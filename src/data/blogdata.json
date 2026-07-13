@@ -1,0 +1,56 @@
+[
+  {
+    "id": "1",
+    "category": "innovation",
+    "slug": "mariani-metal-joins-the-conversation",
+    "img": "/images/blogs/blog1.webp",
+    "title": "Mariani Metal joins the conversation",
+    "description": "A brief note on our official launch on LinkedIn and Instagram. Expect project spotlights, process walk-throughs, and behind-the scenes craft.",
+    "link": "#"
+  },
+  {
+    "id": "2",
+    "category": "thought",
+    "slug": "a-new-website-built-for-clarity",
+    "img": "/images/blogs/blog2.webp",
+    "title": "A new website built for clarity",
+    "description": "We’ve reorganized our portfolio and content so architects and contractors can find technical proof fast.",
+    "link": "#"
+  },
+  {
+    "id": "3",
+    "category": "thought",
+    "slug": "inside-our-70000-sq-ft-facility",
+    "img": "/images/blogs/blog3.webp",
+    "title": "Inside our 70,000 sq ft facility",
+    "description": "From heavy lifts to fine finishing, a look at the flow that moves work from model to installation.",
+    "link": "#"
+  },
+    {
+    "id": "4",
+    "category": "innovation",
+    "slug": "digital-models-that-de-risk-the-site",
+    "img": "/images/blogs/blog4.webp",
+    "title": "Digital models that de-risk the site",
+    "description": "How robust 3D coordination protects tolerance, sequence, and schedule long before steel reaches the field.",
+    "link": "#"
+  },
+    {
+    "id": "5",
+    "category": "innovation",
+    "slug": "methodology-in-practice",
+    "img": "/images/blogs/blog5.webp",
+    "title": "Methodology in practice",
+    "description": "Our path from comprehension to execution. What changes on projects when discipline leads the work.",
+    "link": "#"
+  },
+    {
+    "id": "6",
+    "category": "innovation",
+    "slug": "spotlight-Curved-steel-at-landmark-scale",
+    "img": "/images/blogs/blog6.webp",
+    "title": "Spotlight: Curved steel at landmark scale",
+    "description": "Breaking down tooling, forming, and inspection for signature geometry that must read perfectly in daylight.",
+    "link": "#"
+  }
+]

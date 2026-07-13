@@ -1,0 +1,120 @@
+{
+    "id": "17",
+    "category": "innovation",
+    "slug": "centre-block-rehabilitation",
+    "img": "/images/blogs/blog1.webp",
+    "title": "Parliament Hill - Centre Block Rehabilitation",
+    "description": "The rehabilitation of Centre Block is the largest and most complex heritage rehabilitation ever undertaken in Canada. Built after the original Parliament building was destroyed by fire in 1916, Centre Block houses Canada's Senate, House of Commons, and Library of Parliament, and includes the Memorial Chamber that commemorates Canadians who gave their lives in military service. The project is a comprehensive reckoning with a century of deferred maintenance: the building is being carefully dismantled, structurally reinforced, upgraded for seismic performance, and rebuilt to meet 21st-century requirements for accessibility, sustainability, and security, all while preserving every character-defining heritage feature that makes it one of the most recognized buildings in the country. \n \n Skilled craftsmen are employing traditional techniques to rehabilitate the building's masonry, woodwork, plaster, and metalwork, ensuring that the legacy of this national landmark endures for future generations. Mariani Metal was engaged to fabricate and restore architectural metalwork within the building, contributing to a project where the standard for every visible element is set by the Gothic Revival stonework surrounding it. The scope of restoration encompasses the building's stonework, wood, plaster, frescos, stained glass, marble, and metalwork alongside the replacement of all mechanical, electrical, and fire safety systems. Within that programme, Mariani's fabrication work was required to honour the exacting heritage character of the interiors, matching profiles, finishes, and patina to existing elements with no tolerance for deviation on a federally designated classified heritage building. \n \n Working within the constraints of a secure, active Parliamentary precinct under the oversight of Public Services and Procurement Canada, Mariani coordinated delivery and installation to a programme of exceptional complexity. The project is a complex blend of heritage conservation with appropriate and sensitive contemporary interventions, and it is being designed and built with the next hundred years of Canadian parliamentary democracy in mind. To be part of that programme is to accept a standard of craft that has no equal in Canadian construction.",
+    "location": "Parliament Hill, Wellington Street, Ottawa, Ontario",
+    "architect": "CENTRUS JV (HOK + WSP + Architecture49)",
+    "contractor": "PCL / EllisDon JV",
+    "mainimage": "/images/portfolio/",
+    "detailimage": "",
+    "images": [
+      "/images/portfolio/",
+      "/images/portfolio/",
+      "/images/portfolio/",
+      "/images/portfolio/",
+      "/images/portfolio/"
+    ]
+  },
+  {
+    "id": "20",
+    "category": "innovation",
+    "slug": "peter-george-centre",
+    "img": "/images/blogs/blog1.webp",
+    "title": "Peter George Centre for Living and Learning",
+    "description": "The Living Learning Centre at McMaster University is a 12-storey, 335,000 square foot building that consolidates student residence, academic facilities, and campus services under a single roof, becoming the largest building on the Hamilton campus at its completion. The $110-million project brings together three auditorium-sized classrooms, a Student Wellness Centre, 350 residence rooms, and a childcare facility, all organised around a central multi-storey atrium designed to function as the social and circulatory core of the building. \n \n At the centre of the atrium is a helical curved staircase, the primary visual element of the building, designed to guide occupants upward through the space while offering views and orientation cues across every level. Mariani Metal fabricated the staircase and the architectural metalwork within the atrium, producing the curved steel structure that anchors the interior spatially and visually. A helical stair of this scale demands precise geometry across every riser, stringer, and balustrade panel, with the curve maintained consistently from the ground floor to the uppermost residential level without deviation or visible correction. Fabrication was completed at Mariani's Etobicoke facility, with sections transported and assembled on site within EllisDon's programme. The building interior is a blend of steel and concrete construction, with long-span steel trusses reaching 26 metres supporting the auditorium floors above. Within that structural framework, Mariani's metalwork operates at the human scale, the element that every student, faculty member, and visitor encounters daily as they move through the building. \n \n The Peter George Centre opened in 2019 and has since become the social centre of the McMaster campus, setting a precedent for multi-programme academic buildings across Canada.",
+    "location": "McMaster University, Hamilton, Ontario",
+    "architect": "Diamond Schmitt Architects",
+    "contractor": "-",
+    "mainimage": "/images/portfolio/",
+    "detailimage": "",
+    "images": [
+      "/images/portfolio/",
+      "/images/portfolio/",
+      "/images/portfolio/",
+      "/images/portfolio/",
+      "/images/portfolio/"
+    ]
+  },
+  {
+    "id": "23",
+    "category": "innovation",
+    "slug": "uoft-oise",
+    "img": "/images/blogs/blog1.webp",
+    "title": "UofT OISE - 5th Floor Renovation",
+    "description": "The renewal of the Ontario Institute for Studies in Education at 252 Bloor Street West is a phased masterplan to give new life to a 1970s late Modernist structure, opening up its floors from closed, compartmentalised office arrangements into collaborative, light-filled academic environments. Each completed floor serves as a prototype for those that follow, with Gow Hastings Architects developing an interior language that respects the building's Brutalist concrete character while meeting the University of Toronto's contemporary requirements for accessibility, sustainability, and Indigenisation across its institutional spaces. \n \n The 5th floor renovation is a focused fit-out within that broader programme, requiring precise architectural metalwork to be integrated into an existing concrete structure with no tolerance for alteration of the primary fabric. Gow Hastings' approach to OISE interiors has consistently incorporated meaningful Indigenous materials, with copper accent walls marking significant thresholds and material choices made in reference to Indigenous philosophy and ethics. Mariani Metal fabricated the metal partition framing, feature wall elements, and copper accent assemblies within the 5th floor scope, producing components sized and detailed to sit cleanly within the slab-to-slab height of the existing building and coordinate with the structural openings that Entuitive's engineering resolved. Working within an occupied academic building meant that fabrication tolerances had to account for as-built conditions that differed from drawing dimensions, with adjustments resolved in the shop before installation rather than on site. \n \n The OISE renewal has been recognised with a Grand Valley Construction Association Award for Building Excellence in the Institutional over $20 Million category. The 5th floor renovation is one contribution to a building that is being carefully, deliberately remade from the inside out.",
+    "location": "252 Bloor Street West, Toronto, Ontario",
+    "architect": "Gow Hastings Architects",
+    "contractor": "CGI Construction",
+    "mainimage": "/images/portfolio/",
+    "detailimage": "",
+    "images": [
+      "/images/portfolio/",
+      "/images/portfolio/",
+      "/images/portfolio/",
+      "/images/portfolio/",
+      "/images/portfolio/"
+    ]
+  },
+  {
+    "id": "25",
+    "category": "innovation",
+    "slug": "royal-ontario-museum",
+    "img": "/images/blogs/blog1.webp",
+    "title": " Royal Ontario Museum - OpenROM Facade and Entrance",
+    "description": "OpenROM is a $130 million transformation of Canada's largest museum, entirely reworking the Bloor Street entrance, adding new gallery space, and improving flow and light throughout the building's main floor and atrium. Building on Daniel Libeskind's iconic Michael Lee-Chin Crystal, the project transforms 86,000 square feet on the main floor and creates 6,000 square feet of new gallery space on the second and third levels. At the heart of the programme is a fundamental repositioning of the museum's relationship to the city: the design turns the museum inside out, bringing daylight and views deep inside and creating new connections with Bloor Street and the ground floor public spaces. \n \n Mariani Metal is fabricating the bronze canopy at the Bloor Street entrance, the primary exterior architectural metal element of the entire OpenROM project. The bronze canopy extends outward from the Libeskind Crystal, sheltering the newly redesigned entrance and establishing the material language of the intervention against one of the most photographed building facades in Canada. Fabricating a cantilevered bronze canopy of this scale and visibility demands absolute consistency of surface quality, joint detailing, and structural geometry: it sits against Libeskind's angular aluminium and glass Crystal on one side and the heritage masonry of the original 1914 building on the other, and every dimension is held to scrutiny by the volume of visitors, critics, and passers-by who encounter it daily. Inside, a grand staircase and a series of ramp connectors serve as the architectural centrepiece, offering wayfinding and accessible platforms that knit together the old and new wings. Mariani's scope extends to the staircase metalwork within Hennick Commons, producing the steel structure that anchors the interior spatially across the four-storey atrium. \n \n The project is currently under construction and scheduled for completion in 2027. When finished, it will stand as one of the most significant museum transformations in Canadian history, and the bronze canopy will be among the most visible pieces of architectural metalwork Mariani has ever delivered.",
+    "location": "100 Queen's Park, Toronto, Ontario",
+    "architect": "Hariri Pontarini Architects",
+    "contractor": "Eastern Construction",
+    "mainimage": "/images/portfolio/",
+    "detailimage": "",
+    "images": [
+      "/images/portfolio/",
+      "/images/portfolio/",
+      "/images/portfolio/",
+      "/images/portfolio/",
+      "/images/portfolio/"
+    ]
+  },
+  {
+    "id": "26",
+    "category": "innovation",
+    "slug": "3-world-trade-center",
+    "img": "/images/blogs/blog1.webp",
+    "title": "3 World Trade Center - Transit Hall Lobby",
+    "description": "3 World Trade Center is an 80-storey tower at 175 Greenwich Street, designed by Pritzker Prize-winning architect Richard Rogers and rising 1,079 feet above the heart of Lower Manhattan, directly opposite the National September 11 Memorial and Museum. The transit hall forms part of the access to the transportation hub and connects Towers 2, 3, and 4 at the below-grade levels through a retail concourse designed by Santiago Calatrava. It is one of the most heavily trafficked public interior spaces in New York, handling the daily movement of tens of thousands of commuters, office workers, and visitors passing between the street, the tower lobby, and the underground PATH and subway connections below. \n \n Mirror-backed glass panels with woven metallic mesh fabric flank the walls of the elevator lobbies throughout the transit hall level, establishing the material language of the public circulation spaces across the entire ground and below-grade programme. Mariani Metal fabricated the woven metallic mesh panels and the architectural metalwork within the transit hall lobby, producing the components that line the elevator surrounds and finish the public walls of this below-grade circulation environment. Working within a construction programme of exceptional scale and coordination complexity, Mariani delivered fabrication that met the surface quality and dimensional tolerances demanded by Rogers Stirk Harbour + Partners' design intent, in a space where every material is subject to the relentless scrutiny of a global volume of daily users. \n \n 3 World Trade Center was completed in June 2018 and is certified LEED Gold. The transit hall remains one of the most consequential pieces of public infrastructure delivered in Lower Manhattan since the rebuilding of the World Trade Center site began, and Mariani's metalwork is woven into the fabric of it.",
+    "location": "175 Greenwich Street, New York City, New York",
+    "architect": "Rogers Stirk Harbour + Partners / Adamson Associates (Architect of Record)",
+    "contractor": "Tishman Construction",
+    "mainimage": "/images/portfolio/",
+    "detailimage": "",
+    "images": [
+      "/images/portfolio/",
+      "/images/portfolio/",
+      "/images/portfolio/",
+      "/images/portfolio/",
+      "/images/portfolio/"
+    ]
+  },
+  {
+    "id": "27",
+    "category": "innovation",
+    "slug": "John-a-paulson-center",
+    "img": "/images/blogs/blog1.webp",
+    "title": "John A. Paulson Center - All Ornamental Metals",
+    "description": "The John A. Paulson Center at NYU is the largest expansion in the history of the campus, a 735,000-square-foot structure comprising three glass-clad towers rising from a full-block podium between Houston, Mercer, and Bleecker Streets in Greenwich Village. The building consolidates classrooms, student housing, performing arts, and athletics under a single roof, with a 556-seat theatre, a full NCAA-regulation athletics centre, study and commons spaces, and residential floors for approximately 420 freshmen and 30 to 60 faculty apartments. The project achieved LEED Gold certification and is designed as a showcase piece for NYU's Climate Action Plan. At $1.2 billion, it is one of the largest university construction projects ever completed in New York City. \n \n A building of this programme complexity and scale generates ornamental metalwork across nearly every programme type simultaneously: theatre balustrades and guardrails, athletics centre railings across multiple levels of spectator seating, residential lobby metalwork, the Commons stair and mezzanine assemblies, corridor guardrails across 23 floors, and the feature metalwork within the ground-level public spaces that open the building to the surrounding neighbourhood. Mariani Metal fabricated and delivered all ornamental metals across the Paulson Center, coordinating a programme of exceptional scope with Turner Construction's construction management team across a multi-year build on a full-block Manhattan site. Because the building serves such varying programmes, separate entrances for classrooms, athletics, residences, and theatres were designed to control traffic flow and optimise user interactions, meaning Mariani's metalwork had to perform at the standard expected in each of those distinct environments simultaneously: hospitality quality in the lobbies, institutional durability in the athletics spaces, acoustic sensitivity in the theatre, and precise geometric resolution throughout the Commons. \n \n The Paulson Center opened in January 2023 and stands as one of the most significant pieces of academic infrastructure delivered in New York in a generation.",
+    "location": "181 Mercer Street, New York City, New York",
+    "architect": "Davis Brody Bond + KieranTimberlake",
+    "contractor": "Turner Construction",
+    "mainimage": "/images/portfolio/",
+    "detailimage": "",
+    "images": [
+      "/images/portfolio/",
+      "/images/portfolio/",
+      "/images/portfolio/",
+      "/images/portfolio/",
+      "/images/portfolio/"
+    ]
+  },

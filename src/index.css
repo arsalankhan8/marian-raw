@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: unageo;
+  src: url("./assets/fonts/Unageo-Regular.ttf");
+}
+@font-face {
+  font-family: counture;
+  src: url(./assets/fonts/couture-bld.otf);
+}
+@font-face {
+  font-family: unageo-bold;
+  src: url("./assets/fonts/Unageo-Bold.ttf");
+}
+@font-face {
+  font-family: unageo-medium;
+  src: url("./assets/fonts/Unageo-Medium.ttf");
+}
+@font-face {
+  font-family: unageo-semibold;
+  src: url("./assets/fonts/Unageo-SemiBold.ttf");
+}
+@font-face {
+  font-family: unageo-extrabold;
+  src: url("./assets/fonts/Unageo-ExtraBold.ttf");
+}
+@font-face {
+  font-family: unageo-semibold-italic;
+  src: url("./assets/fonts/Unageo-semibold-italic.ttf");
+}
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: white;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+
+@theme {
+  --font-unageo: unageo, "sans-serif";
+  --font-counture: counture, "sans-serif";
+  --font-unageo-bold: unageo-bold, "sans-serif";
+  --font-unageo-medium: unageo-medium, "sans-serif";
+  --font-unageo-semibold: unageo-semibold, "sans-serif";
+  --font-unageo-extrabold: unageo-extrabold, "sans-serif";
+  --font-unageo-semibold-italic: unageo-semibold-italic, "sans-serif";
+
+  --breakpoint-3xl: 120rem;
+
+
+
+
+}
