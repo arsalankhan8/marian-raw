@@ -60,7 +60,7 @@ export default function Header() {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="flex justify-start">
-            <Link to={homePath}>
+            <Link to="/">
               <img
                 src={logo}
                 alt="Mariani Metal"
@@ -82,7 +82,7 @@ export default function Header() {
               className="relative"
               onMouseEnter={() => setIsOpen(true)}
               onMouseLeave={() => setIsOpen(false)}
-            >
+            > 
               <Link to={legacyPath}>
                 <span
                   className={`flex gap-[4px] items-center ${isActive(
@@ -93,11 +93,10 @@ export default function Header() {
 
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className={`w-4 h-4 transition-transform duration-300 ${
-                      isOpen
+                    className={`w-4 h-4 transition-transform duration-300 ${isOpen
                         ? "rotate-180"
                         : "rotate-0"
-                    }`}
+                      }`}
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"

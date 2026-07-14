@@ -38,7 +38,7 @@ export default function USPortfoliopagesliderv2() {
       id: "3",
       location: "New York City, New York",
       title: "Le Jardin sur Madison",
-      img: "/images/portfolio/LeJardin/main.webp",
+      img: "src/assets/UsLeJarden.jpeg",
       link: "/portfoliodetails/le-jardin",
     },
     {

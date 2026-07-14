@@ -22,7 +22,7 @@ export default function Homeslidernew() {
       id: "3",
       location: "New York City, New York",
       title: "Le Jardin sur Madison",
-      img: "/images/portfolio/LeJardin/main-new.jpg",
+      img: "/images/portfolio/LeJardin/main-new.jpeg",
       link: "/portfoliodetails/le-jardin",
     },
     {
@@ -81,20 +81,6 @@ export default function Homeslidernew() {
       img: "/images/portfolio/NYUGym/2.webp",
       link: "/portfoliodetails/NYUGym",
     },
-    // {
-    //   id: "12",
-    //   location: "New York City, New York",
-    //   title: "Transit Hall Lobby",
-    //   img: "",
-    //   link: "/portfoliodetails/3-world-trade-center",
-    // },
-    // {
-    //   id: "13",
-    //   location: "New York City, New York",
-    //   title: "John A. Paulson Center",
-    //   img: "",
-    //   link: "/portfoliodetails/John-a-paulson-center",
-    // },
   ];
 
   const containerRef = useRef(null);

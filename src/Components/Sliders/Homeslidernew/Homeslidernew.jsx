@@ -21,7 +21,7 @@ const US_SLIDES = [
     id: "3",
     location: "New York City, New York",
     title: "Le Jardin sur Madison",
-    img: "/images/portfolio/LeJardin/main-new.jpg",
+    img: "/images/portfolio/LeJardin/main-new.jpeg",
     link: "/portfoliodetails/le-jardin",
   },
   {
