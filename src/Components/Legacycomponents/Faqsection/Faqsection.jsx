@@ -1,163 +1,262 @@
-import React, { useRef, useState, useEffect } from "react";
-import { useInView } from "react-intersection-observer";
+import React from "react";
 import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { Link } from "react-router-dom";
+
 import faqimg from "../../../assets/faqlegacy.webp";
-import Faq from "../../FAQ/Faq";
 import arrowr from "../../../assets/arrowr.png";
-import { Link } from "react-router";
 
 export default function Faqsection() {
-  const faqitems = [
+  const awards = [
     {
       id: 1,
-      Heading: `Ontario Steel Design Award of Excellence –Projects Outside Ontario (2007)`,
-      Subtext: `Canadian Institute of Steel Construction recognition for the United States Air Force Memorial in Virginia, honoring craftsmanship on an international scale.`,
-      description:
-        "Ontario Steel Design Award of Excellence –Projects Outside Ontario (2007)",
+      heading:
+        "Ontario Steel Design Award of Excellence – Projects Outside Ontario (2007)",
+      subtext:
+        "Canadian Institute of Steel Construction recognition for the United States Air Force Memorial in Virginia, honouring craftsmanship on an international scale.",
     },
     {
       id: 2,
-      Heading: `Ontario Steel Design Award of Excellence –Bridge Category (2019)`,
-      Subtext: `Awarded by CISC for Toronto's Garrison Crossing, highlighting advanced fabrication of landmark duplex stainless steel bridges.`,
+      heading:
+        "Ontario Steel Design Award of Excellence – Bridge Category (2019)",
+      subtext:
+        "Awarded by CISC for Toronto's Garrison Crossing, highlighting advanced fabrication of landmark duplex stainless steel bridges.",
     },
     {
       id: 3,
-      Heading: `Canadian Consulting Engineering Award of Excellence (2020)`,
-      Subtext: `National recognition from ACEC-Canada for Garrison Crossing, celebrated for engineering innovation and fabrication excellence.`,
+      heading: "Canadian Consulting Engineering Award of Excellence (2020)",
+      subtext:
+        "National recognition from ACEC-Canada for Garrison Crossing, celebrated for engineering innovation and fabrication excellence.",
     },
     {
       id: 4,
-      Heading: `Top 10 Fabrication Services Providers in Canada (2024)`,
-      Subtext: `Named by Manufacturing Technology Insights as one of the country's leading firms in advanced architectural steel fabrication.`,
+      heading: "Top 10 Fabrication Services Providers in Canada (2024)",
+      subtext:
+        "Named by Manufacturing Technology Insights as one of the country's leading firms in advanced architectural steel fabrication.",
     },
   ];
 
-  const containerRef = useRef(null);
-  const [pos, setPos] = useState(0); // 0 -> 100 (percent)
-  const [hasAnimated, setHasAnimated] = useState(false);
-  const animationRef = useRef(null);
-
-  // useInView to trigger once when the section becomes sufficiently visible
-  const { ref: inViewRef, inView } = useInView({
+  const { ref, inView } = useInView({
     triggerOnce: true,
-    threshold: 0.4,
+    threshold: 0.2,
   });
 
-  // combine refs
-  useEffect(() => {
-    if (containerRef.current) {
-      inViewRef(containerRef.current);
-    }
-  }, [containerRef, inViewRef]);
+  const contentVariants = {
+    hidden: {
+      opacity: 0,
+      y: 60,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.9,
+        ease: "easeOut",
+        staggerChildren: 0.12,
+      },
+    },
+  };
 
-  // smooth left image animation with looping behavior
-  useEffect(() => {
-    if (!inView) return;
-
-    let rafId = null;
-    const duration = 13000; // milliseconds for full pan
-    const pauseDuration = 1000; // 1 second pause
-
-    const easeInOutCubic = (t) =>
-      t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
-
-    const animate = (startTime, startPos, targetPos, onComplete) => {
-      const stepFn = (now) => {
-        const elapsed = now - startTime;
-        const raw = Math.min(elapsed / duration, 1);
-        const eased = easeInOutCubic(raw);
-        const current = startPos + (targetPos - startPos) * eased;
-        setPos(current);
-
-        if (raw < 1) {
-          rafId = requestAnimationFrame(stepFn);
-        } else {
-          onComplete();
-        }
-      };
-      rafId = requestAnimationFrame(stepFn);
-    };
-
-    const startAnimationLoop = () => {
-      // Animate from left (0%) to right (100%)
-      animate(performance.now(), 0, 100, () => {
-        // Pause at right for 1 second
-        setTimeout(() => {
-          // Animate from right (100%) back to left (0%)
-          animate(performance.now(), 100, 0, () => {
-            // Pause at left for 1 second
-            setTimeout(() => {
-              // Restart the loop
-              startAnimationLoop();
-            }, pauseDuration);
-          });
-        }, pauseDuration);
-      });
-    };
-
-    // Start the animation loop
-    startAnimationLoop();
-
-    return () => {
-      if (rafId) cancelAnimationFrame(rafId);
-    };
-  }, [inView]);
+  const itemVariants = {
+    hidden: {
+      opacity: 0,
+      y: 30,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.65,
+        ease: "easeOut",
+      },
+    },
+  };
 
   return (
-    <div
-      className="max-w-[90vw] w-full mx-auto flex flex-wrap md:flex-nowrap justify-center gap-12 mt-12"
-      ref={containerRef}>
-      {/* LEFT IMAGE WITH WIDTH GROW + SMOOTH PAN */}
-      <div className="w-[100%] md:w-[40%] overflow-hidden rounded-4xl">
-        <motion.img
-          src={faqimg}
-          alt="img"
-          className="h-[70vh] md:h-[620px] 2xl:h-[700px] 3xl:h-[1199px] rounded-4xl object-cover"
-          style={{
-            objectPosition: `${pos}% center`,
-            willChange: "object-position",
-          }}
-          draggable={false}
-          initial={{ width: "0%" }}
-          animate={inView ? { width: "100%" } : {}}
-          transition={{ duration: 1.5, ease: "easeOut" }}
-        />
-      </div>
+<section
+  ref={ref}
+  className="
+    mx-auto mt-12 grid w-full max-w-[90vw]
+    grid-cols-1 gap-10
+    lg:grid-cols-[minmax(0,2fr)_minmax(0,3fr)]
+    lg:gap-14
+  "
+>
+  {/* Left Image */}
+  <motion.div
+    className="
+      relative h-[480px] min-w-0 overflow-hidden
+      rounded-[30px]
+      md:h-[620px]
+      lg:h-[700px]
+      2xl:h-[760px]
+    "
+    initial={{
+      clipPath: "inset(0 100% 0 0)",
+    }}
+    animate={
+      inView
+        ? {
+            clipPath: "inset(0 0% 0 0)",
+          }
+        : {}
+    }
+    transition={{
+      duration: 1.4,
+      ease: [0.22, 1, 0.36, 1],
+    }}
+  >
+    <motion.img
+      src={faqimg}
+      alt="Mariani architectural fabrication project"
+      draggable={false}
+      className="h-full w-full object-cover"
+      initial={{
+        scale: 1.06,
+        objectPosition: "0% 50%",
+      }}
+      animate={
+        inView
+          ? {
+              scale: 1,
+              objectPosition: ["0% 50%", "100% 50%", "0% 50%"],
+            }
+          : {}
+      }
+      transition={{
+        scale: {
+          duration: 1.6,
+          ease: "easeOut",
+        },
+        objectPosition: {
+          duration: 26,
+          repeat: Infinity,
+          ease: "easeInOut",
+          times: [0, 0.5, 1],
+        },
+      }}
+    />
+  </motion.div>
 
-      {/* RIGHT SIDE CONTENT WITH SLIDE UP ANIMATION */}
-      <motion.div
-        className="flex flex-col justify-center w-[100%] md:w-[60%]"
-        initial={{ opacity: 0, y: 100 }}
-        animate={inView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 1, ease: "easeOut" }}
-      >
-        <p className="font-counture text-center md:text-left text-[20px] lg:text-[30px] xl:text-[45px] 2xl:text-[55px] 3xl:text-[111px] leading-[89%] uppercase text-[#00688F]">
-          Awards & Recognitions
-        </p>
+  {/* Right Content */}
+  <motion.div
+    variants={contentVariants}
+    initial="hidden"
+    animate={inView ? "visible" : "hidden"}
+    className="flex min-w-0 flex-col justify-center pb-4 lg:py-10"
+  >
+    <motion.h2
+      variants={itemVariants}
+      className="
+        max-w-full whitespace-normal break-words
+        font-counture text-center
+        text-[38px] uppercase leading-[0.95]
+        text-[#00688F]
+        sm:text-[46px]
+        md:text-left md:text-[52px]
+        lg:text-[54px]
+        xl:text-[64px]
+        2xl:text-[72px]
+      "
+    >
+      Awards &amp; Recognitions
+    </motion.h2>
 
-        <div className="flex mt-6 flex-col gap-3">
-          {faqitems.map((value) => (
-            <Faq
-              key={value.id}
-              faqtitle={value.Heading}
-              faqsubtitle={value.Subtext}
-              faqdescription={value.description}
-            />
-          ))}
-        </div>
-        <div className="flex justify-center md:justify-start">
-          <Link to="/awards">
-            <button className="mt-8 w-[132px] h-[55px] lg:w-[162px] lg:h-[50px] text-[14px] md:text-[24px] lg:text-[18px] xl:text-[25px]  2xl:text-[28px] 3xl:text-[66px] rounded-2xl transition duration-200 flex justify-center items-center gap-6 font-unageo-medium text-white bg-[#00688F] hover:bg-[#939598]">
-              View All
-              <img
-                src={arrowr}
-                alt="arrow"
-                className="w-[16px] md:w-[22px] lg:w-[22px] h-[12px] md:h-[18px] lg:h-[17px]"
-              />
-            </button>
-          </Link>
-        </div>
-      </motion.div>
+    <div className="mt-8 flex min-w-0 flex-col lg:mt-10">
+      {awards.map((award, index) => (
+        <motion.article
+          key={award.id}
+          variants={itemVariants}
+          className={`
+            grid min-w-0
+            grid-cols-[40px_minmax(0,1fr)]
+            gap-4 py-5
+            sm:grid-cols-[44px_minmax(0,1fr)]
+            sm:gap-5
+            lg:py-6
+            ${
+              index !== awards.length - 1
+                ? "border-b border-black/15"
+                : ""
+            }
+          `}
+        >
+          <div
+            className="
+              flex h-10 w-10 shrink-0 items-center justify-center
+              rounded-full bg-[#00688F]
+              font-unageo-medium text-[18px] text-white
+              sm:h-11 sm:w-11 sm:text-[20px]
+            "
+          >
+            {award.id}
+          </div>
+
+          <div className="min-w-0 max-w-full">
+            <h3
+              className="
+                max-w-full whitespace-normal break-words
+                [overflow-wrap:anywhere]
+                font-unageo-medium
+                text-[18px] leading-[1.3] text-black
+                sm:text-[20px]
+                lg:text-[21px]
+                xl:text-[23px]
+              "
+            >
+              {award.heading}
+            </h3>
+
+            <p
+              className="
+                mt-2 max-w-full whitespace-normal break-words
+                [overflow-wrap:anywhere]
+                font-unageo-regular
+                text-[15px] leading-[1.5] text-black/80
+                sm:text-[16px]
+                lg:text-[17px]
+                xl:text-[18px]
+              "
+            >
+              {award.subtext}
+            </p>
+          </div>
+        </motion.article>
+      ))}
     </div>
+
+    <motion.div
+      variants={itemVariants}
+      className="mt-8 flex justify-center md:justify-start"
+    >
+      <Link
+        to="/awards"
+        className="
+          group inline-flex min-h-[54px]
+          items-center justify-center gap-5
+          rounded-[14px] bg-[#00688F]
+          px-5 font-unageo-medium
+          text-[18px] text-white
+          transition-colors duration-300
+          hover:bg-[#939598]
+          sm:px-6 sm:text-[20px]
+        "
+      >
+        View All Awards
+
+        <img
+          src={arrowr}
+          alt=""
+          aria-hidden="true"
+          className="
+            h-auto w-[21px]
+            transition-transform duration-300
+            group-hover:translate-x-1
+          "
+        />
+      </Link>
+    </motion.div>
+  </motion.div>
+</section>
   );
 }
