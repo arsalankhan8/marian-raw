@@ -38,6 +38,8 @@ import AodaCompliance from "./Pages/Policies/AodaCompliance";
 
 import RegionModal from "./Components/RegionSelector/RegionModal";
 
+import Careerpage from "./Pages/Careerpage/Careerpage";
+
 import {
   CA_PORTFOLIO_PATH,
   US_PORTFOLIO_PATH,
@@ -134,6 +136,24 @@ function App() {
                   onSelect={handleRegionSelect}
                   variant="white"
                 />
+              }
+            />
+
+            {/* Careers */}
+            <Route
+              path="/US/careers"
+              element={<Careerpage />}
+            />
+
+            <Route
+              path="/canada/careers"
+              element={<Careerpage />}
+            />
+
+            <Route
+              path="/careers"
+              element={
+                <RegionalRedirect page="careers" />
               }
             />
 

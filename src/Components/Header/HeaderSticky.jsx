@@ -53,6 +53,9 @@ export default function Header() {
   const contactPath =
     getRegionPagePath("contact");
 
+  const careersPath =
+    getRegionPagePath("careers");
+
   const awardsPath = getRegionPagePath(
     "awards",
     REGIONS.CANADA,
@@ -108,8 +111,8 @@ export default function Header() {
     showHeader ||
     isHeaderManuallyRevealed;
 
-const showMenuTrigger =
-  isHomePage && !showHeader;
+  const showMenuTrigger =
+    isHomePage && !showHeader;
 
   const isActive = (path) => {
     const base =
@@ -149,69 +152,69 @@ const showMenuTrigger =
   return (
     <>
 
-{/* Simple floating glow navigation icon */}
-<AnimatePresence>
-  {showMenuTrigger && (
-    <motion.button
-      type="button"
-      aria-label="Reveal navigation"
-      aria-controls="desktop-navigation"
-      initial={{
-        opacity: 0,
-        scale: 0.85,
-      }}
-      animate={{
-        opacity: 1,
-        scale: 1,
-        y: [0, -7, 0],
-        boxShadow: [
-          "0 0 12px rgba(0, 104, 143, 0.35)",
-          "0 0 28px rgba(0, 104, 143, 0.85)",
-          "0 0 12px rgba(0, 104, 143, 0.35)",
-        ],
-      }}
-      exit={{
-        opacity: 0,
-        scale: 0.85,
-      }}
-      transition={{
-        opacity: {
-          duration: 0.3,
-        },
-        scale: {
-          duration: 0.3,
-        },
-        y: {
-          duration: 2.6,
-          repeat: Infinity,
-          ease: "easeInOut",
-        },
-        boxShadow: {
-          duration: 2.2,
-          repeat: Infinity,
-          ease: "easeInOut",
-        },
-      }}
-      whileHover={{
-        scale: 1.12,
-        backgroundColor: "rgba(0, 104, 143, 0.95)",
-        borderColor: "rgba(255, 255, 255, 0.95)",
-        boxShadow:
-          "0 0 22px rgba(0, 104, 143, 1), 0 0 48px rgba(0, 104, 143, 0.75)",
-      }}
-      whileTap={{
-        scale: 0.95,
-      }}
-      onMouseEnter={() =>
-        setIsHeaderManuallyRevealed(true)
-      }
-      onFocus={() =>
-        setIsHeaderManuallyRevealed(true)
-      }
-      onClick={() =>
-        setIsHeaderManuallyRevealed(true)
-      }
-      className="
+      {/* Simple floating glow navigation icon */}
+      <AnimatePresence>
+        {showMenuTrigger && (
+          <motion.button
+            type="button"
+            aria-label="Reveal navigation"
+            aria-controls="desktop-navigation"
+            initial={{
+              opacity: 0,
+              scale: 0.85,
+            }}
+            animate={{
+              opacity: 1,
+              scale: 1,
+              y: [0, -7, 0],
+              boxShadow: [
+                "0 0 12px rgba(0, 104, 143, 0.35)",
+                "0 0 28px rgba(0, 104, 143, 0.85)",
+                "0 0 12px rgba(0, 104, 143, 0.35)",
+              ],
+            }}
+            exit={{
+              opacity: 0,
+              scale: 0.85,
+            }}
+            transition={{
+              opacity: {
+                duration: 0.3,
+              },
+              scale: {
+                duration: 0.3,
+              },
+              y: {
+                duration: 2.6,
+                repeat: Infinity,
+                ease: "easeInOut",
+              },
+              boxShadow: {
+                duration: 2.2,
+                repeat: Infinity,
+                ease: "easeInOut",
+              },
+            }}
+            whileHover={{
+              scale: 1.12,
+              backgroundColor: "rgba(0, 104, 143, 0.95)",
+              borderColor: "rgba(255, 255, 255, 0.95)",
+              boxShadow:
+                "0 0 22px rgba(0, 104, 143, 1), 0 0 48px rgba(0, 104, 143, 0.75)",
+            }}
+            whileTap={{
+              scale: 0.95,
+            }}
+            onMouseEnter={() =>
+              setIsHeaderManuallyRevealed(true)
+            }
+            onFocus={() =>
+              setIsHeaderManuallyRevealed(true)
+            }
+            onClick={() =>
+              setIsHeaderManuallyRevealed(true)
+            }
+            className="
         fixed
         bottom-8
         right-8
@@ -234,10 +237,10 @@ const showMenuTrigger =
         focus:ring-offset-2
         focus:ring-offset-transparent
       "
-    >
-      {/* Subtle animated glow ring */}
-      <motion.span
-        className="
+          >
+            {/* Subtle animated glow ring */}
+            <motion.span
+              className="
           pointer-events-none
           absolute
           -inset-[6px]
@@ -245,26 +248,26 @@ const showMenuTrigger =
           border
           border-[#00688F]/60
         "
-        animate={{
-          opacity: [0.25, 0.75, 0.25],
-          scale: [0.96, 1.13, 0.96],
-        }}
-        transition={{
-          duration: 2.2,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
+              animate={{
+                opacity: [0.25, 0.75, 0.25],
+                scale: [0.96, 1.13, 0.96],
+              }}
+              transition={{
+                duration: 2.2,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            />
 
-      {/* Simple navigation icon */}
-      <span className="relative flex w-6 flex-col gap-[5px]">
-        <span className="block h-[1.5px] w-6 rounded-full bg-white" />
-        <span className="block h-[1.5px] w-4 self-end rounded-full bg-white" />
-        <span className="block h-[1.5px] w-6 rounded-full bg-white" />
-      </span>
-    </motion.button>
-  )}
-</AnimatePresence>
+            {/* Simple navigation icon */}
+            <span className="relative flex w-6 flex-col gap-[5px]">
+              <span className="block h-[1.5px] w-6 rounded-full bg-white" />
+              <span className="block h-[1.5px] w-4 self-end rounded-full bg-white" />
+              <span className="block h-[1.5px] w-6 rounded-full bg-white" />
+            </span>
+          </motion.button>
+        )}
+      </AnimatePresence>
 
       {/* Desktop sticky header */}
       <motion.div
@@ -297,7 +300,7 @@ const showMenuTrigger =
             </div>
 
             {/* Main navigation */}
-            <div className="group flex justify-center items-center gap-12 font-medium border-[1px] py-[16px] px-[26px] border-[#00688F] text-[16px] rounded-[20px] bg-transparent hover:bg-[#00688F] transition-colors duration-300 ease-in-out">
+            <div className="group flex justify-center items-center gap-5 xl:gap-8 2xl:gap-10 font-medium border-[1px] py-[16px] px-[20px] xl:px-[26px] border-[#00688F] text-[14px] xl:text-[16px] rounded-[20px] bg-transparent hover:bg-[#00688F] transition-colors duration-300 ease-in-out">
               <Link to={homePath}>
                 <span
                   className={isActive(
@@ -328,11 +331,10 @@ const showMenuTrigger =
 
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className={`w-4 h-4 transition-transform duration-300 ${
-                        isOpen
+                      className={`w-4 h-4 transition-transform duration-300 ${isOpen
                           ? "rotate-180"
                           : "rotate-0"
-                      }`}
+                        }`}
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -377,16 +379,16 @@ const showMenuTrigger =
                       <ul className="py-2">
                         {region ===
                           REGIONS.CANADA && (
-                          <li>
-                            <Link
-                              to={awardsPath}
-                              className="block px-4 py-2 text-black hover:text-[#00688F] cursor-pointer transition-colors duration-200"
-                            >
-                              Awards &amp;
-                              Recognitions
-                            </Link>
-                          </li>
-                        )}
+                            <li>
+                              <Link
+                                to={awardsPath}
+                                className="block px-4 py-2 text-black hover:text-[#00688F] cursor-pointer transition-colors duration-200"
+                              >
+                                Awards &amp;
+                                Recognitions
+                              </Link>
+                            </li>
+                          )}
 
                         <li>
                           <Link
@@ -420,6 +422,12 @@ const showMenuTrigger =
                   )}
                 >
                   News
+                </span>
+              </Link>
+
+              <Link to={careersPath}>
+                <span className={isActive(careersPath)}>
+                  Careers
                 </span>
               </Link>
 

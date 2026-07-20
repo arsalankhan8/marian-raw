@@ -29,6 +29,10 @@ export default function Header() {
   const newsPath = getRegionPagePath("news");
   const contactPath = getRegionPagePath("contact");
 
+
+  const careersPath =
+    getRegionPagePath("careers");
+
   const awardsPath = getRegionPagePath(
     "awards",
     REGIONS.CANADA,
@@ -70,7 +74,7 @@ export default function Header() {
           </div>
 
           {/* Main navigation */}
-          <div className="group flex justify-center items-center gap-12 font-medium border-[1px] py-[16px] px-[26px] border-[#00688F] text-[16px] rounded-[20px] bg-transparent hover:bg-[#00688F] transition-colors duration-300 ease-in-out">
+          <div className="group flex justify-center items-center gap-5 xl:gap-8 2xl:gap-10 font-medium border-[1px] py-[16px] px-[20px] xl:px-[26px] border-[#00688F] text-[14px] xl:text-[16px] rounded-[20px] bg-transparent hover:bg-[#00688F] transition-colors duration-300 ease-in-out">
             <Link to={homePath}>
               <span className={isActive(homePath)}>
                 Home
@@ -82,7 +86,7 @@ export default function Header() {
               className="relative"
               onMouseEnter={() => setIsOpen(true)}
               onMouseLeave={() => setIsOpen(false)}
-            > 
+            >
               <Link to={legacyPath}>
                 <span
                   className={`flex gap-[4px] items-center ${isActive(
@@ -94,8 +98,8 @@ export default function Header() {
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className={`w-4 h-4 transition-transform duration-300 ${isOpen
-                        ? "rotate-180"
-                        : "rotate-0"
+                      ? "rotate-180"
+                      : "rotate-0"
                       }`}
                     fill="none"
                     viewBox="0 0 24 24"
@@ -167,6 +171,12 @@ export default function Header() {
             <Link to={newsPath}>
               <span className={isActive(newsPath)}>
                 News
+              </span>
+            </Link>
+
+            <Link to={careersPath}>
+              <span className={isActive(careersPath)}>
+                Careers
               </span>
             </Link>
 

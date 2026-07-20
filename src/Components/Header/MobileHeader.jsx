@@ -51,6 +51,9 @@ export default function MobileHeader() {
   const contactPath =
     getRegionPagePath("contact");
 
+  const careersPath =
+    getRegionPagePath("careers");
+
   const awardsPath = getRegionPagePath(
     "awards",
     REGIONS.CANADA,
@@ -312,13 +315,13 @@ export default function MobileHeader() {
               animate={
                 isOpen
                   ? {
-                      rotate: 45,
-                      y: 8,
-                    }
+                    rotate: 45,
+                    y: 8,
+                  }
                   : {
-                      rotate: 0,
-                      y: 0,
-                    }
+                    rotate: 0,
+                    y: 0,
+                  }
               }
               className="block w-6 h-0.5 bg-black"
             />
@@ -334,13 +337,13 @@ export default function MobileHeader() {
               animate={
                 isOpen
                   ? {
-                      rotate: -45,
-                      y: -8,
-                    }
+                    rotate: -45,
+                    y: -8,
+                  }
                   : {
-                      rotate: 0,
-                      y: 0,
-                    }
+                    rotate: 0,
+                    y: 0,
+                  }
               }
               className="block w-6 h-0.5 bg-black"
             />
@@ -414,11 +417,10 @@ export default function MobileHeader() {
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className={`w-4 h-4 transition-transform duration-300 ${
-                        isDropdownOpen
+                      className={`w-4 h-4 transition-transform duration-300 ${isDropdownOpen
                           ? "rotate-180"
                           : "rotate-0"
-                      }`}
+                        }`}
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -455,17 +457,17 @@ export default function MobileHeader() {
                     >
                       {region ===
                         REGIONS.CANADA && (
-                        <li>
-                          <Link
-                            to={awardsPath}
-                            onClick={closeMenu}
-                            className="block py-1 text-gray-600 hover:text-[#00688F]"
-                          >
-                            Awards &amp;
-                            Recognitions
-                          </Link>
-                        </li>
-                      )}
+                          <li>
+                            <Link
+                              to={awardsPath}
+                              onClick={closeMenu}
+                              className="block py-1 text-gray-600 hover:text-[#00688F]"
+                            >
+                              Awards &amp;
+                              Recognitions
+                            </Link>
+                          </li>
+                        )}
 
                       <li>
                         <Link
@@ -505,6 +507,19 @@ export default function MobileHeader() {
                   )}
                 >
                   News
+                </span>
+              </Link>
+
+              <Link
+                to={careersPath}
+                onClick={closeMenu}
+              >
+                <span
+                  className={isActive(
+                    careersPath,
+                  )}
+                >
+                  Careers
                 </span>
               </Link>
 
