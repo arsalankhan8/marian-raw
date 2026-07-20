@@ -463,7 +463,7 @@ export default function Careerpage() {
 
                     <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/65 to-black/25" />
 
-                    <div className="relative z-10 mx-auto w-full max-w-[90vw] pb-16 pt-40 lg:pb-24">
+                    <div className="relative z-10 mx-auto w-full max-w-[90vw] pb-16 pt-16 lg:pb-24">
                         <motion.div
                             initial={{
                                 opacity: 0,
@@ -557,7 +557,7 @@ export default function Careerpage() {
                                     What Defines Our Team
                                 </SectionLabel>
 
-                                <h2 className="max-w-[650px] text-[36px] font-semibold leading-[1.12] sm:text-[35px] lg:text-[50px]">
+                                <h2 className="max-w-[650px] text-[30px] font-semibold leading-[1.12] sm:text-[35px] lg:text-[50px]">
                                     Precision is not one department.
                                     It defines the entire team.
                                 </h2>
@@ -665,7 +665,7 @@ export default function Careerpage() {
                                     Build Your Career at Mariani
                                 </SectionLabel>
 
-                                <h2 className="max-w-[700px] text-[36px] font-semibold leading-[1.12] sm:text-[35px] lg:text-[50px]">
+                                <h2 className="max-w-[700px] text-[30px] font-semibold leading-[1.12] sm:text-[35px] lg:text-[50px]">
                                     Build skills that become part of
                                     something permanent.
                                 </h2>

@@ -1,154 +1,309 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import logo from "../../assets/logo.png";
-import facebook from "../../assets/facebookb.png";
 import insta from "../../assets/instab.png";
 import linkedin from "../../assets/linkedinb.png";
-import { Link } from "react-router";
+
 import {
   getRegionHomePath,
   getRegionPortfolioPath,
+  getRegionPagePath,
   getRegionContact,
+  getSelectedRegion,
 } from "../../utils/regionPaths";
 
+import { REGIONS } from "../../constants/regions";
+
 export default function Footers() {
+  const region = getSelectedRegion();
+
   const homePath = getRegionHomePath();
-  const portfolioPath = getRegionPortfolioPath();
+  const portfolioPath =
+    getRegionPortfolioPath();
+
+  const legacyPath =
+    getRegionPagePath("legacy");
+
+  const newsPath =
+    getRegionPagePath("news");
+
+  const careersPath =
+    getRegionPagePath("careers");
+
+  const contactPath =
+    getRegionPagePath("contact");
+
+  const termsPath =
+    getRegionPagePath(
+      "terms-and-conditions",
+    );
+
+  const privacyPath =
+    getRegionPagePath("privacy-policy");
+
+  const policiesPath =
+    getRegionPagePath("policies");
+
+  const aodaPath = getRegionPagePath(
+    "aoda-compliance",
+    REGIONS.CANADA,
+  );
+
   const contact = getRegionContact();
 
+  const usefulLinks = [
+    {
+      label: "Home",
+      path: homePath,
+    },
+    {
+      label: "Legacy",
+      path: legacyPath,
+    },
+    {
+      label: "Portfolio",
+      path: portfolioPath,
+    },
+    {
+      label: "News",
+      path: newsPath,
+    },
+    {
+      label: "Careers",
+      path: careersPath,
+    },
+    {
+      label: "Contact Us",
+      path: contactPath,
+    },
+  ];
+
   return (
-    <>
-      <div className="max-w-[90vw] mx-auto hidden sm:flex justify-between pt-[70px] pb-[20px]">
-        <div className="flex justify-start items-center">
-          <Link to={homePath}>
-            {" "}
-            <img
-              src={logo}
-              alt="logo"
-              className="h-[196px] w-[206px] 3xl:w-[250px] 3xl:h-[230px]"
-            />
-          </Link>
-        </div>
-        <div className="flex flex-col gap-8">
-          <span className="font-medium text-[22px] text-[#00688F] font-unageo-medium">
-            {" "}
-            Useful Links
-          </span>
-          <div className="flex flex-col gap-3">
-            <Link to={homePath}>
-              {" "}
-              <span className="font-unageo">Home</span>
-            </Link>
-            <Link to={`/legacy`}>
-              <span className="font-unageo">Legacy</span>
-            </Link>
-            <Link to={portfolioPath}>
-              <span className="font-unageo">Portfolio</span>
-            </Link>
-            <Link to={`/news`}>
-              <span className="font-unageo">News</span>
-            </Link>
-            <Link to={`/contact`}>
-              <span className="font-unageo">Contact Us</span>
-            </Link>
-          </div>
-        </div>
-        <div className="flex flex-col gap-8">
-          <span className="font-medium text-[22px] text-[#00688F] font-unageo-medium">
-            {" "}
-            Contact Us
-          </span>
-          <div className="flex flex-col gap-3">
-            <div className="flex flex-col">
-              <span className="text-[18px] font-unageo-medium">Email</span>
-              <span className="font-unageo">info@mariani.com</span>
-            </div>
-            <div className="flex flex-col">
-              <span className="text-[18px] font-unageo-medium">Call</span>
-              <span className="font-unageo">(416) 798-2969</span>
-            </div>
-            <div className="flex flex-col">
-              <span className="text-[18px] font-unageo-medium">Location</span>
-              <span className="font-unageo">
-                {contact.addressLines.map((line, index) => (
-                  <React.Fragment key={line}>
-                    {index > 0 && <br />}
-                    {line}
-                  </React.Fragment>
-                ))}
-              </span>
-            </div>
-          </div>
-        </div>
-        <div className="flex flex-col gap-8">
-          <span className="font-medium text-[22px] text-[#00688F] font-unageo-medium">
-            {" "}
-            Social Media
-          </span>
-          <div className="flex flex-col gap-3">
-            {/*
-    <a href="https://facebook.com/your-profile" target="_blank" rel="noopener noreferrer" className='flex gap-4 cursor-pointer hover:opacity-80 transition-opacity'>
-      <img src={facebook} alt="facebook" className='h-[15px] w-[12px]' />
-      <span className='mt-[-5px] font-unageo'>Facebook</span>
-    </a>
-    */}
-
-            <a
-              href="https://www.instagram.com/marianimetal?igsh=MWg3Nm9lMjRzNHdqZA=="
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex gap-4 cursor-pointer hover:opacity-80 transition-opacity"
-            >
-              <img src={insta} alt="instagram" className="h-[15px] w-[15px]" />
-              <span className="mt-[-5px] font-unageo">Instagram</span>
-            </a>
-
-            <a
-              href="https://www.linkedin.com/company/mariani-metal-group"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex gap-4 cursor-pointer hover:opacity-80 transition-opacity"
+    <footer className="hidden w-full bg-white sm:block">
+      {/* Main footer */}
+      <div className="mx-auto w-full max-w-[1440px] px-6 py-12 lg:px-8 lg:py-14">
+        <div className="grid grid-cols-2 gap-x-10 gap-y-12 lg:grid-cols-[1.15fr_0.8fr_1.1fr_0.8fr] lg:gap-x-14 xl:gap-x-20">
+          {/* Brand */}
+          <div className="col-span-2 flex flex-col items-start lg:col-span-1">
+            <Link
+              to={homePath}
+              aria-label="Mariani Metal home"
+              className="inline-block"
             >
               <img
-                src={linkedin}
-                alt="linkedin"
-                className="h-[15px] w-[15px]"
+                src={logo}
+                alt="Mariani Metal"
+                className="h-[110px] w-auto object-contain lg:h-[135px] xl:h-[150px]"
               />
-              <span className="mt-[-4px] font-unageo">Linkedin</span>
-            </a>
+            </Link>
+
+            <p className="mt-5 max-w-[300px] font-unageo text-[14px] leading-6 text-[#626A6E] lg:text-[15px]">
+              Architectural metalwork built
+              through precision, discipline,
+              and craftsmanship across Canada
+              and the United States.
+            </p>
+
+            <div className="mt-6 flex items-center gap-3">
+              <a
+                href="https://www.instagram.com/marianimetal?igsh=MWg3Nm9lMjRzNHdqZA=="
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Mariani Metal on Instagram"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-[#D2D8DB] transition-all duration-300 hover:border-[#00688F] hover:bg-[#00688F]"
+              >
+                <img
+                  src={insta}
+                  alt=""
+                  aria-hidden="true"
+                  className="h-[16px] w-[16px] object-contain"
+                />
+              </a>
+
+              <a
+                href="https://www.linkedin.com/company/mariani-metal-group"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Mariani Metal on LinkedIn"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-[#D2D8DB] transition-all duration-300 hover:border-[#00688F] hover:bg-[#00688F]"
+              >
+                <img
+                  src={linkedin}
+                  alt=""
+                  aria-hidden="true"
+                  className="h-[16px] w-[16px] object-contain"
+                />
+              </a>
+            </div>
+          </div>
+
+          {/* Useful links */}
+          <div>
+            <h3 className="font-counture text-[22px] leading-none text-[#00688F] lg:text-[24px]">
+              Useful Links
+            </h3>
+
+            <nav
+              aria-label="Footer navigation"
+              className="mt-6 grid grid-cols-2 gap-x-5 gap-y-3 lg:grid-cols-1"
+            >
+              {usefulLinks.map((item) => (
+                <Link
+                  key={item.label}
+                  to={item.path}
+                  className="group flex w-fit items-center gap-2 font-unageo text-[15px] text-[#343A3D] transition-colors duration-300 hover:text-[#00688F]"
+                >
+                  <span className="h-[1px] w-0 bg-[#00688F] transition-all duration-300 group-hover:w-4" />
+
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h3 className="font-counture text-[22px] leading-none text-[#00688F] lg:text-[24px]">
+              Contact
+            </h3>
+
+            <div className="mt-6 grid gap-5">
+              <div>
+                <span className="font-unageo-medium text-[12px] uppercase tracking-[0.14em] text-[#7B8387]">
+                  Email
+                </span>
+
+                <a
+                  href="mailto:info@mariani.com"
+                  className="mt-1 block font-unageo text-[15px] text-[#252B2E] transition-colors duration-300 hover:text-[#00688F]"
+                >
+                  info@mariani.com
+                </a>
+              </div>
+
+              <div>
+                <span className="font-unageo-medium text-[12px] uppercase tracking-[0.14em] text-[#7B8387]">
+                  Call
+                </span>
+
+                <a
+                  href="tel:+14167982969"
+                  className="mt-1 block font-unageo text-[15px] text-[#252B2E] transition-colors duration-300 hover:text-[#00688F]"
+                >
+                  (416) 798-2969
+                </a>
+              </div>
+
+              <div>
+                <span className="font-unageo-medium text-[12px] uppercase tracking-[0.14em] text-[#7B8387]">
+                  Location
+                </span>
+
+                <address className="mt-1 font-unageo text-[14px] not-italic leading-6 text-[#50585C]">
+                  {contact.addressLines.map(
+                    (line) => (
+                      <span
+                        key={line}
+                        className="block"
+                      >
+                        {line}
+                      </span>
+                    ),
+                  )}
+                </address>
+              </div>
+            </div>
+          </div>
+
+          {/* Social */}
+          <div>
+            <h3 className="font-counture text-[22px] leading-none text-[#00688F] lg:text-[24px]">
+              Follow Us
+            </h3>
+
+            <div className="mt-6 grid gap-4">
+              <a
+                href="https://www.instagram.com/marianimetal?igsh=MWg3Nm9lMjRzNHdqZA=="
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex w-fit items-center gap-3 font-unageo text-[15px] text-[#343A3D] transition-colors duration-300 hover:text-[#00688F]"
+              >
+                <span className="flex h-9 w-9 items-center justify-center rounded-full border border-[#D5DCDF] transition-all duration-300 group-hover:border-[#00688F] group-hover:bg-[#00688F]">
+                  <img
+                    src={insta}
+                    alt=""
+                    aria-hidden="true"
+                    className="h-[14px] w-[14px]"
+                  />
+                </span>
+
+                Instagram
+              </a>
+
+              <a
+                href="https://www.linkedin.com/company/mariani-metal-group"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex w-fit items-center gap-3 font-unageo text-[15px] text-[#343A3D] transition-colors duration-300 hover:text-[#00688F]"
+              >
+                <span className="flex h-9 w-9 items-center justify-center rounded-full border border-[#D5DCDF] transition-all duration-300 group-hover:border-[#00688F] group-hover:bg-[#00688F]">
+                  <img
+                    src={linkedin}
+                    alt=""
+                    aria-hidden="true"
+                    className="h-[14px] w-[14px]"
+                  />
+                </span>
+
+                LinkedIn
+              </a>
+            </div>
           </div>
         </div>
       </div>
-      <div className="max-w-[90vw] w-full mx-auto hidden sm:flex justify-between border-t-[1px] pt-[20px] pb-[20px]">
-        <p className="font-unageo-medium text-[14px] 3xl:text-[18px] capitalize">
-          © Copyright 2026. mariani. All Rights Reserved.
-        </p>
-        <div className="flex gap-4 items-center">
-          <Link
-            to="/terms-and-conditions"
-            className="font-unageo-medium text-[14px] 3xl:text-[18px] capitalize pr-[20px] border-r-[2px] leading-none text-black"
-          >
-            Terms & Conditions
-          </Link>
-          <Link
-            to="/privacy-policy"
-            className="font-unageo-medium text-[14px] 3xl:text-[18px] capitalize pr-[20px] border-r-[2px] leading-none text-black"
-          >
-            Privacy Policy
-          </Link>
-          <Link
-            to="/policies"
-            className="font-unageo-medium text-[14px] 3xl:text-[18px] capitalize pr-[20px] border-r-[2px] leading-none text-black"
-          >
-            Other Policies
-          </Link>
-          <Link
-            to="/aoda-compliance"
-            className="font-unageo-medium text-[14px] 3xl:text-[18px] capitalize leading-none text-black"
-          >
-            AODA Compliance
-          </Link>
+
+      {/* Bottom bar */}
+      <div className="border-t border-[#D9DEE0]">
+        <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-4 px-6 py-5 md:flex-row md:items-center md:justify-between lg:px-8">
+          <p className="font-unageo text-[12px] text-[#687074] lg:text-[13px]">
+            © 2026 Mariani. All Rights
+            Reserved.
+          </p>
+
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+            <Link
+              to={termsPath}
+              className="font-unageo-medium text-[12px] text-[#4F575B] transition-colors duration-300 hover:text-[#00688F] lg:text-[13px]"
+            >
+              Terms &amp; Conditions
+            </Link>
+
+            <Link
+              to={privacyPath}
+              className="font-unageo-medium text-[12px] text-[#4F575B] transition-colors duration-300 hover:text-[#00688F] lg:text-[13px]"
+            >
+              Privacy Policy
+            </Link>
+
+            <Link
+              to={policiesPath}
+              className="font-unageo-medium text-[12px] text-[#4F575B] transition-colors duration-300 hover:text-[#00688F] lg:text-[13px]"
+            >
+              Other Policies
+            </Link>
+
+            {region === REGIONS.CANADA && (
+              <Link
+                to={aodaPath}
+                className="font-unageo-medium text-[12px] text-[#4F575B] transition-colors duration-300 hover:text-[#00688F] lg:text-[13px]"
+              >
+                AODA Compliance
+              </Link>
+            )}
+          </div>
         </div>
       </div>
-    </>
+    </footer>
   );
 }
