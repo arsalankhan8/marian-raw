@@ -447,7 +447,7 @@ export default function Careerpage() {
             if (!response.ok || result.success === false) {
                 throw new Error(
                     result.message ||
-                        "Unable to submit the application.",
+                    "Unable to submit the application.",
                 );
             }
 
@@ -500,7 +500,7 @@ export default function Careerpage() {
 
             <main>
                 {/* Hero */}
-                <section className="relative flex min-h-[720px] items-end overflow-hidden bg-black lg:min-h-[790px]">
+                <section className="relative flex min-h-[500px] items-end overflow-hidden bg-black lg:min-h-[550px]">
                     <img
                         src="/images/careers/careers-hero.webp"
                         alt="Mariani team reviewing architectural metalwork"
@@ -533,12 +533,12 @@ export default function Careerpage() {
                                 </span>
                             </div>
 
-                            <h1 className="max-w-[800px] text-[44px] font-semibold leading-[1.05] text-white sm:text-[56px] lg:text-[76px]">
+                            <h1 className="max-w-[800px] text-[45px] font-semibold leading-[1.05] text-white  lg:text-[45px]">
                                 At Mariani, your craft becomes
                                 your legacy.
                             </h1>
 
-                            <p className="mt-7 max-w-[760px] text-[16px] leading-7 text-white/80 sm:text-[18px]">
+                            <p className="mt-7 max-w-[760px] text-[16px] leading-7 text-white/80 sm:text-[15px]">
                                 For nearly four decades, Mariani
                                 Metal has helped shape complex
                                 architectural metalwork across
@@ -575,17 +575,6 @@ export default function Careerpage() {
                                     />
                                 </button>
 
-                                <button
-                                    type="button"
-                                    onClick={() =>
-                                        scrollToSection(
-                                            "talent-community",
-                                        )
-                                    }
-                                    className="inline-flex cursor-pointer items-center justify-center rounded-full border border-white/60 bg-white/5 px-7 py-4 text-[14px] font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:border-white hover:bg-white hover:text-black"
-                                >
-                                    Submit Your Resume
-                                </button>
                             </div>
                         </motion.div>
                     </div>
@@ -603,13 +592,13 @@ export default function Careerpage() {
                                     What Defines Our Team
                                 </SectionLabel>
 
-                                <h2 className="max-w-[650px] text-[30px] font-semibold leading-[1.12] sm:text-[35px] lg:text-[50px]">
+                                <h2 className="max-w-[650px] text-[30px] font-semibold leading-[1.12] sm:text-[35px] lg:text-[45px]">
                                     Precision is not one department.
                                     It defines the entire team.
                                 </h2>
                             </div>
 
-                            <p className="max-w-[700px] text-[16px] leading-7 text-[#5F666A] lg:justify-self-end lg:text-[18px]">
+                            <p className="max-w-[700px] text-[15px] leading-7 text-[#5F666A] lg:justify-self-end lg:text-[15x]">
                                 At Mariani, every role contributes
                                 to something larger than a single
                                 part, panel, weld, drawing, or
@@ -700,7 +689,7 @@ export default function Careerpage() {
                 </section>
 
                 {/* Career Disciplines */}
-                <section className="bg-[#F3F5F6] py-20 lg:py-32">
+                <section className="bg-[#E5F0F4] py-20 lg:py-32">
                     <div className="mx-auto max-w-[90vw]">
                         <motion.div
                             {...revealAnimation}
@@ -711,13 +700,13 @@ export default function Careerpage() {
                                     Build Your Career at Mariani
                                 </SectionLabel>
 
-                                <h2 className="max-w-[700px] text-[30px] font-semibold leading-[1.12] sm:text-[35px] lg:text-[50px]">
+                                <h2 className="max-w-[700px] text-[30px] font-semibold leading-[1.12] sm:text-[35px] lg:text-[45px]">
                                     Build skills that become part of
                                     something permanent.
                                 </h2>
                             </div>
 
-                            <p className="max-w-[580px] text-[16px] leading-7 text-[#5F666A] lg:justify-self-end lg:text-[18px]">
+                            <p className="max-w-[580px] text-[15px] leading-7 text-[#5F666A] lg:justify-self-end lg:text-[15px]">
                                 Join a team where skill,
                                 discipline, and precision come
                                 together to shape landmark projects
@@ -786,11 +775,11 @@ export default function Careerpage() {
                                 Job Opportunities
                             </SectionLabel>
 
-                            <h2 className="text-[38px] font-semibold leading-tight sm:text-[35px] lg:text-[50px]">
+                            <h2 className="text-[38px] font-semibold leading-tight sm:text-[35px] lg:text-[45px]">
                                 Find your place at Mariani.
                             </h2>
 
-                            <p className="mx-auto mt-5 max-w-[680px] text-[16px] leading-7 text-[#626A6E] lg:text-[18px]">
+                            <p className="mx-auto mt-5 max-w-[680px] text-[15px] leading-7 text-[#626A6E] lg:text-[15px]">
                                 Explore current opportunities by
                                 region or submit your resume to be
                                 considered for future openings.
@@ -905,7 +894,7 @@ export default function Careerpage() {
                 {/* Talent Community */}
                 <section
                     id="talent-community"
-                    className="scroll-mt-28 bg-[#063746] py-20 text-white lg:py-32"
+                    className="scroll-mt-28 bg-[#E5F0F4] py-20 text-black lg:py-32"
                 >
                     <div className="mx-auto max-w-[90vw]">
                         <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
@@ -916,12 +905,12 @@ export default function Careerpage() {
                                     Join Our Talent Community
                                 </SectionLabel>
 
-                                <h2 className="max-w-[570px] text-[38px] font-semibold leading-[1.1] sm:text-[35px] lg:text-[50px]">
+                                <h2 className="max-w-[570px] text-[38px] font-semibold leading-[1.1] sm:text-[35px] lg:text-[45px]">
                                     Be the first to hear about new
                                     opportunities.
                                 </h2>
 
-                                <p className="mt-6 max-w-[570px] text-[17px] leading-7 text-white/65">
+                                <p className="mt-6 max-w-[570px] text-[15px] leading-7 text-black">
                                     Submit your details and resume to
                                     stay connected with our hiring
                                     team for current and future
@@ -1284,26 +1273,21 @@ export default function Careerpage() {
                             {...revealAnimation}
                             className="relative flex min-h-[520px] items-center justify-center overflow-hidden rounded-[28px] bg-black px-6 py-20 text-center"
                         >
-                            <img
-                                src="/images/careers/careers-cta.webp"
-                                alt="Completed architectural metalwork by Mariani"
-                                loading="lazy"
-                                className="absolute inset-0 h-full w-full object-cover"
-                            />
+                           #00688F
 
-                            <div className="absolute inset-0 bg-black/65" />
+                            <div className="absolute inset-0 bg-[#00688F]" />
 
                             <div className="relative z-10 max-w-[820px]">
                                 <span className="text-[12px] font-semibold uppercase tracking-[0.24em] text-[#8BD0E7]">
                                     Ready to Build With Mariani?
                                 </span>
 
-                                <h2 className="mt-5 text-[38px] font-semibold leading-[1.08] text-white sm:text-[35px] lg:text-[50px]">
+                                <h2 className="mt-5 text-[38px] font-semibold leading-[1.08] text-white sm:text-[35px] lg:text-[45px]">
                                     Bring your skill to work that
                                     leaves a lasting mark.
                                 </h2>
 
-                                <p className="mx-auto mt-6 max-w-[700px] text-[16px] leading-7 text-white/70 lg:text-[18px]">
+                                <p className="mx-auto mt-6 max-w-[700px] text-[16px] leading-7 text-white/70 lg:text-[15px]">
                                     Bring your skill, your discipline,
                                     and your attention to detail to a
                                     team trusted on complex projects
@@ -1319,7 +1303,7 @@ export default function Careerpage() {
                                                 "job-opportunities",
                                             )
                                         }
-                                        className="cursor-pointer rounded-full bg-[#00688F] px-7 py-4 text-[14px] font-semibold text-white transition-colors duration-300 hover:bg-[#005472]"
+                                         className="cursor-pointer rounded-full border border-white/60 px-7 py-4 text-[14px] font-semibold text-white transition-all duration-300 hover:bg-white hover:text-black"
                                     >
                                         View Open Positions
                                     </button>

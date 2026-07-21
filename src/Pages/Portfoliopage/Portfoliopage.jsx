@@ -18,7 +18,7 @@ export default function Portfoliopage() {
     <div>
       <Header />
       <MobileHeader />
-      <div className="pt-[30px] pb-[70px] rounded-xl">
+      <div className="pt-[30px] pb-[70px] ">
         {/* Section with entrance animation */}
         <motion.div
           initial={{ opacity: 0, y: 200 }}
