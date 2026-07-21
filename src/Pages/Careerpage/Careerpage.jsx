@@ -330,6 +330,13 @@ export default function Careerpage() {
             message: "",
         });
 
+    const [selectedResumeName, setSelectedResumeName] =
+        useState("");
+
+    const talentEndpoint =
+        import.meta.env.VITE_TALENT_API_ENDPOINT?.trim() ||
+        "/api/career-application.php";
+
     useEffect(() => {
         setActiveRegion(pageRegion);
     }, [pageRegion]);
@@ -363,6 +370,10 @@ export default function Careerpage() {
     const handleTalentSubmit = async (event) => {
         event.preventDefault();
 
+        if (isSubmitting) {
+            return;
+        }
+
         const form = event.currentTarget;
         const formData = new FormData(form);
         const resume = formData.get("resume");
@@ -372,28 +383,39 @@ export default function Careerpage() {
             message: "",
         });
 
-        if (
-            resume instanceof File &&
-            resume.size > 10 * 1024 * 1024
-        ) {
+        if (!(resume instanceof File) || resume.size === 0) {
             setFormStatus({
                 type: "error",
-                message:
-                    "Please upload a resume smaller than 10 MB.",
+                message: "Please select your resume.",
             });
 
             return;
         }
 
-        const endpoint =
-            import.meta.env
-                .VITE_TALENT_API_ENDPOINT;
+        const maximumFileSize = 10 * 1024 * 1024;
 
-        if (!endpoint) {
+        if (resume.size > maximumFileSize) {
             setFormStatus({
                 type: "error",
-                message:
-                    "The submission service has not been connected yet.",
+                message: "Please upload a resume smaller than 10 MB.",
+            });
+
+            return;
+        }
+
+        const allowedExtensions = ["pdf", "doc", "docx"];
+        const fileExtension = resume.name
+            .split(".")
+            .pop()
+            ?.toLowerCase();
+
+        if (
+            !fileExtension ||
+            !allowedExtensions.includes(fileExtension)
+        ) {
+            setFormStatus({
+                type: "error",
+                message: "Please upload a PDF, DOC, or DOCX file.",
             });
 
             return;
@@ -402,31 +424,55 @@ export default function Careerpage() {
         try {
             setIsSubmitting(true);
 
-            const response = await fetch(endpoint, {
+            const response = await fetch(talentEndpoint, {
                 method: "POST",
                 body: formData,
+                headers: {
+                    Accept: "application/json",
+                },
             });
 
-            if (!response.ok) {
+            const responseText = await response.text();
+
+            let result = {};
+
+            if (responseText) {
+                try {
+                    result = JSON.parse(responseText);
+                } catch {
+                    result = {};
+                }
+            }
+
+            if (!response.ok || result.success === false) {
                 throw new Error(
-                    "Unable to submit application.",
+                    result.message ||
+                        "Unable to submit the application.",
                 );
             }
 
             form.reset();
+            setSelectedJob(null);
+            setSelectedResumeName("");
 
             setFormStatus({
                 type: "success",
                 message:
-                    "Thank you. Your information has been submitted to our hiring team.",
+                    result.message ||
+                    "Thank you. Your application has been submitted to our hiring team.",
             });
         } catch (error) {
-            console.error(error);
+            console.error(
+                "Career application submission error:",
+                error,
+            );
 
             setFormStatus({
                 type: "error",
                 message:
-                    "We could not submit your information. Please try again.",
+                    error instanceof Error
+                        ? error.message
+                        : "We could not submit your application. Please try again.",
             });
         } finally {
             setIsSubmitting(false);
@@ -896,6 +942,8 @@ export default function Careerpage() {
 
                             <motion.form
                                 {...revealAnimation}
+                                action={talentEndpoint}
+                                method="POST"
                                 onSubmit={handleTalentSubmit}
                                 encType="multipart/form-data"
                                 className="rounded-[24px] bg-white p-6 text-black sm:p-8 lg:p-10"
@@ -1101,8 +1149,9 @@ export default function Careerpage() {
                                             />
                                         </div>
 
-                                        <span className="mt-4 text-[14px] font-semibold">
-                                            Choose your resume
+                                        <span className="mt-4 max-w-full truncate text-[14px] font-semibold">
+                                            {selectedResumeName ||
+                                                "Choose your resume"}
                                         </span>
 
                                         <span className="mt-1 text-[12px] text-[#727A7E]">
@@ -1117,6 +1166,12 @@ export default function Careerpage() {
                                         type="file"
                                         required
                                         accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                                        onChange={(event) =>
+                                            setSelectedResumeName(
+                                                event.target.files?.[0]
+                                                    ?.name || "",
+                                            )
+                                        }
                                         className="sr-only"
                                     />
                                 </div>
@@ -1155,6 +1210,33 @@ export default function Careerpage() {
                                     name="positionDepartment"
                                     value={selectedJob?.department || ""}
                                 />
+
+                                <input
+                                    type="hidden"
+                                    name="applicationRegion"
+                                    value={
+                                        activeRegion === "canada"
+                                            ? "Canada"
+                                            : "United States"
+                                    }
+                                />
+
+                                <div
+                                    className="absolute left-[-9999px] h-px w-px overflow-hidden"
+                                    aria-hidden="true"
+                                >
+                                    <label htmlFor="companyWebsite">
+                                        Leave this field empty
+                                    </label>
+
+                                    <input
+                                        id="companyWebsite"
+                                        type="text"
+                                        name="_gotcha"
+                                        tabIndex={-1}
+                                        autoComplete="off"
+                                    />
+                                </div>
 
                                 <div className="mt-7">
                                     <button

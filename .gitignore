@@ -7,15 +7,38 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
+# Dependencies and builds
+node_modules/
+dist/
+dist-ssr/
+
+# Environment variables
+.env
+.env.*
+!.env.example
 *.local
+
+# Sensitive PHP configuration
+api/mail-config.php
+
+# Composer dependencies
+vendor/
+
+# Temporary uploads
+uploads/
+tmp/
+temp/
+
+# Certificates and private keys
+*.pem
+*.key
+*.p12
+*.pfx
 
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
-.idea
+.idea/
 .DS_Store
 *.suo
 *.ntvs*

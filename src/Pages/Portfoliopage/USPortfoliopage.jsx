@@ -28,7 +28,12 @@ export default function USPortfoliopage() {
           viewport={{ once: true, amount: 0.1 }} // trigger once when ~30% is in view
         >
           <SingleHeading heading="Landmark Projects" headingcss="text-center" divcss="justify-center" />
-          <Bannerimage image={USPortfolioBanner} mobileimg="/images/portfolio/Detailslider/LeJardin.webp" />
+          <div className="h-[200px] md:h-auto overflow-hidden [&_img]:w-full [&_img]:h-full [&_img]:object-cover">
+            <Bannerimage
+              image={USPortfolioBanner}
+              mobileimg={USPortfolioBanner}
+            />
+          </div>
         </motion.div>
 
         <motion.div
@@ -67,7 +72,7 @@ export default function USPortfoliopage() {
           <USPortfoliopagesliderv2 />
         </motion.div>
       </div>
-      <ScrollToTop/>
+      <ScrollToTop />
       <Footers />
       <MobileFooters />
     </div>

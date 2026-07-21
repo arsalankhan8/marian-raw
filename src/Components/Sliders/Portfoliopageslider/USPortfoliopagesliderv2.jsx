@@ -229,7 +229,7 @@ export default function USPortfoliopagesliderv2() {
   return (
     <div
       ref={sliderRef}
-      className="relative max-w-[90vw] mx-auto w-full h-screen overflow-hidden  mt-[50px]"
+      className="relative max-w-[90vw] mx-auto w-full h-[500px] md:h-screen overflow-hidden mt-[50px]"
     >
       <motion.div
         animate={{
@@ -237,7 +237,7 @@ export default function USPortfoliopagesliderv2() {
           opacity: isNavigating ? 0 : 1,
         }}
         transition={{ duration: 1.0 }}
-        className="w-full h-full relative"
+        className="w-full h-[500px] md:h-full relative"
       >
         {/* bottom/static layer (always present) */}
         <div

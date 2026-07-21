@@ -18,16 +18,23 @@ export default function Portfoliopage() {
     <div>
       <Header />
       <MobileHeader />
-      <div className="pt-[30px] pb-[70px]">
+      <div className="pt-[30px] pb-[70px] rounded-xl">
         {/* Section with entrance animation */}
         <motion.div
-          initial={{ opacity: 0, y: 200 }} // start slightly below + hidden
-          whileInView={{ opacity: 1, y: 0 }} // animate upward into place
+          initial={{ opacity: 0, y: 200 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          viewport={{ once: true, amount: 0.1 }} // trigger once when ~30% is in view
+          viewport={{ once: true, amount: 0.1 }}
         >
-          <SingleHeading heading="Landmark Projects" headingcss="text-center" divcss="justify-center" />
-          <Bannerimage image={banner} mobileimg={bannermob} />
+          <SingleHeading
+            heading="Landmark Projects"
+            headingcss="text-center"
+            divcss="justify-center"
+          />
+
+          <div className="h-[200px]  md:h-auto overflow-hidden [&_img]:w-full [&_img]:h-full [&_img]:object-cover">
+            <Bannerimage image={banner} mobileimg={bannermob} />
+          </div>
         </motion.div>
 
         <motion.div
@@ -66,7 +73,7 @@ export default function Portfoliopage() {
           <Portfoliopagesliderv2 />
         </motion.div>
       </div>
-      <ScrollToTop/>
+      <ScrollToTop />
       <Footers />
       <MobileFooters />
     </div>
