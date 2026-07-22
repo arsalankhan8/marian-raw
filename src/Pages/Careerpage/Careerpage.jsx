@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import HeaderSticky from "../../Components/Header/HeaderSticky";
 import MobileHeader from "../../Components/Header/MobileHeader";
@@ -8,6 +8,8 @@ import MobileHeader from "../../Components/Header/MobileHeader";
 import Footers from "../../Components/Footers/Footers";
 import MobileFooters from "../../Components/Footers/MobileFooters";
 import ScrollToTop from "../../Components/ScrollToTop/ScrollTop";
+
+import { CAREER_AREAS, JOBS_BY_REGION } from "./careersData";
 
 const TEAM_DEFINITIONS = [
     {
@@ -40,84 +42,6 @@ const TEAM_DEFINITIONS = [
     },
 ];
 
-const CAREER_AREAS = [
-    {
-        title: "Welding & Fabrication",
-        icon: "welding",
-    },
-    {
-        title: "CNC, Laser & Waterjet",
-        icon: "machine",
-    },
-    {
-        title: "Engineering & Drafting",
-        icon: "drafting",
-    },
-    {
-        title: "Project Management",
-        icon: "clipboard",
-    },
-    {
-        title: "Quality Control & Inspection",
-        icon: "quality",
-    },
-    {
-        title: "Finishing, Assembly & Production",
-        icon: "production",
-    },
-];
-
-/*
-  Add real vacancies here when positions become available.
-
-  Example:
-
-  {
-    title: "Structural Steel Welder",
-    location: "Toronto, Ontario",
-    type: "Full-Time",
-    department: "Fabrication",
-    href: "/careers/structural-steel-welder",
-  }
-*/
-
-const JOBS_BY_REGION = {
-    canada: [
-        {
-            title: "Structural Steel Welder",
-            location: "Toronto, Ontario",
-            type: "Full-Time",
-            department: "Welding & Fabrication",
-        },
-        {
-            title: "CNC Machine Operator",
-            location: "Toronto, Ontario",
-            type: "Full-Time",
-            department: "CNC, Laser & Waterjet",
-        },
-        {
-            title: "Project Coordinator",
-            location: "Toronto, Ontario",
-            type: "Full-Time",
-            department: "Project Management",
-        },
-    ],
-
-    us: [
-        {
-            title: "Metal Fabricator",
-            location: "New York, United States",
-            type: "Full-Time",
-            department: "Welding & Fabrication",
-        },
-        {
-            title: "Quality Control Inspector",
-            location: "New York, United States",
-            type: "Full-Time",
-            department: "Quality Control & Inspection",
-        },
-    ],
-};
 
 const revealAnimation = {
     initial: {
@@ -318,8 +242,8 @@ export default function Careerpage() {
         ? "us"
         : "canada";
 
-    const [activeRegion, setActiveRegion] =
-        useState(pageRegion);
+    const regionPath =
+        pageRegion === "us" ? "/US" : "/canada";
 
     const [isSubmitting, setIsSubmitting] =
         useState(false);
@@ -337,12 +261,9 @@ export default function Careerpage() {
         import.meta.env.VITE_TALENT_API_ENDPOINT?.trim() ||
         "/api/career-application.php";
 
-    useEffect(() => {
-        setActiveRegion(pageRegion);
-    }, [pageRegion]);
 
     const currentJobs =
-        JOBS_BY_REGION[activeRegion];
+        JOBS_BY_REGION[pageRegion];
 
     const scrollToSection = (sectionId) => {
         document
@@ -353,19 +274,7 @@ export default function Careerpage() {
             });
     };
 
-    const [selectedJob, setSelectedJob] =
-        useState(null);
 
-    const handleJobSelect = (job) => {
-        setSelectedJob(job);
-
-        document
-            .getElementById("talent-community")
-            ?.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-            });
-    };
 
     const handleTalentSubmit = async (event) => {
         event.preventDefault();
@@ -452,7 +361,6 @@ export default function Careerpage() {
             }
 
             form.reset();
-            setSelectedJob(null);
             setSelectedResumeName("");
 
             setFormStatus({
@@ -502,7 +410,7 @@ export default function Careerpage() {
                 {/* Hero */}
                 <section className="relative flex min-h-[500px] items-end overflow-hidden bg-black lg:min-h-[550px]">
                     <img
-                        src="/images/careers/careers-hero.webp"
+                        src="/images/portfolio/DaysEnd/DaysEnd.webp"
                         alt="Mariani team reviewing architectural metalwork"
                         className="absolute inset-0 h-full w-full object-cover"
                     />
@@ -533,7 +441,7 @@ export default function Careerpage() {
                                 </span>
                             </div>
 
-                            <h1 className="max-w-[800px] text-[45px] font-semibold leading-[1.05] text-white  lg:text-[45px]">
+                            <h1 className="max-w-[800px] text-[30px] font-semibold leading-[1.05] text-white  lg:text-[45px]">
                                 At Mariani, your craft becomes
                                 your legacy.
                             </h1>
@@ -585,20 +493,20 @@ export default function Careerpage() {
                     <div className="mx-auto max-w-[90vw]">
                         <motion.div
                             {...revealAnimation}
-                            className="grid gap-12 lg:grid-cols-[0.92fr_1.08fr] lg:items-end"
+                            className="grid gap-5 lg:grid-cols-[0.92fr_1.08fr] lg:items-end"
                         >
                             <div>
                                 <SectionLabel>
                                     What Defines Our Team
                                 </SectionLabel>
 
-                                <h2 className="max-w-[650px] text-[30px] font-semibold leading-[1.12] sm:text-[35px] lg:text-[45px]">
+                                <h2 className="max-w-[650px] text-[25px] font-semibold leading-[1.12] sm:text-[35px] lg:text-[45px]">
                                     Precision is not one department.
                                     It defines the entire team.
                                 </h2>
                             </div>
 
-                            <p className="max-w-[700px] text-[15px] leading-7 text-[#5F666A] lg:justify-self-end lg:text-[15x]">
+                            <p className="max-w-[700px] text-[15px] leading-7 text-[#5F666A] lg:justify-self-end lg:text-[15px]">
                                 At Mariani, every role contributes
                                 to something larger than a single
                                 part, panel, weld, drawing, or
@@ -618,7 +526,7 @@ export default function Careerpage() {
                                 className="relative min-h-[500px] overflow-hidden rounded-[24px] bg-[#E7EBED]"
                             >
                                 <img
-                                    src="/images/careers/careers-team.webp"
+                                    src="/images/portfolio/us-portfolio-viva-bus/001-viva-bus.webp"
                                     alt="Mariani fabrication team working together"
                                     loading="lazy"
                                     className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 hover:scale-[1.03]"
@@ -700,7 +608,7 @@ export default function Careerpage() {
                                     Build Your Career at Mariani
                                 </SectionLabel>
 
-                                <h2 className="max-w-[700px] text-[30px] font-semibold leading-[1.12] sm:text-[35px] lg:text-[45px]">
+                                <h2 className="max-w-[700px] text-[25px] font-semibold leading-[1.12] sm:text-[35px] lg:text-[45px]">
                                     Build skills that become part of
                                     something permanent.
                                 </h2>
@@ -710,16 +618,18 @@ export default function Careerpage() {
                                 Join a team where skill,
                                 discipline, and precision come
                                 together to shape landmark projects
-                                across Canada and the United
-                                States.
+                                across Canada and the United States.
                             </p>
                         </motion.div>
 
                         <div className="mt-14 grid gap-[1px] overflow-hidden rounded-[24px] bg-[#CFD5D8] md:grid-cols-2 lg:grid-cols-3">
-                            {CAREER_AREAS.map(
-                                (area, index) => (
+                            {CAREER_AREAS.map((area, index) => (
+                                <Link
+                                    key={area.title}
+                                    to={`${regionPath}/careers/${area.slug}`}
+                                    className="block"
+                                >
                                     <motion.article
-                                        key={area.title}
                                         initial={{
                                             opacity: 0,
                                             y: 25,
@@ -736,16 +646,14 @@ export default function Careerpage() {
                                             duration: 0.55,
                                             delay: index * 0.06,
                                         }}
-                                        className="group min-h-[220px] bg-white p-7 transition-colors duration-300 hover:bg-[#00688F] sm:p-8"
+                                        className="group h-full bg-white p-7 transition-colors duration-300 hover:bg-[#00688F] sm:p-8"
                                     >
                                         <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#EAF4F7] text-[#00688F] transition-colors duration-300 group-hover:bg-white/15 group-hover:text-white">
-                                            <CareerIcon
-                                                name={area.icon}
-                                            />
+                                            <CareerIcon name={area.icon} />
                                         </div>
 
                                         <div className="mt-16 flex items-end justify-between gap-5">
-                                            <h3 className="max-w-[260px] text-[22px] font-semibold leading-7 transition-colors duration-300 group-hover:text-white">
+                                            <h3 className="max-w-[260px] text-[18px] font-semibold leading-7 transition-colors duration-300 group-hover:text-white">
                                                 {area.title}
                                             </h3>
 
@@ -755,8 +663,8 @@ export default function Careerpage() {
                                             />
                                         </div>
                                     </motion.article>
-                                ),
-                            )}
+                                </Link>
+                            ))}
                         </div>
                     </div>
                 </section>
@@ -772,62 +680,35 @@ export default function Careerpage() {
                             className="text-center"
                         >
                             <SectionLabel>
-                                Job Opportunities
+                                {pageRegion === "us"
+                                    ? "United States Job Opportunities"
+                                    : "Canada Job Opportunities"}
                             </SectionLabel>
 
-                            <h2 className="text-[38px] font-semibold leading-tight sm:text-[35px] lg:text-[45px]">
+                            <h2 className="text-[25px] font-semibold leading-tight sm:text-[35px] lg:text-[45px]">
                                 Find your place at Mariani.
                             </h2>
 
                             <p className="mx-auto mt-5 max-w-[680px] text-[15px] leading-7 text-[#626A6E] lg:text-[15px]">
-                                Explore current opportunities by
-                                region or submit your resume to be
-                                considered for future openings.
+                                Explore current opportunities available
+                                through our {pageRegion === "us"
+                                    ? "United States"
+                                    : "Canadian"} operations, or submit
+                                your resume for future openings in this region.
                             </p>
                         </motion.div>
-
-                        <div className="mt-10 flex justify-center">
-                            <div className="inline-flex rounded-full border border-[#D7DCDE] bg-[#F4F6F7] p-1.5">
-                                <button
-                                    type="button"
-                                    onClick={() =>
-                                        setActiveRegion("canada")
-                                    }
-                                    className={`cursor-pointer rounded-full px-7 py-3 text-[14px] font-semibold transition-all duration-300 ${activeRegion === "canada"
-                                        ? "bg-[#00688F] text-white shadow-sm"
-                                        : "text-[#656C70] hover:text-black"
-                                        }`}
-                                >
-                                    Canada
-                                </button>
-
-                                <button
-                                    type="button"
-                                    onClick={() =>
-                                        setActiveRegion("us")
-                                    }
-                                    className={`cursor-pointer rounded-full px-7 py-3 text-[14px] font-semibold transition-all duration-300 ${activeRegion === "us"
-                                        ? "bg-[#00688F] text-white shadow-sm"
-                                        : "text-[#656C70] hover:text-black"
-                                        }`}
-                                >
-                                    United States
-                                </button>
-                            </div>
-                        </div>
 
                         <div className="mt-12">
                             {currentJobs.length > 0 ? (
                                 <div className="divide-y divide-[#DCE0E2] border-y border-[#DCE0E2]">
                                     {currentJobs.map((job) => (
-                                        <button
+                                        <Link
                                             key={`${job.title}-${job.location}`}
-                                            type="button"
-                                            onClick={() => handleJobSelect(job)}
+                                            to={`${regionPath}/careers/${job.slug}`}
                                             className="group grid w-full cursor-pointer gap-4 py-7 text-left transition-colors duration-300 hover:bg-[#F5F7F8] sm:grid-cols-[1fr_auto] sm:items-center sm:px-6"
                                         >
                                             <div>
-                                                <h3 className="text-[21px] font-semibold transition-colors duration-300 group-hover:text-[#00688F]">
+                                                <h3 className="text-[18px] font-semibold transition-colors duration-300 group-hover:text-[#00688F]">
                                                     {job.title}
                                                 </h3>
 
@@ -844,7 +725,7 @@ export default function Careerpage() {
                                                     className="h-5 w-5"
                                                 />
                                             </div>
-                                        </button>
+                                        </Link>
                                     ))}
                                 </div>
                             ) : (
@@ -853,33 +734,26 @@ export default function Careerpage() {
                                     className="mx-auto max-w-[880px] rounded-[24px] border border-[#DCE1E3] bg-[#F6F8F9] px-6 py-14 text-center sm:px-12"
                                 >
                                     <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#E6F2F6] text-[#00688F]">
-                                        <CareerIcon
-                                            name="clipboard"
-                                        />
+                                        <CareerIcon name="clipboard" />
                                     </div>
 
                                     <h3 className="mt-6 text-[25px] font-semibold">
-                                        New positions will be added
-                                        here.
+                                        New positions will be added here.
                                     </h3>
 
                                     <p className="mx-auto mt-3 max-w-[570px] text-[15px] leading-6 text-[#646C70]">
-                                        There are no published openings
-                                        for{" "}
-                                        {activeRegion === "canada"
+                                        There are no published openings for{" "}
+                                        {pageRegion === "canada"
                                             ? "Canada"
                                             : "the United States"}{" "}
-                                        at this time. Submit your resume
-                                        to stay connected with our
-                                        hiring team.
+                                        at this time. Submit your resume to stay
+                                        connected with our hiring team.
                                     </p>
 
                                     <button
                                         type="button"
                                         onClick={() =>
-                                            scrollToSection(
-                                                "talent-community",
-                                            )
+                                            scrollToSection("talent-community")
                                         }
                                         className="mt-7 cursor-pointer rounded-full bg-[#00688F] px-7 py-3.5 text-[14px] font-semibold text-white transition-colors duration-300 hover:bg-[#005472]"
                                     >
@@ -905,7 +779,7 @@ export default function Careerpage() {
                                     Join Our Talent Community
                                 </SectionLabel>
 
-                                <h2 className="max-w-[570px] text-[38px] font-semibold leading-[1.1] sm:text-[35px] lg:text-[45px]">
+                                <h2 className="max-w-[570px] text-[25px] font-semibold leading-[1.1] sm:text-[35px] lg:text-[45px]">
                                     Be the first to hear about new
                                     opportunities.
                                 </h2>
@@ -919,7 +793,7 @@ export default function Careerpage() {
 
                                 <div className="relative mt-10 min-h-[330px] overflow-hidden rounded-[22px]">
                                     <img
-                                        src="/images/careers/careers-talent.webp"
+                                        src="/images/portfolio/us-portfolio-7-dale-images/001-7-dale.webp"
                                         alt="Skilled Mariani employee completing precision work"
                                         loading="lazy"
                                         className="absolute inset-0 h-full w-full object-cover"
@@ -937,31 +811,6 @@ export default function Careerpage() {
                                 encType="multipart/form-data"
                                 className="rounded-[24px] bg-white p-6 text-black sm:p-8 lg:p-10"
                             >
-                                {selectedJob && (
-                                    <div className="mb-6 rounded-[14px] border border-[#B9D9E4] bg-[#EDF7FA] p-5">
-                                        <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#00688F]">
-                                            Applying For
-                                        </span>
-
-                                        <h3 className="mt-2 text-[20px] font-semibold text-black">
-                                            {selectedJob.title}
-                                        </h3>
-
-                                        <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-[13px] text-[#606A6E]">
-                                            <span>{selectedJob.location}</span>
-                                            <span>{selectedJob.type}</span>
-                                            <span>{selectedJob.department}</span>
-                                        </div>
-
-                                        <button
-                                            type="button"
-                                            onClick={() => setSelectedJob(null)}
-                                            className="mt-3 cursor-pointer text-[13px] font-semibold text-[#00688F] hover:underline"
-                                        >
-                                            Clear selected position
-                                        </button>
-                                    </div>
-                                )}
                                 <div className="grid gap-5 sm:grid-cols-2">
                                     <div>
                                         <label
@@ -1086,37 +935,33 @@ export default function Careerpage() {
 
                                     <div>
                                         <label
-                                            htmlFor="preferredLocation"
+                                            htmlFor="preferredLocationDisplay"
                                             className="mb-2 block text-[13px] font-semibold"
                                         >
-                                            Preferred Location *
+                                            Application Region
                                         </label>
 
-                                        <select
-                                            id="preferredLocation"
-                                            name="preferredLocation"
-                                            required
-                                            defaultValue=""
-                                            className={
-                                                inputClassName
+                                        <input
+                                            id="preferredLocationDisplay"
+                                            type="text"
+                                            value={
+                                                pageRegion === "canada"
+                                                    ? "Canada"
+                                                    : "United States"
                                             }
-                                        >
-                                            <option value="" disabled>
-                                                Select a location
-                                            </option>
+                                            readOnly
+                                            className={`${inputClassName} cursor-not-allowed bg-[#F3F5F6] text-[#626A6E]`}
+                                        />
 
-                                            <option value="Canada">
-                                                Canada
-                                            </option>
-
-                                            <option value="United States">
-                                                United States
-                                            </option>
-
-                                            <option value="Either">
-                                                Open to Either
-                                            </option>
-                                        </select>
+                                        <input
+                                            type="hidden"
+                                            name="preferredLocation"
+                                            value={
+                                                pageRegion === "canada"
+                                                    ? "Canada"
+                                                    : "United States"
+                                            }
+                                        />
                                     </div>
                                 </div>
 
@@ -1185,26 +1030,26 @@ export default function Careerpage() {
                                 <input
                                     type="hidden"
                                     name="positionAppliedFor"
-                                    value={selectedJob?.title || "General Application"}
+                                    value="General Application"
                                 />
 
                                 <input
                                     type="hidden"
                                     name="positionLocation"
-                                    value={selectedJob?.location || ""}
+                                    value=""
                                 />
 
                                 <input
                                     type="hidden"
                                     name="positionDepartment"
-                                    value={selectedJob?.department || ""}
+                                    value=""
                                 />
 
                                 <input
                                     type="hidden"
                                     name="applicationRegion"
                                     value={
-                                        activeRegion === "canada"
+                                        pageRegion === "canada"
                                             ? "Canada"
                                             : "United States"
                                     }
@@ -1273,8 +1118,6 @@ export default function Careerpage() {
                             {...revealAnimation}
                             className="relative flex min-h-[520px] items-center justify-center overflow-hidden rounded-[28px] bg-black px-6 py-20 text-center"
                         >
-                           #00688F
-
                             <div className="absolute inset-0 bg-[#00688F]" />
 
                             <div className="relative z-10 max-w-[820px]">
@@ -1282,7 +1125,7 @@ export default function Careerpage() {
                                     Ready to Build With Mariani?
                                 </span>
 
-                                <h2 className="mt-5 text-[38px] font-semibold leading-[1.08] text-white sm:text-[35px] lg:text-[45px]">
+                                <h2 className="mt-5 text-[25px] font-semibold leading-[1.08] text-white sm:text-[35px] lg:text-[45px]">
                                     Bring your skill to work that
                                     leaves a lasting mark.
                                 </h2>
@@ -1303,7 +1146,7 @@ export default function Careerpage() {
                                                 "job-opportunities",
                                             )
                                         }
-                                         className="cursor-pointer rounded-full border border-white/60 px-7 py-4 text-[14px] font-semibold text-white transition-all duration-300 hover:bg-white hover:text-black"
+                                        className="cursor-pointer rounded-full border border-white/60 px-7 py-4 text-[14px] font-semibold text-white transition-all duration-300 hover:bg-white hover:text-black"
                                     >
                                         View Open Positions
                                     </button>

@@ -1,4 +1,10 @@
-import { useEffect, useState } from "react";
+import {
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from "react";
+
 import "./App.css";
 
 import {
@@ -10,7 +16,7 @@ import {
 } from "react-router-dom";
 
 import Lenis from "@studio-freight/lenis";
-
+import CareerDetailpage from "./Pages/Careerpage/CareerDetailpage";
 import Homepage from "./Pages/Homepage/Homepage";
 import USHomepage from "./Pages/USHome/USHomepage";
 import StaticPage from "./Pages/StaticPage/StaticPage";
@@ -46,12 +52,53 @@ import {
   getRegionPagePath,
 } from "./utils/regionPaths";
 
-function ScrollToTop() {
+function ScrollToTop({ lenisRef }) {
   const location = useLocation();
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [location.pathname]);
+  useLayoutEffect(() => {
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
+
+    let firstFrame;
+    let secondFrame;
+
+    const resetScroll = () => {
+      lenisRef.current?.scrollTo(0, {
+        immediate: true,
+        force: true,
+      });
+
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "auto",
+      });
+
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    };
+
+    resetScroll();
+
+    firstFrame = requestAnimationFrame(() => {
+      resetScroll();
+
+      secondFrame = requestAnimationFrame(() => {
+        resetScroll();
+      });
+    });
+
+    return () => {
+      if (firstFrame) {
+        cancelAnimationFrame(firstFrame);
+      }
+
+      if (secondFrame) {
+        cancelAnimationFrame(secondFrame);
+      }
+    };
+  }, [location.pathname, lenisRef]);
 
   return null;
 }
@@ -62,9 +109,35 @@ function RegionalRedirect({ page }) {
   return <Navigate to={redirectPath} replace />;
 }
 
-function App() {
-  const [hasAccess, setHasAccess] = useState(false);
+function getRegionFromCurrentPath() {
+  const pathname = window.location.pathname.toLowerCase();
 
+  if (
+    pathname === "/canada" ||
+    pathname.startsWith("/canada/")
+  ) {
+    return "canada";
+  }
+
+  if (
+    pathname === "/us" ||
+    pathname.startsWith("/us/")
+  ) {
+    return "US";
+  }
+
+  return null;
+}
+
+function App() {
+  const [hasAccess, setHasAccess] = useState(() => {
+    const regionFromUrl = getRegionFromCurrentPath();
+    const savedRegion =
+      sessionStorage.getItem("regionSelected");
+
+    return Boolean(regionFromUrl || savedRegion);
+  });
+  const lenisRef = useRef(null);
   useEffect(() => {
     const savedRegion = sessionStorage.getItem("regionSelected");
 
@@ -87,6 +160,8 @@ function App() {
       smoothTouch: false,
     });
 
+    lenisRef.current = lenis;
+
     let animationFrameId;
 
     const raf = (time) => {
@@ -99,6 +174,7 @@ function App() {
     return () => {
       cancelAnimationFrame(animationFrameId);
       lenis.destroy();
+      lenisRef.current = null;
     };
   }, []);
 
@@ -115,8 +191,7 @@ function App() {
         />
       ) : (
         <>
-          <ScrollToTop />
-
+          <ScrollToTop lenisRef={lenisRef} />
           <Routes>
 
             <Route
@@ -140,21 +215,22 @@ function App() {
             />
 
             {/* Careers */}
+            <Route path="/US/careers" element={<Careerpage />} />
+            <Route path="/canada/careers" element={<Careerpage />} />
+
             <Route
-              path="/US/careers"
-              element={<Careerpage />}
+              path="/US/careers/:slug"
+              element={<CareerDetailpage />}
             />
 
             <Route
-              path="/canada/careers"
-              element={<Careerpage />}
+              path="/canada/careers/:slug"
+              element={<CareerDetailpage />}
             />
 
             <Route
               path="/careers"
-              element={
-                <RegionalRedirect page="careers" />
-              }
+              element={<RegionalRedirect page="careers" />}
             />
 
             {/* Home */}

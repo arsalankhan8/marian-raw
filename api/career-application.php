@@ -16,9 +16,10 @@ header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');
 $allowedOrigins = [
     'https://marianimetal.com',
     'https://www.marianimetal.com',
-    'http://localhost:5173',
     'https://mariani-stagging.netlify.app',
-    'http://127.0.0.1:5173',
+    'http://localhost:5173',
+    'http://localhost:5174',
+    'http://127.0.0.1:5174',
 ];
 
 $origin = (string) ($_SERVER['HTTP_ORIGIN'] ?? '');
