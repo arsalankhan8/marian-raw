@@ -17,15 +17,12 @@ const USHomepage = () => {
     <div>
       <HeaderSticky />
       <MobileHeader />
-
       <USHerosection1 />
       <Stepsectionnew />
       <FlipCard />
       <ExpertiseSection />
       <Herosection3 />
-
       <Contactsection region="us" />
-
       <Footers />
       <MobileFooters />
       <ScrollToTop />

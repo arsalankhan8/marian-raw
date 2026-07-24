@@ -59,25 +59,25 @@ export default function Portfoliodetails() {
           divcss="w-[80%]"
         />
 
-<div className="relative w-full overflow-hidden rounded-[16px] bg-[#111719]">
-  {/* Blurred background fills unused space */}
-  <img
-    src={project.mainimage}
-    alt=""
-    aria-hidden="true"
-    className="absolute inset-0 h-full w-full scale-110 object-cover opacity-35 blur-2xl"
-  />
+        <div className="relative w-full overflow-hidden rounded-[16px] bg-[#111719]">
+          {/* Blurred background fills unused space */}
+          <img
+            src={project.mainimage}
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 h-full w-full scale-110 object-cover opacity-35 blur-2xl"
+          />
 
-  <div className="relative flex h-[300px] items-center justify-center sm:h-[400px] md:h-[500px] lg:h-[580px] xl:h-[620px]">
-    <img
-      src={project.mainimage}
-      alt={project.title}
-      className="block h-full w-full object-contain"
-    />
-  </div>
+          <div className="relative flex h-[300px] items-center justify-center sm:h-[400px] md:h-[500px] lg:h-[580px] xl:h-[620px]">
+            <img
+              src={project.mainimage}
+              alt={project.title}
+              className="block h-full w-full object-cover"
+            />
+          </div>
 
-  <div className="pointer-events-none absolute inset-0 bg-black/5" />
-</div>
+          <div className="pointer-events-none absolute inset-0 bg-black/5" />
+        </div>
 
         <div className="relative w-full">
           <Portfoliolisting datas={project} />

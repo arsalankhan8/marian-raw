@@ -464,7 +464,7 @@ export default function Homeslidernew() {
   return (
     <div
       ref={containerRef}
-      className="flex justify-center items-center w-full h-[400px] md:h-[80vh] bg-cover bg-no-repeat relative overflow-hidden transition-all duration-700 ease-in-out"
+      className="flex justify-center items-center w-full h-[400px] md:h-[100vh] bg-cover bg-no-repeat relative overflow-hidden transition-all duration-700 ease-in-out"
       style={{
         backgroundImage: `url(${currentProject.img})`,
       }}

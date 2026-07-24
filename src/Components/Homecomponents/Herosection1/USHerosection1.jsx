@@ -5,29 +5,44 @@ export default function USHerosection1() {
   const sectionRef = useRef(null);
   const videoRef = useRef(null);
 
-  const [isMuted, setIsMuted] = useState(true);
+  // Sound on by default
+  const [isMuted, setIsMuted] = useState(false);
 
-  const pauseAndMuteVideo = () => {
+  const pauseVideo = () => {
     const video = videoRef.current;
 
     if (!video) return;
 
     video.pause();
-    video.muted = true;
-    setIsMuted(true);
   };
 
-  const playMutedVideo = async () => {
+  const playVideoWithSound = async () => {
     const video = videoRef.current;
 
     if (!video) return;
 
     try {
-      video.muted = true;
-      setIsMuted(true);
+      // First try playing with sound
+      video.muted = false;
+      video.volume = 1;
+      setIsMuted(false);
+
       await video.play();
     } catch (error) {
-      console.error("US video autoplay failed:", error);
+      console.warn(
+        "Unmuted autoplay was blocked. Playing muted instead.",
+        error
+      );
+
+      try {
+        // Browser fallback
+        video.muted = true;
+        setIsMuted(true);
+
+        await video.play();
+      } catch (playError) {
+        console.error("US video autoplay failed:", playError);
+      }
     }
   };
 
@@ -37,28 +52,32 @@ export default function USHerosection1() {
     if (!video) return;
 
     try {
-      video.muted = !video.muted;
-      setIsMuted(video.muted);
+      const nextMutedState = !video.muted;
+
+      video.muted = nextMutedState;
+      video.volume = 1;
+      setIsMuted(nextMutedState);
 
       if (video.paused) {
         await video.play();
       }
     } catch (error) {
-      console.error("Video sound toggle failed:", error);
+      console.error("US video sound toggle failed:", error);
     }
   };
 
   useEffect(() => {
     const section = sectionRef.current;
+    const video = videoRef.current;
 
-    if (!section) return;
+    if (!section || !video) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting && entry.intersectionRatio >= 0.25) {
-          playMutedVideo();
+          playVideoWithSound();
         } else {
-          pauseAndMuteVideo();
+          pauseVideo();
         }
       },
       {
@@ -70,27 +89,21 @@ export default function USHerosection1() {
 
     return () => {
       observer.disconnect();
-
-      const video = videoRef.current;
-
-      if (video) {
-        video.pause();
-        video.muted = true;
-      }
+      video.pause();
+      video.muted = true;
     };
   }, []);
 
   return (
     <div
       ref={sectionRef}
-      className="relative flex w-full h-[70vh] md:h-auto md:aspect-video mt-[-92px] md:mt-[-128px] overflow-hidden bg-black"
+      className="relative flex h-[70vh] w-full overflow-hidden bg-black mt-[-92px] md:mt-[-128px] md:h-auto md:aspect-video"
     >
       {/* Video */}
       <video
         ref={videoRef}
         src={USVideo}
-        autoPlay
-        muted
+        muted={isMuted}
         loop
         playsInline
         preload="auto"
@@ -108,7 +121,6 @@ export default function USHerosection1() {
         className="absolute bottom-5 right-5 z-30 flex h-12 w-12 cursor-pointer items-center justify-center rounded-full border border-white/50 bg-black/40 text-white backdrop-blur-sm transition duration-300 hover:scale-105 hover:bg-black/60"
       >
         {isMuted ? (
-          /* Muted Icon */
           <svg
             viewBox="0 0 24 24"
             fill="none"
@@ -124,7 +136,6 @@ export default function USHerosection1() {
             <path d="m16 9 6 6" />
           </svg>
         ) : (
-          /* Sound On Icon */
           <svg
             viewBox="0 0 24 24"
             fill="none"

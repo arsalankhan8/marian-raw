@@ -5,29 +5,44 @@ export default function Herosection1() {
   const sectionRef = useRef(null);
   const videoRef = useRef(null);
 
-  const [isMuted, setIsMuted] = useState(true);
+  // Sound is on by default
+  const [isMuted, setIsMuted] = useState(false);
 
-  const pauseAndMuteVideo = () => {
+  const pauseVideo = () => {
     const video = videoRef.current;
 
     if (!video) return;
 
     video.pause();
-    video.muted = true;
-    setIsMuted(true);
   };
 
-  const playMutedVideo = async () => {
+  const playVideoWithSound = async () => {
     const video = videoRef.current;
 
     if (!video) return;
 
     try {
-      video.muted = true;
-      setIsMuted(true);
+      // First attempt: play with sound
+      video.muted = false;
+      video.volume = 1;
+      setIsMuted(false);
+
       await video.play();
     } catch (error) {
-      console.error("Canada video autoplay failed:", error);
+      console.warn(
+        "Unmuted autoplay was blocked. Falling back to muted autoplay.",
+        error
+      );
+
+      try {
+        // Fallback: play muted
+        video.muted = true;
+        setIsMuted(true);
+
+        await video.play();
+      } catch (playError) {
+        console.error("Canada video autoplay failed:", playError);
+      }
     }
   };
 
@@ -37,8 +52,11 @@ export default function Herosection1() {
     if (!video) return;
 
     try {
-      video.muted = !video.muted;
-      setIsMuted(video.muted);
+      const nextMutedState = !video.muted;
+
+      video.muted = nextMutedState;
+      video.volume = 1;
+      setIsMuted(nextMutedState);
 
       if (video.paused) {
         await video.play();
@@ -57,9 +75,9 @@ export default function Herosection1() {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting && entry.intersectionRatio >= 0.25) {
-          playMutedVideo();
+          playVideoWithSound();
         } else {
-          pauseAndMuteVideo();
+          pauseVideo();
         }
       },
       {
@@ -79,14 +97,13 @@ export default function Herosection1() {
   return (
     <div
       ref={sectionRef}
-      className="relative flex w-full h-[70vh] md:h-auto md:aspect-video mt-[-92px] md:mt-[-128px] overflow-hidden bg-black"
+      className="relative flex h-[70vh] w-full overflow-hidden bg-black mt-[-92px] md:mt-[-128px] md:h-auto md:aspect-video"
     >
       {/* Same video for desktop and mobile */}
       <video
         ref={videoRef}
         src={CanadaVideo}
-        autoPlay
-        muted
+        muted={isMuted}
         loop
         playsInline
         preload="auto"

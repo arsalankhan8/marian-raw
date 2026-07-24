@@ -53,10 +53,7 @@
       "/images/portfolio/us-portfolio-glen-bridge-images/09-Glen-Bridge.webp",
       "/images/portfolio/us-portfolio-glen-bridge-images/10-Glen-Bridge.webp",
       "/images/portfolio/us-portfolio-glen-bridge-images/11-Glen-Bridge.webp",
-      "/images/portfolio/us-portfolio-glen-bridge-images/12-Glen-Bridge.webp",
-      "/images/portfolio/us-portfolio-glen-bridge-images/13-Glen-Bridge.webp",
-      "/images/portfolio/us-portfolio-glen-bridge-images/14-Glen-Bridge.webp",
-      "/images/portfolio/us-portfolio-glen-bridge-images/15-Glen-Bridge.webp"
+      "/images/portfolio/us-portfolio-glen-bridge-images/12-Glen-Bridge.webp"
     ]
   },
   {
@@ -96,7 +93,7 @@
     "location": "New York City, New York",
     "architect": "Rockwell Group",
     "contractor": "Aecom Tishman",
-    "mainimage": "/images/portfolio/LeJardin/main.webp",
+    "mainimage": "/images/portfolio/LeJardin/main-new.jpeg",
     "detailimage": "/images/portfolio/Detailslider/LeJardin.webp",
     "images": [
       "/images/portfolio/LeJardin/2.webp",
@@ -120,8 +117,8 @@
     "location": "Toronto, Ontario",
     "architect": "Hariri Pontarini Architects",
     "contractor": "Platinum Vista and project GC per phase",
-    "mainimage": "/images/portfolio/dalecondominium/1.webp",
-    "detailimage": "/images/portfolio/Detailslider/7Dale.webp",
+    "mainimage": "/images/portfolio/us-portfolio-7-dale-images/010-7-dale.webp",
+    "detailimage": "/images/portfolio/us-portfolio-7-dale-images/010-7-dale.webp",
     "images": [
       "/images/portfolio/us-portfolio-7-dale-images/001-7-dale.webp",
       "/images/portfolio/us-portfolio-7-dale-images/002-7-dale.webp",
@@ -132,12 +129,7 @@
       "/images/portfolio/us-portfolio-7-dale-images/007-7-dale.webp",
       "/images/portfolio/us-portfolio-7-dale-images/008-7-dale.webp",
       "/images/portfolio/us-portfolio-7-dale-images/009-7-dale.webp",
-      "/images/portfolio/us-portfolio-7-dale-images/010-7-dale.webp",
-      "/images/portfolio/us-portfolio-7-dale-images/011-7-dale.webp",
-      "/images/portfolio/us-portfolio-7-dale-images/012-7-dale.webp",
-      "/images/portfolio/us-portfolio-7-dale-images/013-7-dale.webp",
-      "/images/portfolio/us-portfolio-7-dale-images/014-7-dale.webp",
-      "/images/portfolio/us-portfolio-7-dale-images/015-7-dale.webp"
+      "/images/portfolio/us-portfolio-7-dale-images/010-7-dale.webp"
     ]
   },
   {
@@ -183,21 +175,22 @@
     "mainimage": "/images/portfolio/TheWell/1.webp",
     "detailimage": "/images/portfolio/Detailslider/TheWell.webp",
     "images": [
-      "/images/portfolio/us-portfolio-the-well-images/01-The-Well.png",
-      "/images/portfolio/us-portfolio-the-well-images/02-The-Well.png",
-      "/images/portfolio/us-portfolio-the-well-images/03-The-Well.png",
-      "/images/portfolio/us-portfolio-the-well-images/04-The-Well.png",
-      "/images/portfolio/us-portfolio-the-well-images/05-The-Well.png",
-      "/images/portfolio/us-portfolio-the-well-images/06-The-Well.png",
-      "/images/portfolio/us-portfolio-the-well-images/07-The-Well.png",
-      "/images/portfolio/us-portfolio-the-well-images/08-The-Well.png",
-      "/images/portfolio/us-portfolio-the-well-images/09-The-Well.png",
-      "/images/portfolio/us-portfolio-the-well-images/10-The-Well.png",
-      "/images/portfolio/us-portfolio-the-well-images/11-The-Well.png",
-      "/images/portfolio/us-portfolio-the-well-images/12-The-Well.png",
-      "/images/portfolio/us-portfolio-the-well-images/13-The-Well.png",
-      "/images/portfolio/us-portfolio-the-well-images/14-The-Well.png",
-      "/images/portfolio/us-portfolio-the-well-images/15-The-Well.png"
+      "/images/portfolio/us-portfolio-the-well-images/01-The-Well.webp",
+      "/images/portfolio/us-portfolio-the-well-images/02-The-Well.webp",
+      "/images/portfolio/us-portfolio-the-well-images/03-The-Well.webp",
+      "/images/portfolio/us-portfolio-the-well-images/04-The-Well.webp",
+      "/images/portfolio/us-portfolio-the-well-images/05-The-Well.webp",
+      "/images/portfolio/us-portfolio-the-well-images/06-The-Well.webp",
+      "/images/portfolio/us-portfolio-the-well-images/07-The-Well.webp",
+      "/images/portfolio/us-portfolio-the-well-images/08-The-Well.webp",
+      "/images/portfolio/us-portfolio-the-well-images/09-The-Well.webp",
+      "/images/portfolio/us-portfolio-the-well-images/10-The-Well.webp",
+      "/images/portfolio/us-portfolio-the-well-images/11-The-Well.webp",
+      "/images/portfolio/us-portfolio-the-well-images/12-The-Well.webp",
+      "/images/portfolio/us-portfolio-the-well-images/13-The-Well.webp",
+      "/images/portfolio/us-portfolio-the-well-images/14-The-Well.webp",
+      "/images/portfolio/us-portfolio-the-well-images/15-The-Well.webp",
+      "/images/portfolio/us-portfolio-the-well-images/16-The-Well.webp"
     ]
   },
   {
@@ -213,21 +206,27 @@
     "mainimage": "/images/portfolio/TDTerrace/1.webp",
     "detailimage": "/images/portfolio/Detailslider/tdterrace.webp",
     "images": [
-      "/images/portfolio/us-portfolio-terrace-images/01-TD-Terrace.png",
-      "/images/portfolio/us-portfolio-terrace-images/02-TD-Terrace.png",
-      "/images/portfolio/us-portfolio-terrace-images/03-TD-Terrace.png",
-      "/images/portfolio/us-portfolio-terrace-images/04-TD-Terrace.png",
-      "/images/portfolio/us-portfolio-terrace-images/05-TD-Terrace.png",
-      "/images/portfolio/us-portfolio-terrace-images/06-TD-Terrace.png",
-      "/images/portfolio/us-portfolio-terrace-images/07-TD-Terrace.png",
-      "/images/portfolio/us-portfolio-terrace-images/08-TD-Terrace.png",
-      "/images/portfolio/us-portfolio-terrace-images/09-TD-Terrace.png",
-      "/images/portfolio/us-portfolio-terrace-images/010-TD-Terrace.png",
-      "/images/portfolio/us-portfolio-terrace-images/011-TD-Terrace.png",
-      "/images/portfolio/us-portfolio-terrace-images/012-TD-Terrace.png",
-      "/images/portfolio/us-portfolio-terrace-images/013-TD-Terrace.png",
-      "/images/portfolio/us-portfolio-terrace-images/014-TD-Terrace.png",
-      "/images/portfolio/us-portfolio-terrace-images/015-TD-Terrace.png"
+      "/images/portfolio/us-portfolio-terrace-images/1-TD-Terrace.webp",
+      "/images/portfolio/us-portfolio-terrace-images/2-TD-Terrace.webp",
+      "/images/portfolio/us-portfolio-terrace-images/3-TD-Terrace.webp",
+      "/images/portfolio/us-portfolio-terrace-images/4-TD-Terrace.webp",
+      "/images/portfolio/us-portfolio-terrace-images/5-TD-Terrace.webp",
+      "/images/portfolio/us-portfolio-terrace-images/6-TD-Terrace.webp",
+      "/images/portfolio/us-portfolio-terrace-images/7-TD-Terrace.webp",
+      "/images/portfolio/us-portfolio-terrace-images/8-TD-Terrace.webp",
+      "/images/portfolio/us-portfolio-terrace-images/9-TD-Terrace.webp",
+      "/images/portfolio/us-portfolio-terrace-images/10-TD-Terrace.webp",
+      "/images/portfolio/us-portfolio-terrace-images/11-TD-Terrace.webp",
+      "/images/portfolio/us-portfolio-terrace-images/12-TD-Terrace.webp",
+      "/images/portfolio/us-portfolio-terrace-images/13-TD-Terrace.webp",
+      "/images/portfolio/us-portfolio-terrace-images/14-TD-Terrace.webp",
+      "/images/portfolio/us-portfolio-terrace-images/15-TD-Terrace.webp",
+      "/images/portfolio/us-portfolio-terrace-images/16-TD-Terrace.webp",
+      "/images/portfolio/us-portfolio-terrace-images/17-TD-Terrace.webp",
+      "/images/portfolio/us-portfolio-terrace-images/18-TD-Terrace.webp",
+      "/images/portfolio/us-portfolio-terrace-images/19-TD-Terrace.webp",
+      "/images/portfolio/us-portfolio-terrace-images/20-TD-Terrace.webp",
+      "/images/portfolio/us-portfolio-terrace-images/21-TD-Terrace.webp"
     ]
   },
   {
@@ -253,12 +252,7 @@
       "/images/portfolio/us-portfolio-four-seasons-hotel-new-york-downtown-images/08-four-seasons-downtown-staircase.webp",
       "/images/portfolio/us-portfolio-four-seasons-hotel-new-york-downtown-images/09-four-seasons-downtown-staircase.webp",
       "/images/portfolio/us-portfolio-four-seasons-hotel-new-york-downtown-images/10-four-seasons-downtown-staircase.webp",
-      "/images/portfolio/us-portfolio-four-seasons-hotel-new-york-downtown-images/11-four-seasons-downtown-staircase.webp",
-      "/images/portfolio/us-portfolio-four-seasons-hotel-new-york-downtown-images/12-four-seasons-downtown-staircase.webp",
-      "/images/portfolio/us-portfolio-four-seasons-hotel-new-york-downtown-images/13-four-seasons-downtown-staircase.webp",
-      "/images/portfolio/us-portfolio-four-seasons-hotel-new-york-downtown-images/14-four-seasons-downtown-staircase.webp",
-      "/images/portfolio/us-portfolio-four-seasons-hotel-new-york-downtown-images/15-four-seasons-downtown-staircase.webp",
-      "/images/portfolio/us-portfolio-four-seasons-hotel-new-york-downtown-images/16-four-seasons-downtown-staircase.webp"
+      "/images/portfolio/us-portfolio-four-seasons-hotel-new-york-downtown-images/11-four-seasons-downtown-staircase.webp"
     ]
   },
   {
@@ -340,12 +334,15 @@
     "mainimage": "/images/portfolio/ArtGallery/1.jpg",
     "detailimage": "/images/portfolio/Detailslider/AGO.webp",
     "images": [
-      "/images/portfolio/ArtGallery/2.jpg",
-      "/images/portfolio/ArtGallery/3.jpg",
-      "/images/portfolio/ArtGallery/4.jpg",
-      "/images/portfolio/ArtGallery/5.jpg",
-      "/images/portfolio/us-portfolio-rosaline-images/14-Rosaline.png",
-      "/images/portfolio/us-portfolio-rosaline-images/15-Rosaline.png"
+      "/images/portfolio/us-portfolio-art-gallery-of-ontario-images/1-art-gallery-of-ontario.webp",
+      "/images/portfolio/us-portfolio-art-gallery-of-ontario-images/2-art-gallery-of-ontario.webp",
+      "/images/portfolio/us-portfolio-art-gallery-of-ontario-images/3-art-gallery-of-ontario.webp",
+      "/images/portfolio/us-portfolio-art-gallery-of-ontario-images/4-art-gallery-of-ontario.webp",
+      "/images/portfolio/us-portfolio-art-gallery-of-ontario-images/5-art-gallery-of-ontario.webp",
+      "/images/portfolio/us-portfolio-art-gallery-of-ontario-images/6-art-gallery-of-ontario.webp",
+      "/images/portfolio/us-portfolio-art-gallery-of-ontario-images/7-art-gallery-of-ontario.webp",
+      "/images/portfolio/us-portfolio-art-gallery-of-ontario-images/8-art-gallery-of-ontario.webp",
+      "/images/portfolio/us-portfolio-art-gallery-of-ontario-images/9-art-gallery-of-ontario.webp"
     ]
   },
   {
@@ -361,21 +358,16 @@
     "mainimage": "/images/portfolio/RosalieSharp/1.jpg",
     "detailimage": "/images/portfolio/Detailslider/RosalineSharp.webp",
     "images": [
-      "/images/portfolio/us-portfolio-rosaline-images/01-Rosaline.png",
-      "/images/portfolio/us-portfolio-rosaline-images/02-Rosaline.png",
-      "/images/portfolio/us-portfolio-rosaline-images/03-Rosaline.png",
-      "/images/portfolio/us-portfolio-rosaline-images/04-Rosaline.png",
-      "/images/portfolio/us-portfolio-rosaline-images/05-Rosaline.png",
-      "/images/portfolio/us-portfolio-rosaline-images/06-Rosaline.png",
-      "/images/portfolio/us-portfolio-rosaline-images/07-Rosaline.png",
-      "/images/portfolio/us-portfolio-rosaline-images/08-Rosaline.png",
-      "/images/portfolio/us-portfolio-rosaline-images/09-Rosaline.png",
-      "/images/portfolio/us-portfolio-rosaline-images/10-Rosaline.png",
-      "/images/portfolio/us-portfolio-rosaline-images/11-Rosaline.png",
-      "/images/portfolio/us-portfolio-rosaline-images/12-Rosaline.png",
-      "/images/portfolio/us-portfolio-rosaline-images/13-Rosaline.png",
-      "/images/portfolio/us-portfolio-rosaline-images/14-Rosaline.png",
-      "/images/portfolio/us-portfolio-rosaline-images/15-Rosaline.png"
+      "/images/portfolio/us-portfolio-rosaline-images/01-Rosaline.webp",
+      "/images/portfolio/us-portfolio-rosaline-images/02-Rosaline.webp",
+      "/images/portfolio/us-portfolio-rosaline-images/03-Rosaline.webp",
+      "/images/portfolio/us-portfolio-rosaline-images/04-Rosaline.webp",
+      "/images/portfolio/us-portfolio-rosaline-images/05-Rosaline.webp",
+      "/images/portfolio/us-portfolio-rosaline-images/06-Rosaline.webp",
+      "/images/portfolio/us-portfolio-rosaline-images/07-Rosaline.webp",
+      "/images/portfolio/us-portfolio-rosaline-images/08-Rosaline.webp",
+      "/images/portfolio/us-portfolio-rosaline-images/09-Rosaline.webp",
+      "/images/portfolio/us-portfolio-rosaline-images/10-Rosaline.webp"
     ]
   },
   {
@@ -389,22 +381,23 @@
     "architect": "KPMB Architects (Fascia and Soffit Cladding) / Brook McIlroy Indigenous Design Studio (Ziibiing)",
     "contractor": "EllisDon",
     "mainimage": "/images/portfolio/UniversityToronto/1.jpg",
-    "detailimage": "/images/portfolio/Detailslider/UniversityofToronto.webp",
+    "detailimage": "/images/portfolio/UniversityToronto/1.jpg",
     "images": [
-      "/images/portfolio/awards/us-portfolio-university-of-toronto-images/UT-1.webp",
-      "/images/portfolio/awards/us-portfolio-university-of-toronto-images/UT-3.webp",
-      "/images/portfolio/awards/us-portfolio-university-of-toronto-images/UT-6.webp",
-      "/images/portfolio/awards/us-portfolio-university-of-toronto-images/UT-13.webp",
-      "/images/portfolio/awards/us-portfolio-university-of-toronto-images/UT-15.webp",
-      "/images/portfolio/awards/us-portfolio-university-of-toronto-images/UT-16.webp",
-      "/images/portfolio/awards/us-portfolio-university-of-toronto-images/UT-21.webp",
-      "/images/portfolio/awards/us-portfolio-university-of-toronto-images/UT-25.webp",
-      "/images/portfolio/awards/us-portfolio-university-of-toronto-images/UT-27.webp",
-      "/images/portfolio/awards/us-portfolio-university-of-toronto-images/UT-28.webp",
-      "/images/portfolio/awards/us-portfolio-university-of-toronto-images/UT-35.webp",
-      "/images/portfolio/awards/us-portfolio-university-of-toronto-images/UT-39.webp",
-      "/images/portfolio/awards/us-portfolio-university-of-toronto-images/UT-42.webp",
-      "/images/portfolio/awards/us-portfolio-university-of-toronto-images/UT-44.webp"
+      "/images/portfolio/us-portfolio-university-of-toronto-images/UT-4.webp",
+      "/images/portfolio/us-portfolio-university-of-toronto-images/UT-5.webp",
+      "/images/portfolio/us-portfolio-university-of-toronto-images/UT-6.webp",
+      "/images/portfolio/us-portfolio-university-of-toronto-images/UT-10.webp",
+      "/images/portfolio/us-portfolio-university-of-toronto-images/UT-11.webp",
+      "/images/portfolio/us-portfolio-university-of-toronto-images/UT-15.webp",
+      "/images/portfolio/us-portfolio-university-of-toronto-images/UT-18.webp",
+      "/images/portfolio/us-portfolio-university-of-toronto-images/UT-20.webp",
+      "/images/portfolio/us-portfolio-university-of-toronto-images/UT-22.webp",
+      "/images/portfolio/us-portfolio-university-of-toronto-images/UT-23.webp",
+      "/images/portfolio/us-portfolio-university-of-toronto-images/UT-25.webp",
+      "/images/portfolio/us-portfolio-university-of-toronto-images/UT-29.webp",
+      "/images/portfolio/us-portfolio-university-of-toronto-images/UT-32.webp",
+      "/images/portfolio/us-portfolio-university-of-toronto-images/UT-38.webp",
+      "/images/portfolio/us-portfolio-university-of-toronto-images/UT-42.webp"
     ]
   },
   {
@@ -494,15 +487,22 @@
     "location": "Garrison Crossing, Ordnance Street, Toronto, Ontario",
     "architect": "Studio Munge",
     "contractor": "TMG Builders",
-    "mainimage": "/images/portfolio/GarrisonPoint/4.jpg",
-    "detailimage": "/images/portfolio/Detailslider/GarrisonPoint.webp",
+    "mainimage": "/images/portfolio/us-portfolio-garrison-point-staircase-images/02-Garrison-Point-Staircase.webp",
+    "detailimage": "/images/portfolio/us-portfolio-garrison-point-staircase-images/02-Garrison-Point-Staircase.webp",
     "images": [
-      "/images/portfolio/GarrisonPoint/1.jpg",
-      "/images/portfolio/GarrisonPoint/2.jpg",
-      "/images/portfolio/GarrisonPoint/3.jpg",
-      "/images/portfolio/GarrisonPoint/4.jpg",
-      "/images/portfolio/01-Garrison-Point-Staircase.webp",
-      "/images/portfolio/02-Garrison-Point-Staircase.webp"
+      "/images/portfolio/us-portfolio-garrison-point-staircase-images/02-Garrison-Point-Staircase.webp",
+      "/images/portfolio/us-portfolio-garrison-point-staircase-images/01-Garrison-Point-Staircase.webp",
+      "/images/portfolio/us-portfolio-garrison-point-staircase-images/03-Garrison-Point-Staircase.webp",
+      "/images/portfolio/us-portfolio-garrison-point-staircase-images/04-Garrison-Point-Staircase.webp",
+      "/images/portfolio/us-portfolio-garrison-point-staircase-images/05-Garrison-Point-Staircase.webp",
+      "/images/portfolio/us-portfolio-garrison-point-staircase-images/06-Garrison-Point-Staircase.webp",
+      "/images/portfolio/us-portfolio-garrison-point-staircase-images/07-Garrison-Point-Staircase.webp",
+      "/images/portfolio/us-portfolio-garrison-point-staircase-images/08-Garrison-Point-Staircase.webp",
+      "/images/portfolio/us-portfolio-garrison-point-staircase-images/09-Garrison-Point-Staircase.webp",
+      "/images/portfolio/us-portfolio-garrison-point-staircase-images/10-Garrison-Point-Staircase.webp",
+      "/images/portfolio/us-portfolio-garrison-point-staircase-images/11-Garrison-Point-Staircase.webp",
+      "/images/portfolio/us-portfolio-garrison-point-staircase-images/12-Garrison-Point-Staircase.webp",
+      "/images/portfolio/us-portfolio-garrison-point-staircase-images/13-Garrison-Point-Staircase.webp"
     ]
   },
   {
@@ -519,20 +519,7 @@
     "detailimage": "/images/portfolio/Detailslider/TenYork.webp",
     "images": [
       "/images/portfolio/us-portfolio-ten-york-condominium-images/01-Ten-York-Condominium.webp",
-      "/images/portfolio/us-portfolio-ten-york-condominium-images/02-Ten-York-Condominium.webp",
-      "/images/portfolio/us-portfolio-ten-york-condominium-images/03-Ten-York-Condominium.webp",
-      "/images/portfolio/us-portfolio-ten-york-condominium-images/04-Ten-York-Condominium.webp",
-      "/images/portfolio/us-portfolio-ten-york-condominium-images/05-Ten-York-Condominium.webp",
-      "/images/portfolio/us-portfolio-ten-york-condominium-images/06-Ten-York-Condominium.webp",
-      "/images/portfolio/us-portfolio-ten-york-condominium-images/07-Ten-York-Condominium.webp",
-      "/images/portfolio/us-portfolio-ten-york-condominium-images/08-Ten-York-Condominium.webp",
-      "/images/portfolio/us-portfolio-ten-york-condominium-images/09-Ten-York-Condominium.webp",
-      "/images/portfolio/us-portfolio-ten-york-condominium-images/10-Ten-York-Condominium.webp",
-      "/images/portfolio/us-portfolio-ten-york-condominium-images/11-Ten-York-Condominium.webp",
-      "/images/portfolio/us-portfolio-ten-york-condominium-images/12-Ten-York-Condominium.webp",
-      "/images/portfolio/us-portfolio-ten-york-condominium-images/13-Ten-York-Condominium.webp",
-      "/images/portfolio/us-portfolio-ten-york-condominium-images/14-Ten-York-Condominium.webp",
-      "/images/portfolio/us-portfolio-ten-york-condominium-images/15-Ten-York-Condominium.webp"
+      "/images/portfolio/us-portfolio-ten-york-condominium-images/02-Ten-York-Condominium.webp"
     ]
   },
   {
@@ -548,18 +535,24 @@
     "mainimage": "/images/portfolio/50Wellesley/1.jpg",
     "detailimage": "/images/portfolio/Detailslider/50Wellesley.webp",
     "images": [
-      "/images/portfolio/us-portfolio-50-well-images/001-50-Wellesley-Tree_1_11zon.webp",
-      "/images/portfolio/us-portfolio-50-well-images/002-50-Wellesley-Tree_2_11zon.webp",
-      "/images/portfolio/us-portfolio-50-well-images/003-50-Wellesley-Tree_3_11zon.webp",
-      "/images/portfolio/us-portfolio-50-well-images/004-50-Wellesley-Tree_4_11zon.webp",
-      "/images/portfolio/us-portfolio-50-well-images/005-50-Wellesley-Tree_5_11zon.webp",
-      "/images/portfolio/us-portfolio-50-well-images/006-50-Wellesley-Tree_6_11zon.webp",
-      "/images/portfolio/us-portfolio-50-well-images/007-50-Wellesley-Tree_7_11zon.webp",
-      "/images/portfolio/us-portfolio-50-well-images/008-50-Wellesley-Tree_8_11zon.webp",
-      "/images/portfolio/us-portfolio-50-well-images/009-50-Wellesley-Tree_9_11zon.webp",
-      "/images/portfolio/us-portfolio-50-well-images/010-50-Wellesley-Tree_10_11zon.webp",
-      "/images/portfolio/us-portfolio-50-well-images/011-50-Wellesley-Tree_11_11zon.webp",
-      "/images/portfolio/us-portfolio-50-well-images/012-50-Wellesley-Tree_12_11zon.webp"
+      "/images/portfolio/us-portfolio-50-well-images/001-50-Wellesley-Tree.webp",
+      "/images/portfolio/us-portfolio-50-well-images/002-50-Wellesley-Tree.webp",
+      "/images/portfolio/us-portfolio-50-well-images/003-50-Wellesley-Tree.webp",
+      "/images/portfolio/us-portfolio-50-well-images/004-50-Wellesley-Tree.webp",
+      "/images/portfolio/us-portfolio-50-well-images/005-50-Wellesley-Tree.webp",
+      "/images/portfolio/us-portfolio-50-well-images/006-50-Wellesley-Tree.webp",
+      "/images/portfolio/us-portfolio-50-well-images/007-50-Wellesley-Tree.webp",
+      "/images/portfolio/us-portfolio-50-well-images/008-50-Wellesley-Tree.webp",
+      "/images/portfolio/us-portfolio-50-well-images/009-50-Wellesley-Tree.webp",
+      "/images/portfolio/us-portfolio-50-well-images/010-50-Wellesley-Tree.webp",
+      "/images/portfolio/us-portfolio-50-well-images/011-50-Wellesley-Tree.webp",
+      "/images/portfolio/us-portfolio-50-well-images/012-50-Wellesley-Tree.webp",
+      "/images/portfolio/us-portfolio-50-well-images/013-50-Wellesley-Tree.webp",
+      "/images/portfolio/us-portfolio-50-well-images/014-50-Wellesley-Tree.webp",
+      "/images/portfolio/us-portfolio-50-well-images/015-50-Wellesley-Tree.webp",
+      "/images/portfolio/us-portfolio-50-well-images/016-50-Wellesley-Tree.webp",
+      "/images/portfolio/us-portfolio-50-well-images/017-50-Wellesley-Tree.webp",
+      "/images/portfolio/us-portfolio-50-well-images/018-50-Wellesley-Tree.webp"
     ]
   },
   {
@@ -711,18 +704,21 @@
     "mainimage": "/images/portfolio/TheLuminousVeil/TheLuminousVeil.jpg",
     "detailimage": "/images/portfolio/Detailslider/LuminousVeil.webp",
     "images": [
-      "/images/portfolio/us-portfolio-luminous Veil-images/01-Luminous-Veil_1_11zon.webp",
-      "/images/portfolio/us-portfolio-luminous Veil-images/02-Luminous-Veil_2_11zon.webp",
-      "/images/portfolio/us-portfolio-luminous Veil-images/03-Luminous-Veil_3_11zon.webp",
-      "/images/portfolio/us-portfolio-luminous Veil-images/04-Luminous-Veil_4_11zon.webp",
-      "/images/portfolio/us-portfolio-luminous Veil-images/05-Luminous-Veil_5_11zon.webp",
-      "/images/portfolio/us-portfolio-luminous Veil-images/06-Luminous-Veil_6_11zon.webp",
-      "/images/portfolio/us-portfolio-luminous Veil-images/07-Luminous-Veil_7_11zon.webp",
-      "/images/portfolio/us-portfolio-luminous Veil-images/08-Luminous-Veil_8_11zon.webp",
-      "/images/portfolio/us-portfolio-luminous Veil-images/09-Luminous-Veil_9_11zon.webp",
-      "/images/portfolio/us-portfolio-luminous Veil-images/10-Luminous-Veil_10_11zon.webp",
-      "/images/portfolio/us-portfolio-luminous Veil-images/11-Luminous-Veil_11_11zon.webp",
-      "/images/portfolio/us-portfolio-luminous Veil-images/12-Luminous-Veil_12_11zon.webp"
+      "/images/portfolio/us-portfolio-luminous-veil-images/01-Luminous-Veil.webp",
+      "/images/portfolio/us-portfolio-luminous-veil-images/02-Luminous-Veil.webp",
+      "/images/portfolio/us-portfolio-luminous-veil-images/03-Luminous-Veil.webp",
+      "/images/portfolio/us-portfolio-luminous-veil-images/04-Luminous-Veil.webp",
+      "/images/portfolio/us-portfolio-luminous-veil-images/05-Luminous-Veil.webp",
+      "/images/portfolio/us-portfolio-luminous-veil-images/06-Luminous-Veil.webp",
+      "/images/portfolio/us-portfolio-luminous-veil-images/07-Luminous-Veil.webp",
+      "/images/portfolio/us-portfolio-luminous-veil-images/08-Luminous-Veil.webp",
+      "/images/portfolio/us-portfolio-luminous-veil-images/09-Luminous-Veil.webp",
+      "/images/portfolio/us-portfolio-luminous-veil-images/10-Luminous-Veil.webp",
+      "/images/portfolio/us-portfolio-luminous-veil-images/11-Luminous-Veil.webp",
+      "/images/portfolio/us-portfolio-luminous-veil-images/12-Luminous-Veil.webp",
+      "/images/portfolio/us-portfolio-luminous-veil-images/13-Luminous-Veil.webp",
+      "/images/portfolio/us-portfolio-luminous-veil-images/14-Luminous-Veil.webp",
+      "/images/portfolio/us-portfolio-luminous-veil-images/15-Luminous-Veil.webp"
     ]
   },
   {

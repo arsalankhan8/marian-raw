@@ -113,7 +113,7 @@ const RegionModal = ({
       <div
         className={`absolute inset-0 z-[1] ${
           isWhite
-            ? "bg-white/75"
+            ? "bg-white/40"
             : "bg-slate-950/40"
         }`}
       />
@@ -164,7 +164,7 @@ const RegionModal = ({
               className="block"
             >
               <h2
-                className={`whitespace-nowrap text-[12px] tracking-[0.4em] uppercase font-unageo-medium opacity-70 transition-all duration-300 group-hover:opacity-100 md:text-[15px] ${textClass}`}
+                className={`whitespace-nowrap text-[12px] tracking-[0.4em] uppercase font-unageo-medium opacity-100 transition-all duration-300 group-hover:opacity-100 md:text-[15px] ${textClass}`}
               >
                 Canada
               </h2>
@@ -195,7 +195,7 @@ const RegionModal = ({
               className="block"
             >
               <h2
-                className={`whitespace-nowrap text-[12px] tracking-[0.4em] uppercase font-unageo-medium opacity-70 transition-all duration-300 group-hover:opacity-100 md:text-[15px] ${textClass}`}
+                className={`whitespace-nowrap text-[12px] tracking-[0.4em] uppercase font-unageo-medium opacity-100 transition-all duration-300 group-hover:opacity-100 md:text-[15px] ${textClass}`}
               >
                 United States
               </h2>
