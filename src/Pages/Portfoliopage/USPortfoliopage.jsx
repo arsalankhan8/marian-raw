@@ -68,7 +68,6 @@ export default function USPortfoliopage() {
           transition={{ duration: 1, ease: "easeOut" }}
           viewport={{ once: true, amount: 0.3 }} // trigger once when ~30% is in view
         >
-          {/*} <Portfoliopageslider />*/}
           <USPortfoliopagesliderv2 />
         </motion.div>
       </div>
@@ -77,4 +76,4 @@ export default function USPortfoliopage() {
       <MobileFooters />
     </div>
   );
-}
+};

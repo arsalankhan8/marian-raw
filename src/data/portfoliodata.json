@@ -12,6 +12,7 @@
     "mainimage": "/images/portfolio/TheSpiritGarden/1.webp",
     "detailimage": "/images/portfolio/Detailslider/SpiritGarden.webp",
     "images": [
+      "/images/portfolio/us-portfolio-spirit-images/08-spirit.png",
       "/images/portfolio/us-portfolio-spirit-images/01-spirit.png",
       "/images/portfolio/us-portfolio-spirit-images/02-spirit.png",
       "/images/portfolio/us-portfolio-spirit-images/03-spirit.png",
@@ -19,7 +20,6 @@
       "/images/portfolio/us-portfolio-spirit-images/05-spirit.png",
       "/images/portfolio/us-portfolio-spirit-images/06-spirit.png",
       "/images/portfolio/us-portfolio-spirit-images/07-spirit.png",
-      "/images/portfolio/us-portfolio-spirit-images/08-spirit.png",
       "/images/portfolio/us-portfolio-spirit-images/09-spirit.png",
       "/images/portfolio/us-portfolio-spirit-images/10-spirit.png",
       "/images/portfolio/us-portfolio-spirit-images/11-spirit.png",
@@ -75,7 +75,6 @@
       "/images/portfolio/us-portfolio-viva-bus/004-viva-bus.webp",
       "/images/portfolio/us-portfolio-viva-bus/005-viva-bus.webp",
       "/images/portfolio/us-portfolio-viva-bus/006-viva-bus.webp",
-      "/images/portfolio/us-portfolio-viva-bus/007-viva-bus.webp",
       "/images/portfolio/us-portfolio-viva-bus/008-viva-bus.webp",
       "/images/portfolio/us-portfolio-viva-bus/009-viva-bus.webp",
       "/images/portfolio/us-portfolio-viva-bus/010-viva-bus.webp",
@@ -120,6 +119,7 @@
     "mainimage": "/images/portfolio/us-portfolio-7-dale-images/010-7-dale.webp",
     "detailimage": "/images/portfolio/us-portfolio-7-dale-images/010-7-dale.webp",
     "images": [
+      "/images/portfolio/us-portfolio-7-dale-images/009-7-dale.webp",
       "/images/portfolio/us-portfolio-7-dale-images/001-7-dale.webp",
       "/images/portfolio/us-portfolio-7-dale-images/002-7-dale.webp",
       "/images/portfolio/us-portfolio-7-dale-images/003-7-dale.webp",
@@ -128,7 +128,6 @@
       "/images/portfolio/us-portfolio-7-dale-images/006-7-dale.webp",
       "/images/portfolio/us-portfolio-7-dale-images/007-7-dale.webp",
       "/images/portfolio/us-portfolio-7-dale-images/008-7-dale.webp",
-      "/images/portfolio/us-portfolio-7-dale-images/009-7-dale.webp",
       "/images/portfolio/us-portfolio-7-dale-images/010-7-dale.webp"
     ]
   },
@@ -146,8 +145,6 @@
     "detailimage": "/images/portfolio/Detailslider/GarrisonCrossing.webp",
     "images": [
       "/images/portfolio/us-portfolio-garrison/01-Garrison.png",
-      "/images/portfolio/us-portfolio-garrison/02-Garrison.png",
-      "/images/portfolio/us-portfolio-garrison/03-Garrison.png",
       "/images/portfolio/us-portfolio-garrison/04-Garrison.png",
       "/images/portfolio/us-portfolio-garrison/05-Garrison.png",
       "/images/portfolio/us-portfolio-garrison/06-Garrison.png",
@@ -268,6 +265,7 @@
     "mainimage": "/images/portfolio/LittleIsland/main.webp",
     "detailimage": "/images/portfolio/Detailslider/LittleIsland.webp",
     "images": [
+      "/images/portfolio/LittleIsland/main.webp",
       "/images/portfolio/LittleIsland/1.webp",
       "/images/portfolio/LittleIsland/3.webp",
       "/images/portfolio/LittleIsland/5.webp",
@@ -308,17 +306,7 @@
       "/images/portfolio/DaysEnd/2.jpg",
       "/images/portfolio/DaysEnd/3.jpg",
       "/images/portfolio/DaysEnd/4.jpg",
-      "/images/portfolio/DaysEnd/5.jpg",
-      "/images/portfolio/us-portfolio-days-end-images/01-day-end-pier-52.webp",
-      "/images/portfolio/us-portfolio-days-end-images/02-day-end-pier-52.webp",
-      "/images/portfolio/us-portfolio-days-end-images/04-day-end-pier-52.webp",
-      "/images/portfolio/us-portfolio-days-end-images/05-day-end-pier-52.webp",
-      "/images/portfolio/us-portfolio-days-end-images/06-day-end-pier-52.webp",
-      "/images/portfolio/us-portfolio-days-end-images/07-day-end-pier-52.webp",
-      "/images/portfolio/us-portfolio-days-end-images/08-day-end-pier-52.webp",
-      "/images/portfolio/us-portfolio-days-end-images/09-day-end-pier-52.webp",
-      "/images/portfolio/us-portfolio-days-end-images/10-day-end-pier-52.webp",
-      "/images/portfolio/us-portfolio-days-end-images/03-day-end-pier-52.webp"
+      "/images/portfolio/DaysEnd/5.jpg"
     ]
   },
   {
@@ -380,7 +368,7 @@
     "location": "St. George Campus, Toronto, Ontario",
     "architect": "KPMB Architects (Fascia and Soffit Cladding) / Brook McIlroy Indigenous Design Studio (Ziibiing)",
     "contractor": "EllisDon",
-    "mainimage": "/images/portfolio/UniversityToronto/1.jpg",
+    "mainimage": "/images/portfolio/us-portfolio-university-of-toronto-images/UT-6.webp",
     "detailimage": "/images/portfolio/UniversityToronto/1.jpg",
     "images": [
       "/images/portfolio/us-portfolio-university-of-toronto-images/UT-4.webp",
@@ -418,7 +406,6 @@
       "/images/portfolio/WestBlock/4.jpg",
       "/images/portfolio/WestBlock/2.jpg",
       "/images/portfolio/us-portfolio-west-block/02-west-block.webp",
-      "/images/portfolio/WestBlock/5.jpg",
       "/images/portfolio/us-portfolio-west-block/01-west-block.webp",
       "/images/portfolio/us-portfolio-west-block/03-west-block.webp",
       "/images/portfolio/us-portfolio-west-block/04-west-block.webp",
@@ -515,8 +502,8 @@
     "location": "10 York Street, Toronto, Ontario",
     "architect": "Wallman Architects",
     "contractor": "Tridel",
-    "mainimage": "/images/portfolio/TenYork/4.jpg",
-    "detailimage": "/images/portfolio/Detailslider/TenYork.webp",
+    "mainimage": "/images/portfolio/us-portfolio-ten-york-condominium-images/01-Ten-York-Condominium.webp",
+    "detailimage": "/images/portfolio/us-portfolio-ten-york-condominium-images/01-Ten-York-Condominium.webp",
     "images": [
       "/images/portfolio/us-portfolio-ten-york-condominium-images/01-Ten-York-Condominium.webp",
       "/images/portfolio/us-portfolio-ten-york-condominium-images/02-Ten-York-Condominium.webp"

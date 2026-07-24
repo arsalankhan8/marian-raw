@@ -111,13 +111,6 @@ export default function Portfoliopagesliderv2() {
       img: "/images/portfolio/WestBlock/5.jpg",
       link: "/portfoliodetails/house-of-commons",
     },
-    // {
-    //   id: "14",
-    //   location: "Ottawa, Ontario",
-    //   title: "Centre Block Rehabilitation",
-    //   img: "",
-    //   link: "/portfoliodetails/centre-block-rehabilitation",
-    // },
     {
       id: "15",
       location: "Brampton, Ontario",
@@ -132,13 +125,6 @@ export default function Portfoliopagesliderv2() {
       img: "/images/portfolio/WellandCanal/1.webp",
       link: "/portfoliodetails/welland-canal",
     },
-    // {
-    //   id: "17",
-    //   location: "Hamilton, Ontario",
-    //   title: "Peter George Centre for Living and Learning",
-    //   img: "",
-    //   link: "/portfoliodetails/peter-george-centre",
-    // },
     {
       id: "18",
       location: "Toronto, Ontario",
@@ -153,13 +139,6 @@ export default function Portfoliopagesliderv2() {
       img: "/images/portfolio/TenYork/4.jpg",
       link: "/portfoliodetails/ten-york",
     },
-    // {
-    //   id: "20",
-    //   location: "Toronto, Ontario",
-    //   title: "UofT OISE - 5th Floor Renovation",
-    //   img: "",
-    //   link: "/portfoliodetails/uoft-oise",
-    // },
     {
       id: "21",
       location: "Toronto, Ontario",
@@ -167,13 +146,6 @@ export default function Portfoliopagesliderv2() {
       img: "/images/portfolio/50Wellesley/1.jpg",
       link: "/portfoliodetails/50-wellesley",
     },
-    // {
-    //   id: "22",
-    //   location: "Toronto, Ontario",
-    //   title: "OpenROM Facade and Entrance",
-    //   img: "",
-    //   link: "/portfoliodetails/royal-ontario-museum",
-    // },
     {
       id: "23",
       location: "Mississauga, Ontario",
