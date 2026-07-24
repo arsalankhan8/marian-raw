@@ -78,9 +78,18 @@ const sortBySlugOrder = (projects, slugOrder) => {
   })
 }
 
-export const filterPortfolioByRegion = (projects, region = getSelectedRegion()) => {
-  const slugOrder = region === REGIONS.US ? US_PORTFOLIO_SLUGS : CA_PORTFOLIO_SLUGS
-  const filtered = projects.filter((project) => matchesRegion(project, region))
-  return sortBySlugOrder(filtered, slugOrder)
-}
+export function filterPortfolioByRegion(data = [], region = "canada") {
+  if (!Array.isArray(data)) return [];
 
+  const normalizedRegion = region.toLowerCase();
+
+  return data.filter((item) => {
+    const itemRegion = (
+      item.region ||
+      item.country ||
+      ""
+    ).toLowerCase();
+
+    return itemRegion === normalizedRegion;
+  });
+}

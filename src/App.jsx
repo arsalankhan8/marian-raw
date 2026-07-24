@@ -16,15 +16,26 @@ import {
 } from "react-router-dom";
 
 import Lenis from "@studio-freight/lenis";
+
 import CareerDetailpage from "./Pages/Careerpage/CareerDetailpage";
+import Careerpage from "./Pages/Careerpage/Careerpage";
+
 import Homepage from "./Pages/Homepage/Homepage";
 import USHomepage from "./Pages/USHome/USHomepage";
 import StaticPage from "./Pages/StaticPage/StaticPage";
 
 import Portfoliopage from "./Pages/Portfoliopage/Portfoliopage";
 import USPortfoliopage from "./Pages/Portfoliopage/USPortfoliopage";
-import PortfolioRedirect from "./Components/PortfolioRedirect/PortfolioRedirect";
+import Portfoliodetails from "./Pages/Portfoliodetails/Portfoliodetails";
+import Referencepage from "./Pages/Portfoliopage/Referencepage/Referencepage";
 
+import PortfolioRedirect from "./Components/PortfolioRedirect/PortfolioRedirect";
+import RegionModal from "./Components/RegionSelector/RegionModal";
+
+/*
+  These component names can remain unchanged.
+  They are now displayed through the About URLs.
+*/
 import USLegacyPage from "./Pages/US/LegacyPage";
 import CanadaLegacyPage from "./Pages/Canada/LegacyPage";
 
@@ -33,18 +44,12 @@ import CanadaCsrPage from "./Pages/Canada/Csrpage";
 
 import Awardspage from "./Pages/Awardspage/Awardspage";
 import Newspage from "./Pages/Newspage/Newspage";
-import Portfoliodetails from "./Pages/Portfoliodetails/Portfoliodetails";
 import Contactpage from "./Pages/Contactpage/Contactpage";
-import Referencepage from "./Pages/Portfoliopage/Referencepage/Referencepage";
 
 import PrivacyPolicy from "./Pages/Policies/PrivacyPolicy";
 import TermsConditions from "./Pages/Policies/TermsConditions";
 import PoliciesPage from "./Pages/Policies/PoliciesPage";
 import AodaCompliance from "./Pages/Policies/AodaCompliance";
-
-import RegionModal from "./Components/RegionSelector/RegionModal";
-
-import Careerpage from "./Pages/Careerpage/Careerpage";
 
 import {
   CA_PORTFOLIO_PATH,
@@ -110,7 +115,8 @@ function RegionalRedirect({ page }) {
 }
 
 function getRegionFromCurrentPath() {
-  const pathname = window.location.pathname.toLowerCase();
+  const pathname =
+    window.location.pathname.toLowerCase();
 
   if (
     pathname === "/canada" ||
@@ -132,14 +138,18 @@ function getRegionFromCurrentPath() {
 function App() {
   const [hasAccess, setHasAccess] = useState(() => {
     const regionFromUrl = getRegionFromCurrentPath();
+
     const savedRegion =
       sessionStorage.getItem("regionSelected");
 
     return Boolean(regionFromUrl || savedRegion);
   });
+
   const lenisRef = useRef(null);
+
   useEffect(() => {
-    const savedRegion = sessionStorage.getItem("regionSelected");
+    const savedRegion =
+      sessionStorage.getItem("regionSelected");
 
     if (savedRegion) {
       setHasAccess(true);
@@ -147,15 +157,24 @@ function App() {
   }, []);
 
   const handleRegionSelect = (region) => {
-    sessionStorage.setItem("regionSelected", region);
+    sessionStorage.setItem(
+      "regionSelected",
+      region,
+    );
+
     setHasAccess(true);
   };
 
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.2,
+
       easing: (t) =>
-        Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        Math.min(
+          1,
+          1.001 - Math.pow(2, -10 * t),
+        ),
+
       smoothWheel: true,
       smoothTouch: false,
     });
@@ -166,13 +185,17 @@ function App() {
 
     const raf = (time) => {
       lenis.raf(time);
-      animationFrameId = requestAnimationFrame(raf);
+
+      animationFrameId =
+        requestAnimationFrame(raf);
     };
 
-    animationFrameId = requestAnimationFrame(raf);
+    animationFrameId =
+      requestAnimationFrame(raf);
 
     return () => {
       cancelAnimationFrame(animationFrameId);
+
       lenis.destroy();
       lenisRef.current = null;
     };
@@ -184,7 +207,8 @@ function App() {
         <RegionModal
           onSelect={handleRegionSelect}
           variant={
-            window.location.pathname.toLowerCase() === "/white"
+            window.location.pathname.toLowerCase() ===
+            "/white"
               ? "white"
               : "dark"
           }
@@ -192,8 +216,9 @@ function App() {
       ) : (
         <>
           <ScrollToTop lenisRef={lenisRef} />
-          <Routes>
 
+          <Routes>
+            {/* Region selector */}
             <Route
               path="/"
               element={
@@ -214,9 +239,27 @@ function App() {
               }
             />
 
+            {/* Home */}
+            <Route
+              path="/canada"
+              element={<Homepage />}
+            />
+
+            <Route
+              path="/US"
+              element={<USHomepage />}
+            />
+
             {/* Careers */}
-            <Route path="/US/careers" element={<Careerpage />} />
-            <Route path="/canada/careers" element={<Careerpage />} />
+            <Route
+              path="/US/careers"
+              element={<Careerpage />}
+            />
+
+            <Route
+              path="/canada/careers"
+              element={<Careerpage />}
+            />
 
             <Route
               path="/US/careers/:slug"
@@ -230,18 +273,9 @@ function App() {
 
             <Route
               path="/careers"
-              element={<RegionalRedirect page="careers" />}
-            />
-
-            {/* Home */}
-            <Route
-              path="/canada"
-              element={<Homepage />}
-            />
-
-            <Route
-              path="/US"
-              element={<USHomepage />}
+              element={
+                <RegionalRedirect page="careers" />
+              }
             />
 
             {/* Static page */}
@@ -257,30 +291,86 @@ function App() {
             />
 
             <Route
-              path={US_PORTFOLIO_PATH}
-              element={<USPortfoliopage />}
-            />
-
-            <Route
               path={CA_PORTFOLIO_PATH}
               element={<Portfoliopage />}
             />
 
-            {/* Legacy */}
             <Route
-              path="/US/legacy"
+              path={US_PORTFOLIO_PATH}
+              element={<USPortfoliopage />}
+            />
+
+            {/* Portfolio details */}
+            <Route
+              path="/canada/portfolio/:slug"
+              element={<Portfoliodetails />}
+            />
+
+            <Route
+              path="/US/portfolio/:slug"
+              element={<Portfoliodetails />}
+            />
+
+            {/* About */}
+            <Route
+              path="/US/about"
               element={<USLegacyPage />}
             />
 
             <Route
-              path="/canada/legacy"
+              path="/canada/about"
               element={<CanadaLegacyPage />}
+            />
+
+            <Route
+              path="/about"
+              element={
+                <RegionalRedirect page="about" />
+              }
+            />
+
+            {/* Redirect previous Legacy URLs */}
+            <Route
+              path="/legacy"
+              element={
+                <RegionalRedirect page="about" />
+              }
+            />
+
+            <Route
+              path="/US/legacy"
+              element={
+                <Navigate
+                  to="/US/about"
+                  replace
+                />
+              }
+            />
+
+            <Route
+              path="/canada/legacy"
+              element={
+                <Navigate
+                  to="/canada/about"
+                  replace
+                />
+              }
             />
 
             {/* Canada-only Awards */}
             <Route
               path="/canada/awards"
               element={<Awardspage />}
+            />
+
+            <Route
+              path="/awards"
+              element={
+                <Navigate
+                  to="/canada/awards"
+                  replace
+                />
+              }
             />
 
             {/* CSR */}
@@ -294,15 +384,33 @@ function App() {
               element={<CanadaCsrPage />}
             />
 
+            <Route
+              path="/csr"
+              element={
+                <RegionalRedirect page="csr" />
+              }
+            />
+
             {/* News */}
             <Route
               path="/US/news"
-              element={<Newspage region="us" />}
+              element={
+                <Newspage region="us" />
+              }
             />
 
             <Route
               path="/canada/news"
-              element={<Newspage region="canada" />}
+              element={
+                <Newspage region="canada" />
+              }
+            />
+
+            <Route
+              path="/news"
+              element={
+                <RegionalRedirect page="news" />
+              }
             />
 
             {/* Contact */}
@@ -316,15 +424,11 @@ function App() {
               element={<Contactpage />}
             />
 
-            {/* Portfolio details */}
             <Route
-              path="/US/portfolio/:slug"
-              element={<Portfoliodetails />}
-            />
-
-            <Route
-              path="/canada/portfolio/:slug"
-              element={<Portfoliodetails />}
+              path="/contact"
+              element={
+                <RegionalRedirect page="contact" />
+              }
             />
 
             {/* Reference */}
@@ -338,6 +442,13 @@ function App() {
               element={<Referencepage />}
             />
 
+            <Route
+              path="/reference"
+              element={
+                <RegionalRedirect page="reference" />
+              }
+            />
+
             {/* Privacy Policy */}
             <Route
               path="/US/privacy-policy"
@@ -349,7 +460,14 @@ function App() {
               element={<PrivacyPolicy />}
             />
 
-            {/* Terms */}
+            <Route
+              path="/privacy-policy"
+              element={
+                <RegionalRedirect page="privacy-policy" />
+              }
+            />
+
+            {/* Terms and Conditions */}
             <Route
               path="/US/terms-and-conditions"
               element={<TermsConditions />}
@@ -358,6 +476,13 @@ function App() {
             <Route
               path="/canada/terms-and-conditions"
               element={<TermsConditions />}
+            />
+
+            <Route
+              path="/terms-and-conditions"
+              element={
+                <RegionalRedirect page="terms-and-conditions" />
+              }
             />
 
             {/* Policies */}
@@ -371,77 +496,17 @@ function App() {
               element={<PoliciesPage />}
             />
 
-            {/* Canada-only AODA */}
-            <Route
-              path="/canada/aoda-compliance"
-              element={<AodaCompliance />}
-            />
-
-            {/* Legacy URL redirects */}
-            <Route
-              path="/legacy"
-              element={
-                <RegionalRedirect page="legacy" />
-              }
-            />
-
-            <Route
-              path="/awards"
-              element={
-                <Navigate
-                  to="/canada/awards"
-                  replace
-                />
-              }
-            />
-
-            <Route
-              path="/csr"
-              element={
-                <RegionalRedirect page="csr" />
-              }
-            />
-
-            <Route
-              path="/news"
-              element={
-                <RegionalRedirect page="news" />
-              }
-            />
-
-            <Route
-              path="/contact"
-              element={
-                <RegionalRedirect page="contact" />
-              }
-            />
-
-            <Route
-              path="/reference"
-              element={
-                <RegionalRedirect page="reference" />
-              }
-            />
-
-            <Route
-              path="/privacy-policy"
-              element={
-                <RegionalRedirect page="privacy-policy" />
-              }
-            />
-
-            <Route
-              path="/terms-and-conditions"
-              element={
-                <RegionalRedirect page="terms-and-conditions" />
-              }
-            />
-
             <Route
               path="/policies"
               element={
                 <RegionalRedirect page="policies" />
               }
+            />
+
+            {/* Canada-only AODA */}
+            <Route
+              path="/canada/aoda-compliance"
+              element={<AodaCompliance />}
             />
 
             <Route
@@ -454,7 +519,7 @@ function App() {
               }
             />
 
-            {/* Old portfolio detail URLs */}
+            {/* Old portfolio detail URL */}
             <Route
               path="/portfoliodetails/:slug"
               element={<Portfoliodetails />}

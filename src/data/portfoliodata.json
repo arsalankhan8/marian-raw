@@ -555,10 +555,10 @@
     "mainimage": "/images/portfolio/WeatherheadSchool/3.webp",
     "detailimage": "/images/portfolio/Detailslider/WeatherHeadSchool.webp",
     "images": [
-      "/images/portfolio/us-portfolio-weatherhead-images/01-Weatherhead-Construction4.webp",
-      "/images/portfolio/us-portfolio-weatherhead-images/02-Weatherhead-Construction4.webp",
-      "/images/portfolio/us-portfolio-weatherhead-images/03-Weatherhead-Construction4.webp",
-      "/images/portfolio/us-portfolio-weatherhead-images/04-Weatherhead-Construction4.webp"
+      "/images/portfolio/us-portfolio-weatherhead-images/01-weatherhead.png",
+      "/images/portfolio/us-portfolio-weatherhead-images/02-weatherhead.png",
+      "/images/portfolio/us-portfolio-weatherhead-images/03-weatherhead.png",
+      "/images/portfolio/us-portfolio-weatherhead-images/04-weatherhead.png"
     ]
   },
   {
@@ -631,13 +631,13 @@
     "location": "New York City, New York",
     "architect": "James Ingo Freed",
     "contractor": "Tishman",
-    "mainimage": "/images/portfolio/GoldmanSachs/main.webp",
-    "detailimage": "/images/portfolio/Detailslider/GoldmanSachs.webp",
+    "mainimage": "/images/portfolio/GoldmanSachs/04-goldman.png",
+    "detailimage": "/images/portfolio/GoldmanSachs/04-goldman.png",
     "images": [
-      "/images/portfolio/GoldmanSachs/1.webp",
-      "/images/portfolio/GoldmanSachs/2.webp",
-      "/images/portfolio/GoldmanSachs/3.webp",
-      "/images/portfolio/GoldmanSachs/4.webp"
+      "/images/portfolio/GoldmanSachs/01-goldman.png",
+      "/images/portfolio/GoldmanSachs/02-goldman.png",
+      "/images/portfolio/GoldmanSachs/03-goldman.png",
+      "/images/portfolio/GoldmanSachs/04-goldman.png"
     ]
   },
   {
@@ -653,10 +653,9 @@
     "mainimage": "/images/portfolio/LaserCentre/1.webp",
     "detailimage": "/images/portfolio/Detailslider/MississaugaLaserCentre.webp",
     "images": [
-      "/images/portfolio/LaserCentre/1.webp",
-      "/images/portfolio/LaserCentre/2.webp",
-      "/images/portfolio/LaserCentre/3.webp",
-      "/images/portfolio/LaserCentre/4.webp"
+      "/images/portfolio/us-portfolio-mississauga-images/01-mississauga.png",
+      "/images/portfolio/us-portfolio-mississauga-images/02-mississauga.png",
+      "/images/portfolio/us-portfolio-mississauga-images/03-mississauga.png"
     ]
   },
   {

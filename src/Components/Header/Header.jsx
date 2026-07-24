@@ -29,6 +29,7 @@ export default function Header() {
   const newsPath = getRegionPagePath("news");
   const contactPath = getRegionPagePath("contact");
 
+  const aboutPath = getRegionPagePath("about");
 
   const careersPath =
     getRegionPagePath("careers");
@@ -81,19 +82,19 @@ export default function Header() {
               </span>
             </Link>
 
-            {/* Legacy dropdown */}
+            {/* About dropdown */}
             <div
               className="relative"
               onMouseEnter={() => setIsOpen(true)}
               onMouseLeave={() => setIsOpen(false)}
             >
-              <Link to={legacyPath}>
+              <Link to={aboutPath}>
                 <span
                   className={`flex gap-[4px] items-center ${isActive(
-                    legacyPath,
+                    aboutPath,
                   )}`}
                 >
-                  Legacy
+                  About Us
 
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

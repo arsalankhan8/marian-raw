@@ -58,7 +58,7 @@ export default function Footers() {
       path: homePath,
     },
     {
-      label: "Legacy",
+      label: "About Us",
       path: legacyPath,
     },
     {

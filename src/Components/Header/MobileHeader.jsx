@@ -59,6 +59,8 @@ export default function MobileHeader() {
     REGIONS.CANADA,
   );
 
+  const aboutPath = getRegionPagePath("about");
+
   const isHomePage =
     location.pathname.toLowerCase() ===
     homePath.toLowerCase();
@@ -388,19 +390,18 @@ export default function MobileHeader() {
               <div>
                 <div className="flex items-center justify-between w-full">
                   <Link
-                    to={legacyPath}
+                    to={aboutPath}
                     onClick={closeMenu}
                     className="flex-1"
                   >
                     <span
                       className={isActive(
-                        legacyPath,
+                        aboutPath,
                       )}
                     >
-                      Legacy
+                      About Us
                     </span>
                   </Link>
-
                   <button
                     type="button"
                     aria-label="Toggle Legacy submenu"
@@ -418,8 +419,8 @@ export default function MobileHeader() {
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className={`w-4 h-4 transition-transform duration-300 ${isDropdownOpen
-                          ? "rotate-180"
-                          : "rotate-0"
+                        ? "rotate-180"
+                        : "rotate-0"
                         }`}
                       fill="none"
                       viewBox="0 0 24 24"

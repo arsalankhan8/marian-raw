@@ -48,7 +48,7 @@ export default function MobileFooters() {
       path: homePath,
     },
     {
-      label: "Legacy",
+      label: "About Us",
       path: legacyPath,
     },
     {

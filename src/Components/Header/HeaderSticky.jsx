@@ -61,6 +61,8 @@ export default function Header() {
     REGIONS.CANADA,
   );
 
+  const aboutPath = getRegionPagePath("about");
+
   const isHomePage =
     location.pathname.toLowerCase() ===
     homePath.toLowerCase();
@@ -321,19 +323,19 @@ export default function Header() {
                   setIsOpen(false)
                 }
               >
-                <Link to={legacyPath}>
+                <Link to={aboutPath}>
                   <span
                     className={`flex gap-[4px] items-center ${isActive(
-                      legacyPath,
+                      aboutPath,
                     )}`}
                   >
-                    Legacy
+                    About Us
 
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className={`w-4 h-4 transition-transform duration-300 ${isOpen
-                          ? "rotate-180"
-                          : "rotate-0"
+                        ? "rotate-180"
+                        : "rotate-0"
                         }`}
                       fill="none"
                       viewBox="0 0 24 24"

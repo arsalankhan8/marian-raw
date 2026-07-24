@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import locationicon from "../../../assets/mapw.png";
 import { Link } from "react-router";
+import { getRegionPortfolioPath } from "../../../utils/regionPaths";
 
 const US_SLIDES = [
   {
@@ -8,77 +9,77 @@ const US_SLIDES = [
     location: "New York City, New York",
     title: "Four Seasons Downtown",
     img: "/images/portfolio/FourSeasonsHotel/1.webp",
-    link: "/portfoliodetails/four-season",
+    link: "/US/portfolio/four-season",
   },
   {
     id: "2",
     location: "New York City, New York",
     title: "NYU Theatre",
     img: "/images/portfolio/NYUTheatre/NYUTheatre.jpg",
-    link: "/portfoliodetails/NYUTheatre",
+    link: "/US/portfolio/NYUTheatre",
   },
   {
     id: "3",
     location: "New York City, New York",
     title: "Le Jardin sur Madison",
     img: "/images/portfolio/LeJardin/main-new.jpeg",
-    link: "/portfoliodetails/le-jardin",
+    link: "/US/portfolio/le-jardin",
   },
   {
     id: "4",
     location: "New York City, New York",
     title: "Little Island - Pier 55",
     img: "/images/portfolio/LittleIsland/main.webp",
-    link: "/portfoliodetails/little-island",
+    link: "/US/portfolio/little-island",
   },
   {
     id: "5",
     location: "New York City, New York",
     title: "Day's End - Pier 52",
     img: "/images/portfolio/DaysEnd/DaysEnd.webp",
-    link: "/portfoliodetails/days-end",
+    link: "/US/portfolio/days-end",
   },
   {
     id: "6",
     location: "Cleveland, Ohio",
     title: "Weatherhead School of Management",
     img: "/images/portfolio/WeatherheadSchool/3.webp",
-    link: "/portfoliodetails/WeatherheadSchool",
+    link: "/US/portfolio/WeatherheadSchool",
   },
   {
     id: "7",
     location: "Arlington, Virginia",
     title: "United States Air Force Memorial",
     img: "/images/portfolio/AirForce/main.webp",
-    link: "/portfoliodetails/AirForce",
+    link: "/US/portfolio/AirForce",
   },
   {
     id: "8",
     location: "New York City, New York",
     title: "The New York Times Building",
     img: "/images/portfolio/NewYorkTimes/5.webp",
-    link: "/portfoliodetails/NewYorkTimes",
+    link: "/US/portfolio/NewYorkTimes",
   },
   {
     id: "9",
     location: "New York City, New York",
     title: "The Elevated Acre",
     img: "/images/portfolio/ElevatedAcre/1.webp",
-    link: "/portfoliodetails/ElevatedAcre",
+    link: "/US/portfolio/ElevatedAcre",
   },
   {
     id: "10",
     location: "New York City, New York",
     title: "Goldman Sachs",
     img: "/images/portfolio/GoldmanSachs/main-new.jpg",
-    link: "/portfoliodetails/GoldmanSachs",
+    link: "/US/portfolio/GoldmanSachs",
   },
   {
     id: "11",
     location: "New York City, New York",
     title: "NYU Gym",
     img: "/images/portfolio/NYUGym/2.webp",
-    link: "/portfoliodetails/NYUGym",
+    link: "/US/portfolio/NYUGym",
   },
 ];
 
@@ -88,140 +89,140 @@ const CANADA_SLIDES = [
     location: "Toronto, Ontario",
     title: "TD Terrace",
     img: "/images/portfolio/TDTerrace/1.webp",
-    link: "/portfoliodetails/td-terrace",
+    link: "/canada/portfolio/td-terrace",
   },
   {
     id: "2",
     location: "York Region, Ontario",
     title: "vivaNext BRT Stations",
     img: "/images/portfolio/VivaNextTransitHub/1.webp",
-    link: "/portfoliodetails/viva-next-brt-station",
+    link: "/canada/portfolio/viva-next-brt-station",
   },
   {
     id: "3",
     location: "Toronto, Ontario",
     title: "The Well",
     img: "/images/portfolio/TheWell/1.webp",
-    link: "/portfoliodetails/the-well",
+    link: "/canada/portfolio/the-well",
   },
   {
     id: "4",
     location: "Toronto, Ontario",
     title: "The Luminous Veil",
     img: "/images/portfolio/TheLuminousVeil/TheLuminousVeil.jpg",
-    link: "/portfoliodetails/LuminousVeil",
+    link: "/canada/portfolio/LuminousVeil",
   },
   {
     id: "5",
     location: "Calgary, Alberta",
     title: "The Bow",
     img: "/images/portfolio/TheBow/TheBow.webp",
-    link: "/portfoliodetails/the-bow",
+    link: "/canada/portfolio/the-bow",
   },
   {
     id: "6",
     location: "Toronto, Ontario",
     title: "Garrison Crossing",
     img: "/images/portfolio/GarrisonCrossing/1.webp",
-    link: "/portfoliodetails/garrison-crossing",
+    link: "/canada/portfolio/garrison-crossing",
   },
   {
     id: "7",
     location: "Toronto, Ontario",
     title: "The Spirit Garden",
     img: "/images/portfolio/TheSpiritGarden/1.webp",
-    link: "/portfoliodetails/the-spirit-garden",
+    link: "/canada/portfolio/the-spirit-garden",
   },
   {
     id: "8",
     location: "Toronto, Ontario",
     title: "Glen Road Pedestrian Bridge",
     img: "/images/portfolio/GlenRoadPedestrianBridge/1.webp",
-    link: "/portfoliodetails/glen-road-pedestrian-bridge",
+    link: "/canada/portfolio/glen-road-pedestrian-bridge",
   },
   {
     id: "9",
     location: "Toronto, Ontario",
     title: "7 Dale Condominium",
     img: "/images/portfolio/dalecondominium/1.webp",
-    link: "/portfoliodetails/7-dale-condominium",
+    link: "/canada/portfolio/7-dale-condominium",
   },
   {
     id: "10",
     location: "Toronto, Ontario",
     title: "Art Gallery of Ontario",
     img: "/images/portfolio/ArtGallery/1.jpg",
-    link: "/portfoliodetails/art-galary",
+    link: "/canada/portfolio/art-galary",
   },
   {
     id: "11",
     location: "Toronto, Ontario",
     title: "Rosaline Sharp Pavilion",
     img: "/images/portfolio/RosalieSharp/1.jpg",
-    link: "/portfoliodetails/front-facade",
+    link: "/canada/portfolio/front-facade",
   },
   {
     id: "12",
     location: "Toronto, Ontario",
     title: "University of Toronto",
     img: "/images/portfolio/UniversityToronto/1.jpg",
-    link: "/portfoliodetails/landmark-project",
+    link: "/canada/portfolio/landmark-project",
   },
   {
     id: "13",
     location: "Ottawa, Ontario",
     title: "House of Commons Interim Chamber",
     img: "/images/portfolio/WestBlock/5.jpg",
-    link: "/portfoliodetails/house-of-commons",
+    link: "/canada/portfolio/house-of-commons",
   },
   {
     id: "15",
     location: "Brampton, Ontario",
     title: "Axium Packaging",
     img: "/images/portfolio/AxiumPackaging/1.jpg",
-    link: "/portfoliodetails/axium-packaging",
+    link: "/canada/portfolio/axium-packaging",
   },
   {
     id: "16",
     location: "St. Catharines, Ontario",
     title: "Welland Canal Fallen Workers Memorial",
     img: "/images/portfolio/WellandCanal/1.webp",
-    link: "/portfoliodetails/welland-canal",
+    link: "/canada/portfolio/welland-canal",
   },
   {
     id: "18",
     location: "Toronto, Ontario",
     title: "Garrison Point Staircase",
     img: "/images/portfolio/GarrisonPoint/4.jpg",
-    link: "/portfoliodetails/garrison-point",
+    link: "/canada/portfolio/garrison-point",
   },
   {
     id: "19",
     location: "Toronto, Ontario",
     title: "Ten York Condominium",
     img: "/images/portfolio/TenYork/4.jpg",
-    link: "/portfoliodetails/ten-york",
+    link: "/canada/portfolio/ten-york",
   },
   {
     id: "21",
     location: "Toronto, Ontario",
     title: "50 Wellesley Tree",
     img: "/images/portfolio/50Wellesley/1.jpg",
-    link: "/portfoliodetails/50-wellesley",
+    link: "/canada/portfolio/50-wellesley",
   },
   {
     id: "23",
     location: "Mississauga, Ontario",
     title: "Mississauga Laser Centre",
     img: "/images/portfolio/LaserCentre/1.webp",
-    link: "/portfoliodetails/MississaugaLaserCentre",
+    link: "/canada/portfolio/MississaugaLaserCentre",
   },
   {
     id: "24",
     location: "Toronto, Ontario",
     title: "Toronto Pearson Airport Terminal 1",
     img: "/images/portfolio/TorontoAirport/4.webp",
-    link: "/portfoliodetails/TorontoPearsonAirport",
+    link: "/canada/portfolio/TorontoPearsonAirport",
   },
 ];
 
@@ -275,6 +276,10 @@ export default function Homeslidernew() {
 
   const [imagesPreloaded, setImagesPreloaded] = useState(false);
 
+  const portfolioPath = getRegionPortfolioPath();
+
+  const currentProject = slides[currentSlide];
+  
   useEffect(() => {
     let mounted = true;
 
@@ -459,7 +464,7 @@ export default function Homeslidernew() {
     };
   }, [slides.length]);
 
-  const currentProject = slides[currentSlide];
+
 
   return (
     <div
@@ -571,8 +576,7 @@ export default function Homeslidernew() {
       )}
 
       {/* Canada portfolio button */}
-      <Link
-        to="/C.A.-Portfolio"
+      <Link to={portfolioPath}
         className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-50 text-white border border-white px-5 md:px-8 py-3 uppercase tracking-[0.2em] hover:bg-white hover:text-black transition-all duration-300 font-unageo text-xs md:text-base cursor-pointer whitespace-nowrap"
       >
         View Full Portfolio

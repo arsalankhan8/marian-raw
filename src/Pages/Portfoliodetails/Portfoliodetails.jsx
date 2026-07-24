@@ -4,7 +4,7 @@ import Header from "../../Components/Header/Header";
 import SingleHeading from "../../Components/Headings/Singleheading/SingleHeading";
 import Portfoliolisting from "../../Components/Portfoliolisting/Portfoliolisting";
 import Footers from "../../Components/Footers/Footers";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import imground from "../../assets/round.png";
 import Portfoliodetailslider from "../../Components/Sliders/Portfoliodetailslider/Portfoliodetailslider";
@@ -15,12 +15,21 @@ import { getRegionPortfolioPath } from "../../utils/regionPaths";
 import { filterPortfolioByRegion } from "../../utils/portfolioRegions";
 
 export default function Portfoliodetails() {
+
   const { slug } = useParams();
+  const location = useLocation();
+
+  const currentRegion = location.pathname
+    .toLowerCase()
+    .startsWith("/us")
+    ? "us"
+    : "canada";
+
   const portfolioPath = getRegionPortfolioPath();
 
-  const relatedProjects = filterPortfolioByRegion(portfoliodata).filter(
-    (item) => item.slug !== slug
-  );
+const relatedProjects = portfoliodata.filter(
+  (item) => item.slug !== slug
+);
 
   const project = portfoliodata.find((item) => item.slug === slug);
 
