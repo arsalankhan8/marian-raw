@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import img1 from '../../../assets/sus4.webp'
 import img2 from '../../../assets/sus5.webp'
-import img3 from '../../../assets/sus7.webp'
+import img3 from '../../../assets/sus1.webp'
 
 export default function Lastsection() {
   const ref = useRef(null)

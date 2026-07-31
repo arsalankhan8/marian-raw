@@ -88,7 +88,7 @@ const CANADA_SLIDES = [
     id: "1",
     location: "Toronto, Ontario",
     title: "TD Terrace",
-    img: "/images/portfolio/TDTerrace/1.webp",
+    img: "/images/portfolio/us-portfolio-terrace-images/16-TD-Terrace.webp",
     link: "/canada/portfolio/td-terrace",
   },
   {
@@ -102,14 +102,14 @@ const CANADA_SLIDES = [
     id: "3",
     location: "Toronto, Ontario",
     title: "The Well",
-    img: "/images/portfolio/TheWell/1.webp",
+    img: "/images/portfolio/us-portfolio-the-well-images/11-The-Well.webp",
     link: "/canada/portfolio/the-well",
   },
   {
     id: "4",
     location: "Toronto, Ontario",
     title: "The Luminous Veil",
-    img: "/images/portfolio/TheLuminousVeil/TheLuminousVeil.jpg",
+    img: "/images/portfolio/us-portfolio-luminous-veil-images/02-Luminous-Veil.webp",
     link: "/canada/portfolio/LuminousVeil",
   },
   {
@@ -151,7 +151,7 @@ const CANADA_SLIDES = [
     id: "10",
     location: "Toronto, Ontario",
     title: "Art Gallery of Ontario",
-    img: "/images/portfolio/ArtGallery/1.jpg",
+    img: "/images/portfolio/us-portfolio-art-gallery-of-ontario-images/4-art-gallery-of-ontario.webp",
     link: "/canada/portfolio/art-galary",
   },
   {
@@ -207,14 +207,14 @@ const CANADA_SLIDES = [
     id: "21",
     location: "Toronto, Ontario",
     title: "50 Wellesley Tree",
-    img: "/images/portfolio/50Wellesley/1.jpg",
+    img: "/images/portfolio/us-portfolio-50-well-images/003-50-Wellesley-Tree.webp",
     link: "/canada/portfolio/50-wellesley",
   },
   {
     id: "23",
     location: "Mississauga, Ontario",
     title: "Mississauga Laser Centre",
-    img: "/images/portfolio/LaserCentre/1.webp",
+    img: "/images/portfolio/us-portfolio-mississauga-images/03-mississauga.png",
     link: "/canada/portfolio/MississaugaLaserCentre",
   },
   {

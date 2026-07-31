@@ -19,6 +19,7 @@ export default function Portfoliopage() {
       <Header />
       <MobileHeader />
       <div className="pt-[30px] pb-[70px] ">
+
         {/* Section with entrance animation */}
         <motion.div
           initial={{ opacity: 0, y: 200 }}
@@ -63,6 +64,7 @@ export default function Portfoliopage() {
             }
           />
         </motion.div>
+
         <motion.div
           initial={{ opacity: 0, y: 200 }} // start slightly below + hidden
           whileInView={{ opacity: 1, y: 0 }} // animate upward into place
@@ -72,6 +74,7 @@ export default function Portfoliopage() {
           {/*} <Portfoliopageslider />*/}
           <Portfoliopagesliderv2 />
         </motion.div>
+
       </div>
       <ScrollToTop />
       <Footers />

@@ -93,7 +93,7 @@
     "architect": "Rockwell Group",
     "contractor": "Aecom Tishman",
     "mainimage": "/images/portfolio/LeJardin/main-new.jpeg",
-    "detailimage": "/images/portfolio/Detailslider/LeJardin.webp",
+    "detailimage": "/images/portfolio/LeJardin/main-new.jpeg",
     "images": [
       "/images/portfolio/LeJardin/2.webp",
       "/images/portfolio/LeJardin/3.webp",
@@ -169,8 +169,8 @@
     "location": "Toronto, Ontario",
     "architect": "Hariri Pontarini Architects (Masterplan & Office Tower)",
     "contractor": "EllisDon Construction Services Inc. for the joint venture of RioCan REIT & Allied Properties REIT",
-    "mainimage": "/images/portfolio/TheWell/1.webp",
-    "detailimage": "/images/portfolio/Detailslider/TheWell.webp",
+    "mainimage": "/images/portfolio/us-portfolio-the-well-images/11-The-Well.webp",
+    "detailimage": "/images/portfolio/us-portfolio-the-well-images/11-The-Well.webp",
     "images": [
       "/images/portfolio/us-portfolio-the-well-images/01-The-Well.webp",
       "/images/portfolio/us-portfolio-the-well-images/02-The-Well.webp",
@@ -200,8 +200,8 @@
     "location": "Toronto, Ontario",
     "architect": "Adrian Smith + Gordon Gill Architecture (Design) / B+H Architects (Architect of Record)",
     "contractor": "Cadillac Fairview, PCL Construction",
-    "mainimage": "/images/portfolio/TDTerrace/1.webp",
-    "detailimage": "/images/portfolio/Detailslider/tdterrace.webp",
+    "mainimage": "/images/portfolio/us-portfolio-terrace-images/16-TD-Terrace.webp",
+    "detailimage": "/images/portfolio/us-portfolio-terrace-images/16-TD-Terrace.webp",
     "images": [
       "/images/portfolio/us-portfolio-terrace-images/1-TD-Terrace.webp",
       "/images/portfolio/us-portfolio-terrace-images/2-TD-Terrace.webp",
@@ -283,10 +283,23 @@
     "location": "500 Centre Street S, Calgary, Alberta",
     "architect": "Foster + Partners (Design) / Zeidler Partnership Architects (Architect of Record)",
     "contractor": "Ledcor Construction",
-    "mainimage": "/images/portfolio/TheBow/1.jpg",
-    "detailimage": "/images/portfolio/Detailslider/thebow.webp",
+    "mainimage": "/images/portfolio/us-portfolio-the-bow-images/10-the-bow.webp",
+    "detailimage": "/images/portfolio/us-portfolio-the-bow-images/01-the-bow.webp",
     "images": [
-      "/images/portfolio/TheBow/1.jpg"
+      "/images/portfolio/us-portfolio-the-bow-images/01-the-bow.webp",
+      "/images/portfolio/us-portfolio-the-bow-images/02-the-bow.webp",
+      "/images/portfolio/us-portfolio-the-bow-images/03-the-bow.webp",
+      "/images/portfolio/us-portfolio-the-bow-images/04-the-bow.webp",
+      "/images/portfolio/us-portfolio-the-bow-images/05-the-bow.webp",
+      "/images/portfolio/us-portfolio-the-bow-images/06-the-bow.webp",
+      "/images/portfolio/us-portfolio-the-bow-images/07-the-bow.webp",
+      "/images/portfolio/us-portfolio-the-bow-images/08-the-bow.webp",
+      "/images/portfolio/us-portfolio-the-bow-images/09-the-bow.webp",
+      "/images/portfolio/us-portfolio-the-bow-images/10-the-bow.webp",
+      "/images/portfolio/us-portfolio-the-bow-images/11-the-bow.webp",
+      "/images/portfolio/us-portfolio-the-bow-images/12-the-bow.webp",
+      "/images/portfolio/us-portfolio-the-bow-images/13-the-bow.webp",
+      "/images/portfolio/us-portfolio-the-bow-images/14-the-bow.webp"
     ]
   },
   {
@@ -319,8 +332,8 @@
     "location": "Toronto, Ontario",
     "architect": "Frank Gehry",
     "contractor": "EllisDon",
-    "mainimage": "/images/portfolio/ArtGallery/1.jpg",
-    "detailimage": "/images/portfolio/Detailslider/AGO.webp",
+    "mainimage": "/images/portfolio/us-portfolio-art-gallery-of-ontario-images/4-art-gallery-of-ontario.webp",
+    "detailimage": "/images/portfolio/us-portfolio-art-gallery-of-ontario-images/4-art-gallery-of-ontario.webp",
     "images": [
       "/images/portfolio/us-portfolio-art-gallery-of-ontario-images/1-art-gallery-of-ontario.webp",
       "/images/portfolio/us-portfolio-art-gallery-of-ontario-images/2-art-gallery-of-ontario.webp",
@@ -519,8 +532,8 @@
     "location": "50 Wellesley Street East, Toronto, Ontario",
     "architect": "Quadrangle Architects",
     "contractor": "Plaza Corp",
-    "mainimage": "/images/portfolio/50Wellesley/1.jpg",
-    "detailimage": "/images/portfolio/Detailslider/50Wellesley.webp",
+    "mainimage": "/images/portfolio/us-portfolio-50-well-images/003-50-Wellesley-Tree.webp",
+    "detailimage": "/images/portfolio/us-portfolio-50-well-images/003-50-Wellesley-Tree.webp",
     "images": [
       "/images/portfolio/us-portfolio-50-well-images/001-50-Wellesley-Tree.webp",
       "/images/portfolio/us-portfolio-50-well-images/002-50-Wellesley-Tree.webp",
@@ -650,8 +663,8 @@
     "location": "Mississauga, Ontario",
     "architect": "Hariri Pontarini",
     "contractor": "-",
-    "mainimage": "/images/portfolio/LaserCentre/1.webp",
-    "detailimage": "/images/portfolio/Detailslider/MississaugaLaserCentre.webp",
+    "mainimage": "/images/portfolio/us-portfolio-mississauga-images/03-mississauga.png",
+    "detailimage": "/images/portfolio/us-portfolio-mississauga-images/03-mississauga.png",
     "images": [
       "/images/portfolio/us-portfolio-mississauga-images/01-mississauga.png",
       "/images/portfolio/us-portfolio-mississauga-images/02-mississauga.png",
@@ -687,8 +700,8 @@
     "location": "Toronto, Ontario",
     "architect": "Dereck Revington",
     "contractor": "Halcrow Yolles",
-    "mainimage": "/images/portfolio/TheLuminousVeil/TheLuminousVeil.jpg",
-    "detailimage": "/images/portfolio/Detailslider/LuminousVeil.webp",
+    "mainimage": "/images/portfolio/us-portfolio-luminous-veil-images/02-Luminous-Veil.webp",
+    "detailimage": "/images/portfolio/us-portfolio-luminous-veil-images/02-Luminous-Veil.webp",
     "images": [
       "/images/portfolio/us-portfolio-luminous-veil-images/01-Luminous-Veil.webp",
       "/images/portfolio/us-portfolio-luminous-veil-images/02-Luminous-Veil.webp",
