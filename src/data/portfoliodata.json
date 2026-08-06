@@ -95,15 +95,22 @@
     "mainimage": "/images/portfolio/LeJardin/main-new.jpeg",
     "detailimage": "/images/portfolio/LeJardin/main-new.jpeg",
     "images": [
+      "/images/portfolio/us-portfolio-le-jardin-images/06-le-jardin.webp",
       "/images/portfolio/LeJardin/2.webp",
+      "/images/portfolio/us-portfolio-le-jardin-images/10-le-jardin.webp",
+      "/images/portfolio/us-portfolio-le-jardin-images/13-le-jardin.webp",
+      "/images/portfolio/us-portfolio-le-jardin-images/07-le-jardin.webp",
+      "/images/portfolio/us-portfolio-le-jardin-images/08-le-jardin.webp",
       "/images/portfolio/LeJardin/3.webp",
-      "/images/portfolio/LeJardin/4.webp",
-      "/images/portfolio/LeJardin/5.webp",
-      "/images/portfolio/LeJardin/6.webp",
-      "/images/portfolio/LeJardin/7.webp",
-      "/images/portfolio/LeJardin/8.webp",
-      "/images/portfolio/LeJardin/9.webp",
-      "/images/portfolio/LeJardin/10.webp"
+      "/images/portfolio/us-portfolio-le-jardin-images/01-le-jardin.webp",
+      "/images/portfolio/us-portfolio-le-jardin-images/02-le-jardin.webp",
+      "/images/portfolio/us-portfolio-le-jardin-images/03-le-jardin.webp",
+      "/images/portfolio/us-portfolio-le-jardin-images/04-le-jardin.webp",
+      "/images/portfolio/us-portfolio-le-jardin-images/05-le-jardin.webp",
+      "/images/portfolio/us-portfolio-le-jardin-images/09-le-jardin.webp",
+      "/images/portfolio/us-portfolio-le-jardin-images/11-le-jardin.webp",
+      "/images/portfolio/us-portfolio-le-jardin-images/12-le-jardin.webp",
+      "/images/portfolio/us-portfolio-le-jardin-images/14-le-jardin.webp"
     ]
   },
   {
@@ -270,7 +277,17 @@
       "/images/portfolio/LittleIsland/3.webp",
       "/images/portfolio/LittleIsland/5.webp",
       "/images/portfolio/LittleIsland/6.webp",
-      "/images/portfolio/LittleIsland/8.webp"
+      "/images/portfolio/LittleIsland/8.webp",
+      "/images/portfolio/us-portfolio-little-island-image/01-little-island.webp",
+      "/images/portfolio/us-portfolio-little-island-image/02-little-island.webp",
+      "/images/portfolio/us-portfolio-little-island-image/03-little-island.webp",
+      "/images/portfolio/us-portfolio-little-island-image/04-little-island.webp",
+      "/images/portfolio/us-portfolio-little-island-image/05-little-island.webp",
+      "/images/portfolio/us-portfolio-little-island-image/06-little-island.webp",
+      "/images/portfolio/us-portfolio-little-island-image/07-little-island.webp",
+      "/images/portfolio/us-portfolio-little-island-image/08-little-island.webp",
+      "/images/portfolio/us-portfolio-little-island-image/09-little-island.webp",
+      "/images/portfolio/us-portfolio-little-island-image/10-little-island.webp"
     ]
   },
   {
@@ -755,7 +772,53 @@
       "/images/portfolio/NYUTheatre/NYUTheatre.jpg",
       "/images/portfolio/NYUTheatre/1.webp",
       "/images/portfolio/NYUTheatre/2.webp",
-      "/images/portfolio/NYUTheatre/3.webp"
+      "/images/portfolio/NYUTheatre/3.webp",
+      "/images/portfolio/us-portfolio-nyu-theatre-images/01-nyu-theatre.webp",
+      "/images/portfolio/us-portfolio-nyu-theatre-images/02-nyu-theatre.webp",
+      "/images/portfolio/us-portfolio-nyu-theatre-images/03-nyu-theatre.webp",
+      "/images/portfolio/us-portfolio-nyu-theatre-images/04-nyu-theatre.webp",
+      "/images/portfolio/us-portfolio-nyu-theatre-images/05-nyu-theatre.webp",
+      "/images/portfolio/us-portfolio-nyu-theatre-images/06-nyu-theatre.webp",
+      "/images/portfolio/us-portfolio-nyu-theatre-images/07-nyu-theatre.webp",
+      "/images/portfolio/us-portfolio-nyu-theatre-images/08-nyu-theatre.webp",
+      "/images/portfolio/us-portfolio-nyu-theatre-images/09-nyu-theatre.webp",
+      "/images/portfolio/us-portfolio-nyu-theatre-images/10-nyu-theatre.webp",
+      "/images/portfolio/us-portfolio-nyu-theatre-images/11-nyu-theatre.webp",
+      "/images/portfolio/us-portfolio-nyu-theatre-images/12-nyu-theatre.webp"
+    ]
+  },
+  {
+    "id": "38",
+    "category": "innovation",
+    "slug": "VivaNextCanopies",
+    "img": "/images/blogs/blog1.webp",
+    "title": "VivaNext Canopies",
+    "description": "Mariani Metal proudly contributed to the VivaNext Bus Rapid Transit (BRT) project by fabricating and installing custom architectural canopies along the corridor stretching from Highway 7 & Wigwoss Drive to Highway 7 & Highway 400/Bathurst in Vaughan, Ontario.\n\nDesigned to enhance the commuter experience while complementing the modern transit infrastructure, these canopies required precision fabrication, structural integrity, and a high-quality architectural finish. Working in collaboration with IBI Group (Architect), EllisDon Coco (Contractor), and LEA Consulting (Engineer), our team delivered durable metal solutions that met the project's demanding performance and design standards.\n\nFrom fabrication through installation, Mariani Metal ensured every canopy was built with meticulous attention to detail, contributing to a transit system that is functional, resilient, and visually distinctive.",
+    "location": "Vaughan, Ontario",
+    "architect": "IBI Group",
+    "contractor": "EllisDon Coco",
+    "mainimage": "/images/portfolio/us-portfolio-viva-canopies-images/01-viva-canopies.webp",
+    "detailimage": "/images/portfolio/us-portfolio-viva-canopies-images/01-viva-canopies.webp",
+    "images": [
+      "/images/portfolio/us-portfolio-viva-canopies-images/01-viva-canopies.webp",
+      "/images/portfolio/us-portfolio-viva-canopies-images/02-viva-canopies.webp",
+      "/images/portfolio/us-portfolio-viva-canopies-images/03-viva-canopies.webp",
+      "/images/portfolio/us-portfolio-viva-canopies-images/04-viva-canopies.webp",
+      "/images/portfolio/us-portfolio-viva-canopies-images/05-viva-canopies.webp",
+      "/images/portfolio/us-portfolio-viva-canopies-images/06-viva-canopies.webp",
+      "/images/portfolio/us-portfolio-viva-canopies-images/07-viva-canopies.webp",
+      "/images/portfolio/us-portfolio-viva-canopies-images/08-viva-canopies.webp",
+      "/images/portfolio/us-portfolio-viva-canopies-images/09-viva-canopies.webp",
+      "/images/portfolio/us-portfolio-viva-canopies-images/10-viva-canopies.webp",
+      "/images/portfolio/us-portfolio-viva-canopies-images/11-viva-canopies.webp",
+      "/images/portfolio/us-portfolio-viva-canopies-images/12-viva-canopies.webp",
+      "/images/portfolio/us-portfolio-viva-canopies-images/13-viva-canopies.webp",
+      "/images/portfolio/us-portfolio-viva-canopies-images/14-viva-canopies.webp",
+      "/images/portfolio/us-portfolio-viva-canopies-images/15-viva-canopies.webp",
+      "/images/portfolio/us-portfolio-viva-canopies-images/16-viva-canopies.webp",
+      "/images/portfolio/us-portfolio-viva-canopies-images/17-viva-canopies.webp",
+      "/images/portfolio/us-portfolio-viva-canopies-images/18-viva-canopies.webp",
+      "/images/portfolio/us-portfolio-viva-canopies-images/19-viva-canopies.webp"
     ]
   }
 ]

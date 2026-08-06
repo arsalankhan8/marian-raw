@@ -224,6 +224,13 @@ const CANADA_SLIDES = [
     img: "/images/portfolio/TorontoAirport/4.webp",
     link: "/canada/portfolio/TorontoPearsonAirport",
   },
+  {
+    id: "25",
+    location: "Vaughan, Ontario",
+    title: "VivaNext Canopies",
+    img: "/images/portfolio/us-portfolio-viva-canopies-images/01-viva-canopies.webp",
+    link: "/canada/portfolio/VivaNextCanopies",
+  },
 ];
 
 const interleaveSlides = (usSlides, canadaSlides) => {
@@ -279,7 +286,7 @@ export default function Homeslidernew() {
   const portfolioPath = getRegionPortfolioPath();
 
   const currentProject = slides[currentSlide];
-  
+
   useEffect(() => {
     let mounted = true;
 
