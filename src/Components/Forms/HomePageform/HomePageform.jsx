@@ -30,9 +30,9 @@ export default function HomePageform({
   `;
 
   return (
-    <div className="p-5 md:p-10 rounded-xl md:max-w-[70vw] mx-auto">
+    <div className="relative z-10 mx-auto w-full max-w-[1344px] px-5 py-6 md:px-10 md:py-8">
       <form>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-32 gap-y-8 text-[12px] md:text-[14px] lg:text-[15px] 3xl:text-[24px]">
+        <div className="grid grid-cols-1 gap-y-8 text-[12px] md:grid-cols-2 md:gap-x-12 md:text-[14px] lg:gap-x-20 lg:text-[15px] xl:gap-x-32 3xl:text-[24px]">
           {/* Full Name */}
           <div className="flex flex-col">
             <label
@@ -106,7 +106,7 @@ export default function HomePageform({
         </div>
 
         <div className="mt-8 flex flex-col md:flex-row items-start justify-between gap-6">
-          <label className="flex items-start gap-3 cursor-pointer md:max-w-[75%]">
+          <label className="flex items-start gap-3 cursor-pointer md:max-w-[35%]">
             <input
               type="checkbox"
               name="smsConsent"
