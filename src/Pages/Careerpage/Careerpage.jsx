@@ -10,6 +10,11 @@ import MobileFooters from "../../Components/Footers/MobileFooters";
 import ScrollToTop from "../../Components/ScrollToTop/ScrollTop";
 
 import { CAREER_AREAS, JOBS_BY_REGION } from "./careersData";
+import TurnstileWidget from "./TurnstileWidget";
+import {
+    resetTurnstileWidget,
+    turnstileSiteKey,
+} from "./turnstile";
 
 const TEAM_DEFINITIONS = [
     {
@@ -312,7 +317,7 @@ export default function Careerpage() {
             return;
         }
 
-        const allowedExtensions = ["pdf", "doc", "docx"];
+        const allowedExtensions = ["pdf", "docx"];
         const fileExtension = resume.name
             .split(".")
             .pop()
@@ -324,7 +329,22 @@ export default function Careerpage() {
         ) {
             setFormStatus({
                 type: "error",
-                message: "Please upload a PDF, DOC, or DOCX file.",
+                message: "Please upload a PDF or DOCX file.",
+            });
+
+            return;
+        }
+
+        const turnstileToken = formData.get("cf-turnstile-response");
+
+        if (
+            !turnstileSiteKey ||
+            typeof turnstileToken !== "string" ||
+            turnstileToken.trim() === ""
+        ) {
+            setFormStatus({
+                type: "error",
+                message: "Please complete the security verification.",
             });
 
             return;
@@ -361,6 +381,7 @@ export default function Careerpage() {
             }
 
             form.reset();
+            resetTurnstileWidget(form);
             setSelectedResumeName("");
 
             setFormStatus({
@@ -989,7 +1010,7 @@ export default function Careerpage() {
                                         </span>
 
                                         <span className="mt-1 text-[12px] text-[#727A7E]">
-                                            PDF, DOC or DOCX. Maximum 10
+                                            PDF or DOCX. Maximum 10
                                             MB.
                                         </span>
                                     </label>
@@ -999,7 +1020,7 @@ export default function Careerpage() {
                                         name="resume"
                                         type="file"
                                         required
-                                        accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                                        accept=".pdf,.docx,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
                                         onChange={(event) =>
                                             setSelectedResumeName(
                                                 event.target.files?.[0]
@@ -1072,10 +1093,14 @@ export default function Careerpage() {
                                     />
                                 </div>
 
+                                <div className="mt-6">
+                                    <TurnstileWidget />
+                                </div>
+
                                 <div className="mt-7">
                                     <button
                                         type="submit"
-                                        disabled={isSubmitting}
+                                        disabled={isSubmitting || !turnstileSiteKey}
                                         className="group inline-flex w-full cursor-pointer items-center justify-center gap-3 rounded-full bg-[#00688F] px-7 py-4 text-[14px] font-semibold text-white transition-colors duration-300 hover:bg-[#005472] disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
                                     >
                                         {isSubmitting

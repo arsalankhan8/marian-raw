@@ -51,6 +51,7 @@ export default function MobileHeader() {
   const contactPath =
     getRegionPagePath("contact");
 
+  // eslint-disable-next-line no-unused-vars -- Kept for restoring the commented Careers link.
   const careersPath =
     getRegionPagePath("careers");
 
@@ -511,6 +512,7 @@ export default function MobileHeader() {
                 </span>
               </Link>
 
+              {/* Temporarily hidden. Uncomment this block to restore Careers.
               <Link
                 to={careersPath}
                 onClick={closeMenu}
@@ -523,6 +525,7 @@ export default function MobileHeader() {
                   Careers
                 </span>
               </Link>
+              */}
 
               <Link
                 to={contactPath}

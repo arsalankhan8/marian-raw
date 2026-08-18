@@ -31,6 +31,7 @@ export default function Header() {
 
   const aboutPath = getRegionPagePath("about");
 
+  // eslint-disable-next-line no-unused-vars -- Kept for restoring the commented Careers link.
   const careersPath =
     getRegionPagePath("careers");
 
@@ -175,11 +176,13 @@ export default function Header() {
               </span>
             </Link>
 
+            {/* Temporarily hidden. Uncomment this block to restore Careers.
             <Link to={careersPath}>
               <span className={isActive(careersPath)}>
                 Careers
               </span>
             </Link>
+            */}
 
             <Link to={contactPath}>
               <span className={isActive(contactPath)}>

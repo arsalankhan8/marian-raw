@@ -90,7 +90,7 @@ const REGION_CONTACT = {
       "ON M9W 5Y8",
     ],
     phone: "(416) 798-2969",
-    email: "info@mariani.com",
+    email: "info@marianimetal.com",
   },
 
   [REGIONS.US]: {
@@ -99,7 +99,7 @@ const REGION_CONTACT = {
       "Washington, NJ 07882",
     ],
     phone: "(416) 798-2969",
-    email: "info@mariani.com",
+    email: "info@marianimetal.com",
   },
 };
 

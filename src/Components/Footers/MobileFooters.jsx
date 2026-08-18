@@ -156,10 +156,10 @@ export default function MobileFooters() {
                 </span>
 
                 <a
-                  href="mailto:info@mariani.com"
+                  href="mailto:info@marianimetal.com"
                   className="mt-1 block break-words font-unageo text-[14px] leading-5 text-[#22282B] transition-colors duration-300 hover:text-[#00688F]"
                 >
-                  info@mariani.com
+                  info@marianimetal.com
                 </a>
               </div>
 

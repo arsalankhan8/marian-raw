@@ -1,3 +1,15 @@
-<Files "mail-config.php">
+Options -Indexes
+LimitRequestBody 11534336
+
+<FilesMatch "^(mail-config(?:\.example)?\.php|PHPMailer\.zip)$">
     Require all denied
-</Files>
+</FilesMatch>
+
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "DENY"
+    Header always set Referrer-Policy "no-referrer"
+    Header always set Cross-Origin-Resource-Policy "same-origin"
+    Header always set X-Permitted-Cross-Domain-Policies "none"
+    Header always set Content-Security-Policy "default-src 'none'; frame-ancestors 'none'"
+</IfModule>

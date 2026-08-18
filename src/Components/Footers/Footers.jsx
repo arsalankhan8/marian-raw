@@ -175,10 +175,10 @@ export default function Footers() {
                 </span>
 
                 <a
-                  href="mailto:info@mariani.com"
+                  href="mailto:info@marianimetal.com"
                   className="mt-1 block font-unageo text-[15px] text-[#252B2E] transition-colors duration-300 hover:text-[#00688F]"
                 >
-                  info@mariani.com
+                  info@marianimetal.com
                 </a>
               </div>
 
