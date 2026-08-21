@@ -18,13 +18,14 @@ export default function Homepage() {
       <HeaderSticky />
       <MobileHeader />
 
-      <Herosection1 />
-      <Stepsectionnew />
-      <FlipCard />
-      <ExpertiseSection />
-      <Herosection2 />
-
-      <Contactsection region="canada" />
+      <main id="main-content" tabIndex={-1}>
+        <Herosection1 />
+        <Stepsectionnew />
+        <FlipCard />
+        <ExpertiseSection />
+        <Herosection2 />
+        <Contactsection region="canada" />
+      </main>
 
       <Footers />
       <MobileFooters />

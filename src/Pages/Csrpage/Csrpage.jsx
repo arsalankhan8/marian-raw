@@ -26,6 +26,7 @@ export default function Csrpage({ region = "canada" }) {
       <Header />
       <MobileHeader />
 
+      <main id="main-content" tabIndex={-1}>
       <div className="max-w-[90vw] w-full mx-auto">
         {/* Page heading and banner */}
         <motion.div
@@ -36,6 +37,7 @@ export default function Csrpage({ region = "canada" }) {
           className="pt-[30px] md:pt-[40px] 2xl:pt-[40px] 3xl:pt-[70px]"
         >
           <SingleHeading
+            as="h1"
             heading="CSR & Sustainability"
             headingcss="text-center md:text-right"
             divcss="justify-center"
@@ -68,7 +70,7 @@ export default function Csrpage({ region = "canada" }) {
         </motion.div>
 
         {/* Education section */}
-        <div className="flex justify-center gap-2 md:justify-start pt-[60px] pb-[20px]">
+        <h2 className="flex justify-center gap-2 md:justify-start pt-[60px] pb-[20px]">
           <span className="font-unageo-bold text-[20px] lg:text-[30px] xl:text-[45px] 2xl:text-[55px] 3xl:text-[111px] text-[#00688F]">
             Education &amp;
           </span>
@@ -76,7 +78,7 @@ export default function Csrpage({ region = "canada" }) {
           <span className="font-unageo-bold text-[20px] lg:text-[30px] xl:text-[45px] 2xl:text-[55px] 3xl:text-[111px] text-[#00688F]">
             Scholarship
           </span>
-        </div>
+        </h2>
 
         <motion.div
           initial={{ opacity: 0, y: 200 }}
@@ -93,9 +95,9 @@ export default function Csrpage({ region = "canada" }) {
         {!isUS && (
           <>
             <div className="flex justify-center md:justify-start pt-[60px] pb-[20px]">
-              <span className="font-unageo-bold text-[20px] lg:text-[30px] xl:text-[45px] 2xl:text-[55px] 3xl:text-[111px] text-[#00688F]">
+              <h2 className="font-unageo-bold text-[20px] lg:text-[30px] xl:text-[45px] 2xl:text-[55px] 3xl:text-[111px] text-[#00688F]">
                 Community Engagement
-              </span>
+              </h2>
             </div>
 
             <motion.div
@@ -139,6 +141,7 @@ export default function Csrpage({ region = "canada" }) {
 
         <div className="h-[800px]" />
       </div>
+      </main>
 
       <ScrollToTop />
       <Footers />

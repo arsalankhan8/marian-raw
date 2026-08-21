@@ -427,7 +427,7 @@ export default function Careerpage() {
             <HeaderSticky />
             <MobileHeader />
 
-            <main>
+            <main id="main-content" tabIndex={-1}>
                 {/* Hero */}
                 <section className="relative flex min-h-[500px] items-end overflow-hidden bg-black lg:min-h-[550px]">
                     <img

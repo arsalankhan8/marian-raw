@@ -356,7 +356,9 @@ export default function Referencepage() {
     <div>
       <Header />
       <MobileHeader />
-      <motion.div
+      <motion.main
+        id="main-content"
+        tabIndex={-1}
         initial={{ opacity: 0, y: 200 }} // start slightly below + hidden
         whileInView={{ opacity: 1, y: 0 }} // animate upward into place
         transition={{ duration: 1, ease: "easeOut" }}
@@ -364,14 +366,14 @@ export default function Referencepage() {
       >
         <div className="flex flex-col gap-10 max-w-[90vw] w-full mx-auto mt-[60px]">
           {/* Section Titles */}
-          <div className="text-center md:text-left">
-            <p className="font-unageo-semibold text-[20px] lg:text-[30px] xl:text-[45px] 2xl:text-[55px] 3xl:text-[111px] leading-[132%] capitalize mb-2">
+          <h1 className="text-center md:text-left">
+            <span className="block font-unageo-semibold text-[20px] lg:text-[30px] xl:text-[45px] 2xl:text-[55px] 3xl:text-[111px] leading-[132%] capitalize mb-2">
               Made by Mariani
-            </p>
-            <p className="font-unageo-semibold text-[#00688F] text-center md:text-left text-[20px] lg:text-[30px] xl:text-[45px] 2xl:text-[55px] 3xl:text-[111px] capitalize leading-[132%]">
+            </span>
+            <span className="block font-unageo-semibold text-[#00688F] text-center md:text-left text-[20px] lg:text-[30px] xl:text-[45px] 2xl:text-[55px] 3xl:text-[111px] capitalize leading-[132%]">
               Less Ordinary, More Monumental
-            </p>
-          </div>
+            </span>
+          </h1>
 
           {/* Highlights / Reference Navigation */}
           <div className="flex justify-center md:justify-start gap-10 mt-6">
@@ -405,9 +407,9 @@ export default function Referencepage() {
           <div className="flex flex-col gap-10 mt-10">
             {activeTab === "Country" && (
               <div className="flex flex-col gap-16">
-                <h3 className="text-[#00688F] text-[20px] lg:text-[30px] xl:text-[45px] 2xl:text-[55px] 3xl:text-[111px] font-unageo-semibold capitalize leading-[132%]">
+                <h2 className="text-[#00688F] text-[20px] lg:text-[30px] xl:text-[45px] 2xl:text-[55px] 3xl:text-[111px] font-unageo-semibold capitalize leading-[132%]">
                   {selectedCountry}
-                </h3>
+                </h2>
                 <div className="flex flex-col gap-12">
                   {Object.entries(
                     filteredProjects.reduce((acc, curr) => {
@@ -453,7 +455,7 @@ export default function Referencepage() {
             )}
           </div>
         </div>
-      </motion.div>
+      </motion.main>
 
 
       {/*}           <div className="flex flex-col gap-6 max-w-[90vw] w-full mx-auto mt-[70px]">

@@ -69,9 +69,9 @@ export default function Industrylist() {
     <div className="bg-[#00688F] py-[70px]">
       <div className="flex max-w-[90vw] w-full mx-auto justify-center">
         <div className="w-full">
-          <p className="font-counture text-[20px] lg:text-[30px] xl:text-[45px] 2xl:text-[55px] 3xl:text-[111px] text-center w-full leading-[100%] text-white">
+          <h2 className="font-counture text-[20px] lg:text-[30px] xl:text-[45px] 2xl:text-[55px] 3xl:text-[111px] text-center w-full leading-[100%] text-white">
             Industry Certifications
-          </p>
+          </h2>
         </div>
       </div>
       <div className="mt-[60px] md:mt-[60px] lg:mt-[70px] 2xl:mt-[120px] overflow-hidden">

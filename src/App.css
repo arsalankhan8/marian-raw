@@ -4,6 +4,15 @@
   color: black;
 }
 
+.skip-link {
+  transform: translateY(calc(-100% - 1rem));
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+  transform: translateY(0);
+}
+
 @keyframes pulseBorder {
   0%, 100% {
     transform: scale(1);

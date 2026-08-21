@@ -12,9 +12,9 @@ export default function Newslatest({ img, title, description, slug }) {
           />
         </div>
         <div className="flex flex-col gap-2 justify-between">
-          <p className="font-unageo-bold leading-[94%] text-[14px] md:text-[16px] lg:text-[18px] xl:text-[23px] 3xl:text-[31px] capitalize">
+          <h4 className="font-unageo-bold leading-[94%] text-[14px] md:text-[16px] lg:text-[18px] xl:text-[23px] 3xl:text-[31px] capitalize">
             {title}
-          </p>
+          </h4>
           <p className="font-unageo text-[12px] lg:text-[14px] 3xl:text-[17px] leading-[132%] capitalize">
             {description}
           </p>

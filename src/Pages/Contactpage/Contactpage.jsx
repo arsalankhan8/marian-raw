@@ -77,13 +77,14 @@ export default function Contactpage() {
       <Header />
       <MobileHeader />
 
+      <main id="main-content" tabIndex={-1}>
       <div className="max-w-[90vw] w-full mx-auto pt-[30px] md:pt-[40px] 2xl:pt-[40px] 3xl:pt-[70px]">
         <div className="flex flex-wrap md:flex-nowrap gap-6">
           {/* Heading */}
           <div className="flex justify-center md:justify-start w-full md:w-[50%]">
-            <p className="font-unageo-bold text-[#00688F] text-[24px] md:text-[32px] lg:text-[38px] xl:text-[44px] 2xl:text-[52px] 3xl:text-[60px] leading-[100%]">
+            <h1 className="font-unageo-bold text-[#00688F] text-[24px] md:text-[32px] lg:text-[38px] xl:text-[44px] 2xl:text-[52px] 3xl:text-[60px] leading-[100%]">
               CONTACT US
-            </p>
+            </h1>
           </div>
 
           {/* Contact information */}
@@ -169,9 +170,9 @@ export default function Contactpage() {
         }}
       >
         <div className="max-w-[90vw] w-full mx-auto text-white">
-          <p className="font-counture text-[20px] lg:text-[30px] xl:text-[45px] 2xl:text-[55px] 3xl:text-[111px] uppercase leading-[100%]">
+          <h2 className="font-counture text-[20px] lg:text-[30px] xl:text-[45px] 2xl:text-[55px] 3xl:text-[111px] uppercase leading-[100%]">
             Speak with Us
-          </p>
+          </h2>
 
           <p className="font-unageo-semibold text-[14px] md:text-[24px] lg:text-[18px] xl:text-[25px] 2xl:text-[28px] 3xl:text-[66px] capitalize">
             Witness Your Vision Find Form
@@ -198,6 +199,7 @@ export default function Contactpage() {
           </div>
         </div>
       </motion.div>
+      </main>
 
       <ScrollToTop />
       <Footers />

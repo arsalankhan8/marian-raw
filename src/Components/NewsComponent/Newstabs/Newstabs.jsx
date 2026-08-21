@@ -58,9 +58,9 @@ export default function Newstabs({ blogdata }) {
           >
             {filteredBlogs.map((value, index) => (
               <div className="flex flex-col gap-2" key={index}>
-                <p className="font-unageo-bold text-[16px] md:text-[18px] lg:text-[21px] capitalize leading-[94%] 3xl:text-[31px]">
+                <h4 className="font-unageo-bold text-[16px] md:text-[18px] lg:text-[21px] capitalize leading-[94%] 3xl:text-[31px]">
                   {value.title}
-                </p>
+                </h4>
                 <p className="font-unageo text-[12px] capitalize 3xl:text-[17px]">
                   {value.description}
                 </p>

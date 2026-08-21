@@ -19,6 +19,7 @@ export default function Awardspage() {
       <Header />
       <MobileHeader />
 
+      <main id="main-content" tabIndex={-1}>
       <motion.div
         initial={{ opacity: 0, y: 200 }} // start slightly below + hidden
         whileInView={{ opacity: 1, y: 0 }} // animate upward into place
@@ -37,6 +38,7 @@ export default function Awardspage() {
         className="pt-[40px] md:pt-[0px]"
       >
         <SingleHeading
+          as="h1"
           heading="Awards & Recognitions"
           headingcss="text-center mt-[20px]"
           divcss="justify-center"
@@ -61,6 +63,7 @@ export default function Awardspage() {
       >
         <Professionalsection />
       </motion.div>
+      </main>
       <ScrollToTop/>
       <Footers />
       <MobileFooters />

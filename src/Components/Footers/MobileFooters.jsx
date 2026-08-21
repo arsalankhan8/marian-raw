@@ -22,9 +22,6 @@ export default function MobileFooters() {
   const newsPath =
     getRegionPagePath("news");
 
-  const careersPath =
-    getRegionPagePath("careers");
-
   const contactPath =
     getRegionPagePath("contact");
 
@@ -58,10 +55,6 @@ export default function MobileFooters() {
     {
       label: "News",
       path: newsPath,
-    },
-    {
-      label: "Careers",
-      path: careersPath,
     },
     {
       label: "Contact Us",

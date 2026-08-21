@@ -201,6 +201,7 @@ const ExpertiseCard = ({ item }) => {
       {/* Default title state */}
 
       <div
+        aria-hidden={isActive}
         className={`absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/80 via-black/20 to-transparent p-6 transition-opacity duration-500 ${
           isActive ? "opacity-0" : "opacity-100"
         }`}
@@ -213,6 +214,7 @@ const ExpertiseCard = ({ item }) => {
       {/* Active overlay state */}
 
       <div
+        aria-hidden={!isActive}
         className={`absolute inset-0 flex flex-col items-center justify-center bg-[#00688F]/90 p-6 text-center transition-all duration-500 ${
           isActive
             ? "pointer-events-auto opacity-100"
@@ -273,7 +275,7 @@ const ExpertiseSection = () => {
       {/* Section heading */}
 
       <div className="flex w-full max-w-4xl flex-col items-center gap-4 pb-12 text-center md:pb-16">
-        <motion.h1
+        <motion.h2
           initial={{
             opacity: 0,
             y: 30,
@@ -292,9 +294,9 @@ const ExpertiseSection = () => {
           className="font-counture text-[20px] uppercase leading-[84%] text-[#00688F] lg:text-[30px] xl:text-[45px] 2xl:text-[55px] 3xl:text-[111px]"
         >
           Sectors We Build For
-        </motion.h1>
+        </motion.h2>
 
-        <motion.h2
+        <motion.p
           initial={{
             opacity: 0,
             y: 20,
@@ -315,7 +317,7 @@ const ExpertiseSection = () => {
         >
           Supporting public and private infrastructure across multiple
           industries.
-        </motion.h2>
+        </motion.p>
       </div>
 
       {/* Region-based carousel */}

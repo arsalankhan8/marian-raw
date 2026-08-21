@@ -10,7 +10,7 @@ export default function Herosection3() {
       <div className="flex flex-col pb-[40px] md:w-[100%] lg:w-[100%] gap-2 items-center">
         
         {/* H1: Precision in Practice */}
-        <motion.h1
+        <motion.h2
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
@@ -18,10 +18,10 @@ export default function Herosection3() {
           className="text-[20px] lg:text-[30px] xl:text-[45px] 2xl:text-[55px] 3xl:text-[111px] text-[#00688F] font-counture text-center md:text-left leading-[84%] uppercase"
         >
           Precision in Practice
-        </motion.h1>
+        </motion.h2>
 
         {/* H2: Featured Projects */}
-        <motion.h2
+        <motion.p
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
@@ -29,7 +29,7 @@ export default function Herosection3() {
           className="text-[14px] md:text-[24px] lg:text-[18px] xl:text-[25px]  2xl:text-[28px] 3xl:text-[66px] text-[#00688F] font-unageo-medium capitalize text-center md:text-left"
         >
           Featured Projects
-        </motion.h2>
+        </motion.p>
 
         {/* Sub-heading / Body Text */}
         <motion.div

@@ -12,7 +12,7 @@ export default function Newslist({slug, img, title, description, link}) {
         </div>
 
         <div className='flex flex-col pl-[25px] pr-[15px] gap-4 '>
-          <p className='font-unageo-bold text-[16px] md:text-[22px] 3xl:text-[31px] capitalize leading-[94%]'>{title}</p>
+          <h3 className='font-unageo-bold text-[16px] md:text-[22px] 3xl:text-[31px] capitalize leading-[94%]'>{title}</h3>
           <p className='font-unageo text-[13px] 3xl:text-[17px] capitalize leading-[132%]'>{description}</p>
           <button className='font-unageo-bold text-[16px] md:text-[17px] 3xl:text-[21px] capitalize underline w-fit'>Read More</button>
         </div>

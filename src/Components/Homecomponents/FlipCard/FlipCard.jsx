@@ -89,7 +89,7 @@ const FlipCard = () => {
 
       {/* HEADING SECTION */}
       <div className="flex flex-col pb-[60px] w-full md:w-[75%] lg:w-[65%] gap-2 items-center text-center">
-        <motion.h1
+        <motion.h2
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
@@ -97,9 +97,9 @@ const FlipCard = () => {
           className="text-[20px] lg:text-[30px] xl:text-[45px] 2xl:text-[55px] 3xl:text-[111px] text-[#00688F] font-counture text-center md:text-left leading-[84%] uppercase"
         >
           CORE EXPERTISE
-        </motion.h1>
+        </motion.h2>
 
-        <motion.h2
+        <motion.p
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
@@ -107,7 +107,7 @@ const FlipCard = () => {
           className="text-[14px] md:text-[24px] lg:text-[18px] xl:text-[25px] 2xl:text-[28px] 3xl:text-[66px] text-[#00688F] font-unageo-medium capitalize text-center"
         >
           Engineered systems built for performance, longevity, and architectural integrity.
-        </motion.h2>
+        </motion.p>
       </div>
 
       {/* CARDS GRID */}
@@ -139,7 +139,7 @@ const FlipCard = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
                   </div>
                   <div className="relative z-10 p-8 text-white font-counture">
-                    <h4 className="text-xl md:text-2xl font-counture mb-3 uppercase tracking-tight">{card.heading}</h4>
+                    <h3 className="text-xl md:text-2xl font-counture mb-3 uppercase tracking-tight">{card.heading}</h3>
                     <p className="text-sm font-unageo-medium text-slate-300 italic leading-4.5">{card.bodyCopy}</p>
                     <div className="mt-5 h-1.5 w-16 bg-[#00688F]" />
                   </div>

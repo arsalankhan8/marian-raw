@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import portfoliodata from "../../data/portfoliodata.json";
 import Header from "../../Components/Header/Header";
 import SingleHeading from "../../Components/Headings/Singleheading/SingleHeading";
@@ -33,15 +33,22 @@ const relatedProjects = portfoliodata.filter(
 
   const project = portfoliodata.find((item) => item.slug === slug);
 
+  useEffect(() => {
+    const regionName = currentRegion === "us" ? "United States" : "Canada";
+    document.title = project
+      ? `${project.title} | Mariani Metal ${regionName}`
+      : "Project Not Found | Mariani Metal";
+  }, [currentRegion, project]);
+
   if (!project) {
     return (
       <div>
         <Header />
         <MobileHeader />
 
-        <div className="max-w-[90vw] w-full mx-auto py-20 text-center">
-          <h2 className="text-2xl font-bold">Project not found</h2>
-        </div>
+        <main id="main-content" tabIndex={-1} className="max-w-[90vw] w-full mx-auto py-20 text-center">
+          <h1 className="text-2xl font-bold">Project not found</h1>
+        </main>
 
         <Footers />
         <MobileFooters />
@@ -56,6 +63,8 @@ const relatedProjects = portfoliodata.filter(
 
       {/* Portfolio Details */}
       <motion.main
+        id="main-content"
+        tabIndex={-1}
         initial={{ opacity: 0, y: 200 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: "easeOut" }}
@@ -63,6 +72,7 @@ const relatedProjects = portfoliodata.filter(
         className="relative max-w-[90vw] w-full mx-auto mt-[70px]"
       >
         <SingleHeading
+          as="h1"
           heading={project.title}
           headingcss="text-left leading-[100%] mb-[20px]"
           divcss="w-[80%]"

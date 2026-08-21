@@ -17,12 +17,14 @@ const USHomepage = () => {
     <div>
       <HeaderSticky />
       <MobileHeader />
-      <USHerosection1 />
-      <Stepsectionnew />
-      <FlipCard />
-      <ExpertiseSection />
-      <Herosection3 />
-      <Contactsection region="us" />
+      <main id="main-content" tabIndex={-1}>
+        <USHerosection1 />
+        <Stepsectionnew />
+        <FlipCard />
+        <ExpertiseSection />
+        <Herosection3 />
+        <Contactsection region="us" />
+      </main>
       <Footers />
       <MobileFooters />
       <ScrollToTop />

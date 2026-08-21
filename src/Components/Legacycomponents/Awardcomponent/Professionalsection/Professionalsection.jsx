@@ -5,17 +5,17 @@ export default function Professionalsection() {
     <div>
       <div className="flex flex-col max-w-[90vw] w-full mx-auto justify-between">
         <div className="flex justify-between flex-wrap pt-[70px] pb-[50px]">
-          <p className="font-counture text-[20px] lg:text-[30px] xl:text-[45px] 2xl:text-[55px] 3xl:text-[111px] text-center md:text-left w-full  md:w-[70%] leading-[100%] text-[#00688F]">
+          <h2 className="font-counture text-[20px] lg:text-[30px] xl:text-[45px] 2xl:text-[55px] 3xl:text-[111px] text-center md:text-left w-full  md:w-[70%] leading-[100%] text-[#00688F]">
             Professional Affiliations
-          </p>
+          </h2>
         </div>
 
         <div className="flex flex-col gap-4 md:gap-4 lg:gap-6 xl:gap-7 2xl:gap-8">
           <div className="flex flex-col gap-6 md:w-[70%] pb-[25px] border-b-[1px] border-b-black">
             <div className="flex flex-col w-full gap-4">
-              <p className="text-[16px] md:text-[20px] lg:text-[21px] xl:text-[24px] 2xl:text-[27px] 3xl:text-[46px] font-unageo-bold leading-[112%] capitalize">
+              <h3 className="text-[16px] md:text-[20px] lg:text-[21px] xl:text-[24px] 2xl:text-[27px] 3xl:text-[46px] font-unageo-bold leading-[112%] capitalize">
                 Canadian Institute of Steel Construction (CISC)
-              </p>
+              </h3>
               <p className="font-unageo text-[13px] md:text-[14px] lg:text-[15px] xl:text-[18px] 2xl:text-[19px] 3xl:text-[36px] leading-[112%] capitalize">
                 Member of Canada’s leading structural steel association,
                 contributing to the development of industry standards and
@@ -26,9 +26,9 @@ export default function Professionalsection() {
 
           <div className="flex flex-col gap-6 md:w-[70%] pb-[25px] border-b-[1px] border-b-black">
             <div className="flex flex-col w-full gap-4">
-              <p className="text-[16px] md:text-[20px] lg:text-[21px] xl:text-[24px] 2xl:text-[27px] 3xl:text-[46px] font-unageo-bold leading-[112%] capitalize">
+              <h3 className="text-[16px] md:text-[20px] lg:text-[21px] xl:text-[24px] 2xl:text-[27px] 3xl:text-[46px] font-unageo-bold leading-[112%] capitalize">
                 Ontario Glass & Metal Association (OGMA)
-              </p>
+              </h3>
               <p className="font-unageo text-[13px] md:text-[14px] lg:text-[15px] xl:text-[18px] 2xl:text-[19px] 3xl:text-[36px] leading-[112%] capitalize">
                 Affiliated with Ontario’s network of architectural glass and
                 metal professionals, strengthening knowledge in façades and
@@ -38,9 +38,9 @@ export default function Professionalsection() {
           </div>
           <div className="flex flex-col gap-6 md:w-[70%] pb-[25px] border-b-[1px] border-b-black">
             <div className="flex flex-col w-full gap-4">
-              <p className="text-[16px] md:text-[20px] lg:text-[21px] xl:text-[24px] 2xl:text-[27px] 3xl:text-[46px] font-unageo-bold leading-[112%] capitalize">
+              <h3 className="text-[16px] md:text-[20px] lg:text-[21px] xl:text-[24px] 2xl:text-[27px] 3xl:text-[46px] font-unageo-bold leading-[112%] capitalize">
                 Toronto Construction Association (TCA)
-              </p>
+              </h3>
               <p className="font-unageo text-[13px] md:text-[14px] lg:text-[15px] xl:text-[18px] 2xl:text-[19px] 3xl:text-[36px] leading-[112%] capitalize">
                 Member of Toronto’s largest construction community, fostering
                 collaboration across disciplines and sectors.
@@ -49,9 +49,9 @@ export default function Professionalsection() {
           </div>
           <div className="flex flex-col gap-6 md:w-[70%] pb-[15px] ">
             <div className="flex flex-col w-full gap-4">
-              <p className="text-[16px] md:text-[20px] lg:text-[21px] xl:text-[24px] 2xl:text-[27px] 3xl:text-[46px] font-unageo-bold leading-[112%] capitalize">
+              <h3 className="text-[16px] md:text-[20px] lg:text-[21px] xl:text-[24px] 2xl:text-[27px] 3xl:text-[46px] font-unageo-bold leading-[112%] capitalize">
                 Canadian Welding Bureau (CWB)
-              </p>
+              </h3>
               <p className="font-unageo text-[13px] md:text-[14px] lg:text-[15px] xl:text-[18px] 2xl:text-[19px] 3xl:text-[36px] leading-[112%] capitalize">
                 Active participant in Canada’s national certification body,
                 reinforcing credibility and professional standing in

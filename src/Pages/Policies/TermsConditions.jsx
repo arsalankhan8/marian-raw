@@ -10,7 +10,7 @@ export default function TermsConditions() {
     <>
       <Header />
       <MobileHeader />
-      <div className="max-w-[90vw] w-full mx-auto pt-[80px] md:pt-[130px] pb-[100px] min-h-[60vh]">
+      <main id="main-content" tabIndex={-1} className="max-w-[90vw] w-full mx-auto pt-[80px] md:pt-[130px] pb-[100px] min-h-[60vh]">
         <h1 className="font-counture text-[#00688F] text-[20px] lg:text-[30px] xl:text-[45px] 2xl:text-[55px] 3xl:text-[111px] mb-8">
           Terms and Conditions
         </h1>
@@ -117,7 +117,7 @@ export default function TermsConditions() {
             </p>
           </section>
         </div>
-      </div>
+      </main>
       <ScrollToTop/>
       <Footers />
       <MobileFooters />

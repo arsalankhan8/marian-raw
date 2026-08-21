@@ -19,7 +19,7 @@ export default function USPortfoliopage() {
     <div>
       <Header />
       <MobileHeader />
-      <div className="pt-[30px] pb-[70px]">
+      <main id="main-content" tabIndex={-1} className="pt-[30px] pb-[70px]">
         {/* Section with entrance animation */}
         <motion.div
           initial={{ opacity: 0, y: 200 }} // start slightly below + hidden
@@ -27,7 +27,7 @@ export default function USPortfoliopage() {
           transition={{ duration: 1, ease: "easeOut" }}
           viewport={{ once: true, amount: 0.1 }} // trigger once when ~30% is in view
         >
-          <SingleHeading heading="Landmark Projects" headingcss="text-center" divcss="justify-center" />
+          <SingleHeading as="h1" heading="Landmark Projects" headingcss="text-center" divcss="justify-center" />
           <div className="h-[200px] md:h-auto overflow-hidden [&_img]:w-full [&_img]:h-full [&_img]:object-cover">
             <Bannerimage
               image={USPortfolioBanner}
@@ -70,7 +70,7 @@ export default function USPortfoliopage() {
         >
           <USPortfoliopagesliderv2 />
         </motion.div>
-      </div>
+      </main>
       <ScrollToTop />
       <Footers />
       <MobileFooters />

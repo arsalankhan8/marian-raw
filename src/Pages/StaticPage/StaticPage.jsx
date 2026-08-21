@@ -21,14 +21,16 @@ const StaticPage = () => {
     <div>
       <HeaderSticky />
       <MobileHeader />
-      <StaticCarousel />
-      {/* <Herosection1 /> */}
-      <Stepsectionnew />
-      <FlipCard />
-      <ExpertiseSection />
-      <Herosection2 />
-      {/* <Mapsection/> */}
-      <Contactsection />
+      <main id="main-content" tabIndex={-1}>
+        <StaticCarousel />
+        {/* <Herosection1 /> */}
+        <Stepsectionnew headingLevel="h2" />
+        <FlipCard />
+        <ExpertiseSection />
+        <Herosection2 />
+        {/* <Mapsection/> */}
+        <Contactsection />
+      </main>
       <Footers />
       <MobileFooters />
       <ScrollToTop/>

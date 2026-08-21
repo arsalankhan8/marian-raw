@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   Link,
   useLocation,
 } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 
 import MarianiScales from "../../assets/MarianiScales.webp";
 import MarianiWritten from "../../assets/MarianiWritten.webp";
@@ -16,6 +16,9 @@ const RegionModal = ({
   variant = "dark",
 }) => {
   const location = useLocation();
+  const videoRef = useRef(null);
+  const shouldReduceMotion = useReducedMotion();
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
 
   const isWhite =
     variant === "white" ||
@@ -76,8 +79,42 @@ const RegionModal = ({
     ? "brightness(1) grayscale(0.1)"
     : "brightness(0.4) grayscale(0.2)";
 
+  useEffect(() => {
+    const video = videoRef.current;
+
+    if (!video) return;
+
+    if (shouldReduceMotion) {
+      video.pause();
+      return;
+    }
+
+    video.play().catch(() => {
+      setIsVideoPlaying(false);
+    });
+  }, [shouldReduceMotion]);
+
+  const toggleVideoPlayback = async () => {
+    const video = videoRef.current;
+
+    if (!video) return;
+
+    if (!video.paused) {
+      video.pause();
+      return;
+    }
+
+    try {
+      await video.play();
+    } catch {
+      setIsVideoPlaying(false);
+    }
+  };
+
   return (
-    <motion.div
+    <motion.main
+      id="main-content"
+      tabIndex={-1}
       initial="hidden"
       animate="visible"
       variants={containerVariants}
@@ -91,10 +128,16 @@ const RegionModal = ({
         className="absolute inset-0 z-0 overflow-hidden"
       >
         <video
-          autoPlay
+          ref={videoRef}
+          autoPlay={!shouldReduceMotion}
           loop
           muted
           playsInline
+          preload={shouldReduceMotion ? "metadata" : "auto"}
+          aria-hidden="true"
+          tabIndex={-1}
+          onPlay={() => setIsVideoPlaying(true)}
+          onPause={() => setIsVideoPlaying(false)}
           className="h-full w-full object-cover"
           style={{
             filter: videoFilter,
@@ -108,6 +151,23 @@ const RegionModal = ({
           Your browser does not support the video tag.
         </video>
       </motion.div>
+
+      <button
+        type="button"
+        onClick={toggleVideoPlayback}
+        aria-label={isVideoPlaying ? "Pause background video" : "Play background video"}
+        className="absolute bottom-4 left-4 z-20 flex h-12 w-12 items-center justify-center rounded-full border border-white/60 bg-black/50 text-white backdrop-blur-sm transition hover:bg-black/70 focus:outline-none focus-visible:ring-4 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+      >
+        {isVideoPlaying ? (
+          <svg viewBox="0 0 24 24" fill="currentColor" className="h-6 w-6" aria-hidden="true">
+            <path d="M6 5h4v14H6zM14 5h4v14h-4z" />
+          </svg>
+        ) : (
+          <svg viewBox="0 0 24 24" fill="currentColor" className="h-6 w-6" aria-hidden="true">
+            <path d="m8 5 11 7-11 7V5z" />
+          </svg>
+        )}
+      </button>
 
       {/* White or dark overlay */}
       <div
@@ -123,22 +183,23 @@ const RegionModal = ({
         variants={itemVariants}
         className="relative z-10 text-center"
       >
-        <h3
+        <p
           className={`relative top-[-45px] text-[12px] tracking-[0.5em] uppercase font-unageo-medium opacity-80 md:text-[16px] ${textClass}`}
         >
           Less Ordinary, More Monumental
-        </h3>
+        </p>
       </motion.div>
 
       {/* Main logo and region options */}
       <div className="relative z-10 flex w-full max-w-4xl flex-col items-center px-4">
         <div className="relative flex flex-col items-center">
-          <motion.img
-            variants={logoVariants}
-            src={MarianiScales}
-            alt="Mariani Metal"
-            className={`relative right-5 mb-6 h-20 w-auto object-contain md:right-0 md:h-28 ${logoClass}`}
-          />
+          <motion.h1 variants={logoVariants} className="m-0">
+            <img
+              src={MarianiScales}
+              alt="Mariani Metal"
+              className={`relative right-5 mb-6 h-20 w-auto object-contain md:right-0 md:h-28 ${logoClass}`}
+            />
+          </motion.h1>
 
           {/* Canada */}
           <motion.div
@@ -163,11 +224,11 @@ const RegionModal = ({
               }
               className="block"
             >
-              <h2
+              <span
                 className={`whitespace-nowrap text-[12px] tracking-[0.4em] uppercase font-unageo-medium opacity-100 transition-all duration-300 group-hover:opacity-100 md:text-[15px] ${textClass}`}
               >
                 Canada
-              </h2>
+              </span>
             </Link>
           </motion.div>
 
@@ -194,11 +255,11 @@ const RegionModal = ({
               }
               className="block"
             >
-              <h2
+              <span
                 className={`whitespace-nowrap text-[12px] tracking-[0.4em] uppercase font-unageo-medium opacity-100 transition-all duration-300 group-hover:opacity-100 md:text-[15px] ${textClass}`}
               >
                 United States
-              </h2>
+              </span>
             </Link>
           </motion.div>
         </div>
@@ -215,7 +276,7 @@ const RegionModal = ({
           className={`h-5 w-auto object-contain md:h-10 ${logoClass}`}
         />
       </motion.div>
-    </motion.div>
+    </motion.main>
   );
 };
 

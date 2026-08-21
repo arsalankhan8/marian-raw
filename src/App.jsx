@@ -31,6 +31,7 @@ import Referencepage from "./Pages/Portfoliopage/Referencepage/Referencepage";
 
 import PortfolioRedirect from "./Components/PortfolioRedirect/PortfolioRedirect";
 import RegionModal from "./Components/RegionSelector/RegionModal";
+import SkipLink from "./Components/SkipLink/SkipLink";
 
 /*
   These component names can remain unchanged.
@@ -112,6 +113,63 @@ function RegionalRedirect({ page }) {
   const redirectPath = getRegionPagePath(page);
 
   return <Navigate to={redirectPath} replace />;
+}
+
+const STATIC_PAGE_TITLES = {
+  "/": "Choose Your Region | Mariani Metal",
+  "/white": "Choose Your Region | Mariani Metal",
+  "/canada": "Architectural Metal & Glass Fabrication | Mariani Metal Canada",
+  "/us": "Architectural Metal & Glass Fabrication | Mariani Metal United States",
+  "/c.a.-portfolio": "Landmark Projects | Mariani Metal Canada",
+  "/u.s.-portfolio": "Landmark Projects | Mariani Metal United States",
+  "/canada/about": "About | Mariani Metal Canada",
+  "/us/about": "About | Mariani Metal United States",
+  "/canada/awards": "Awards & Recognitions | Mariani Metal Canada",
+  "/canada/csr": "CSR & Sustainability | Mariani Metal Canada",
+  "/us/csr": "CSR & Sustainability | Mariani Metal United States",
+  "/canada/news": "News & Insights | Mariani Metal Canada",
+  "/us/news": "News & Insights | Mariani Metal United States",
+  "/canada/contact": "Contact | Mariani Metal Canada",
+  "/us/contact": "Contact | Mariani Metal United States",
+  "/canada/reference": "Project Reference List | Mariani Metal Canada",
+  "/us/reference": "Project Reference List | Mariani Metal United States",
+  "/canada/careers": "Careers | Mariani Metal Canada",
+  "/us/careers": "Careers | Mariani Metal United States",
+  "/canada/privacy-policy": "Privacy Policy | Mariani Metal Canada",
+  "/us/privacy-policy": "Privacy Policy | Mariani Metal United States",
+  "/canada/terms-and-conditions": "Terms & Conditions | Mariani Metal Canada",
+  "/us/terms-and-conditions": "Terms & Conditions | Mariani Metal United States",
+  "/canada/policies": "Policies | Mariani Metal Canada",
+  "/us/policies": "Policies | Mariani Metal United States",
+  "/canada/aoda-compliance": "AODA Accessibility | Mariani Metal Canada",
+  "/static": "Capabilities & Projects | Mariani Metal",
+};
+
+function DocumentTitle({ hasAccess }) {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (!hasAccess) {
+      document.title = "Choose Your Region | Mariani Metal";
+      return;
+    }
+
+    const pathname = location.pathname.toLowerCase();
+
+    // Detail pages set a content-specific title after loading their own data.
+    const isDetailPage =
+      /^\/(canada|us)\/careers\/[^/]+$/.test(pathname) ||
+      /^\/(canada|us)\/portfolio\/[^/]+$/.test(pathname) ||
+      /^\/portfoliodetails\/[^/]+$/.test(pathname);
+
+    if (isDetailPage) return;
+
+    document.title =
+      STATIC_PAGE_TITLES[pathname] ||
+      "Mariani Metal | Architectural Metal & Glass Fabrication";
+  }, [hasAccess, location.pathname]);
+
+  return null;
 }
 
 function getRegionFromCurrentPath() {
@@ -203,6 +261,8 @@ function App() {
 
   return (
     <BrowserRouter>
+      <DocumentTitle hasAccess={hasAccess} />
+      <SkipLink />
       {!hasAccess ? (
         <RegionModal
           onSelect={handleRegionSelect}

@@ -28,9 +28,6 @@ export default function Footers() {
   const newsPath =
     getRegionPagePath("news");
 
-  const careersPath =
-    getRegionPagePath("careers");
-
   const contactPath =
     getRegionPagePath("contact");
 
@@ -68,10 +65,6 @@ export default function Footers() {
     {
       label: "News",
       path: newsPath,
-    },
-    {
-      label: "Careers",
-      path: careersPath,
     },
     {
       label: "Contact Us",

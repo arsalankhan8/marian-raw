@@ -21,9 +21,9 @@ export default function Newssection() {
         </div>
 
         <div className='lg:w-[30%] flex flex-col gap-4'>
-          <p className='font-unageo-bold text-[20px] lg:text-[30px] xl:text-[45px] 2xl:text-[55px] 3xl:text-[111px] text-[#00688F] tracking-[-6%]'>
+          <h3 className='font-unageo-bold text-[20px] lg:text-[30px] xl:text-[45px] 2xl:text-[55px] 3xl:text-[111px] text-[#00688F] tracking-[-6%]'>
             Latest
-          </p>
+          </h3>
           {blogData.slice(0, 4).map((value, index) => (
             <Newslatest 
               key={index} 

@@ -96,9 +96,9 @@ const SlideContent = ({ activeSlide }) => {
     <div className="absolute inset-0 z-30 flex flex-col items-start justify-center px-6 md:px-24 text-white">
       <div key={activeSlide.id} className="max-w-4xl space-y-6">
         {/* Headline */}
-        <h2 className="text-[30px] lg:text-[30px] xl:text-[45px] 2xl:text-[55px] 3xl:text-[111px] font-counture tracking-tighter uppercase leading-tight animate-fadeUp">
+        <h1 className="text-[30px] lg:text-[30px] xl:text-[45px] 2xl:text-[55px] 3xl:text-[111px] font-counture tracking-tighter uppercase leading-tight animate-fadeUp">
           {activeSlide.headline}
-        </h2>
+        </h1>
 
         {/* Sub-text: Removed 'opacity-0' to ensure visibility if animation lags */}
         <p className="text-[18px] lg:text-[19px] 3xl:text-[28px] text-gray-200 max-w-2xl font-unageo-medium leading-[110%] animate-fadeUp [animation-delay:200ms]">

@@ -60,7 +60,7 @@ export default function CareerDetailpage() {
       <HeaderSticky />
       <MobileHeader />
 
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <section className="relative overflow-hidden pb-16 pt-36 text-white lg:p-32">
 
           {/* Background image */}

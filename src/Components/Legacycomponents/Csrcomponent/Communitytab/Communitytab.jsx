@@ -130,9 +130,9 @@ export default function Communitytab() {
             >
               {activeTab === 1 && (
                 <>
-                  <p className="font-unageo-semibold text-[16px] md:text-[20px] lg:text-[24px] xl:text-[27px] 2xl:text-[30px] 3xl:text[40px] text-[#00688F] capitalize leading-[112%]">
+                  <h3 className="font-unageo-semibold text-[16px] md:text-[20px] lg:text-[24px] xl:text-[27px] 2xl:text-[30px] 3xl:text[40px] text-[#00688F] capitalize leading-[112%]">
                     Humber Student Garden Sponsorship
-                  </p>
+                  </h3>
                   <p className="font-unageo text-[12px] md:text-[16px] lg:text-[17px] xl:text-[20px] 2xl:text-[22px] 3xl:text[32px] text-black capitalize leading-[127%] mt-3">
                     Mariani Metal has sponsored Humber College's student garden,
                     a project that brings education and sustainability together.
@@ -145,9 +145,9 @@ export default function Communitytab() {
 
               {activeTab === 2 && (
                 <>
-                  <p className="font-unageo-semibold text-[16px] md:text-[20px] lg:text-[24px] xl:text-[27px] 2xl:text-[30px] 3xl:text[40px] text-[#00688F] capitalize leading-[112%]">
+                  <h3 className="font-unageo-semibold text-[16px] md:text-[20px] lg:text-[24px] xl:text-[27px] 2xl:text-[30px] 3xl:text[40px] text-[#00688F] capitalize leading-[112%]">
                     STEM Scholarship Ceremony Sponsorship
-                  </p>
+                  </h3>
                   <p className="font-unageo text-[12px] md:text-[16px] lg:text-[17px] xl:text-[20px] 2xl:text-[22px] 3xl:text[32px] text-black capitalize leading-[127%] mt-3">
                     Mariani Metal contributes to the U.S. Minority Contractors
                     Association's STEM Scholarship Ceremony, an event that

@@ -18,7 +18,7 @@ export default function Portfoliopage() {
     <div>
       <Header />
       <MobileHeader />
-      <div className="pt-[30px] pb-[70px] ">
+      <main id="main-content" tabIndex={-1} className="pt-[30px] pb-[70px] ">
 
         {/* Section with entrance animation */}
         <motion.div
@@ -28,6 +28,7 @@ export default function Portfoliopage() {
           viewport={{ once: true, amount: 0.1 }}
         >
           <SingleHeading
+            as="h1"
             heading="Landmark Projects"
             headingcss="text-center"
             divcss="justify-center"
@@ -75,7 +76,7 @@ export default function Portfoliopage() {
           <Portfoliopagesliderv2 />
         </motion.div>
 
-      </div>
+      </main>
       <ScrollToTop />
       <Footers />
       <MobileFooters />

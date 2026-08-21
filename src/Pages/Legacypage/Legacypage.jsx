@@ -109,21 +109,21 @@ export default function Legacypage({
     <div>
       <Header />
       <MobileHeader />
-      <>
+      <main id="main-content" tabIndex={-1}>
         <div className="max-w-[90vw] w-full mx-auto pt-[30px] md:pt-[40px] 2xl:pt-[50px] 3xl:pt-[70px]">
-          <motion.p
+          <motion.div
             initial={{ opacity: 0, y: 100 }} // start slightly below + hidden
             whileInView={{ opacity: 1, y: 0 }} // animate upward into place
             transition={{ duration: 1, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.1 }}
           >
             <div className="flex pb-[10px] w-[87%]">
-              <span className="text-[20px] lg:text-[30px] xl:text-[45px] 2xl:text-[55px] 3xl:text-[111px] text-[#00688F] font-counture text-left leading-[84%] uppercase">
+              <h1 className="text-[20px] lg:text-[30px] xl:text-[45px] 2xl:text-[55px] 3xl:text-[111px] text-[#00688F] font-counture text-left leading-[84%] uppercase">
                 The Legacy of Mariani
-              </span>
+              </h1>
             </div>
-          </motion.p>
-          <motion.p
+          </motion.div>
+          <motion.div
             initial={{ opacity: 0, y: 100 }} // start slightly below + hidden
             whileInView={{ opacity: 1, y: 0 }} // animate upward into place
             transition={{ duration: 1, ease: "easeOut" }}
@@ -145,9 +145,8 @@ export default function Legacypage({
                 </>
               </span>
             </div>
-          </motion.p>
+          </motion.div>
         </div>
-      </>
 
       {/* Animated Section */}
       <div ref={ref}>
@@ -202,13 +201,13 @@ export default function Legacypage({
       </div>
 
       <div>
-     
-{showFaqSection && <Faqsection />}
+        {showFaqSection && <Faqsection />}
         <Lastsection />
-        <ScrollToTop />
-        <Footers />
-        <MobileFooters />
       </div>
+      </main>
+      <ScrollToTop />
+      <Footers />
+      <MobileFooters />
     </div>
   );
 }

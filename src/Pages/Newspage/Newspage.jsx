@@ -27,6 +27,7 @@ export default function Newspage({ region = "canada" }) {
       <Header />
       <MobileHeader />
 
+      <main id="main-content" tabIndex={-1}>
       <motion.div
         initial={{ opacity: 0, y: 200 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -38,6 +39,7 @@ export default function Newspage({ region = "canada" }) {
         className="pt-[30px] md:pt-[40px] 2xl:pt-[40px] 3xl:pt-[70px]"
       >
         <Leftheadingright
+          as="h1"
           heading="News & Insights"
           subtext={
             <>
@@ -54,7 +56,7 @@ export default function Newspage({ region = "canada" }) {
         />
       </motion.div>
 
-      <motion.div
+      <motion.section
         initial={{ opacity: 0, y: 200 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{
@@ -68,13 +70,14 @@ export default function Newspage({ region = "canada" }) {
         className="mb-[70px]"
       >
         <div className="max-w-[90vw] w-full mx-auto mb-[50px] mt-[70px]">
-          <p className="font-unageo-bold text-[20px] lg:text-[30px] xl:text-[45px] 2xl:text-[55px] 3xl:text-[111px] md:leading-[57px] capitalize text-[#00688F]">
+          <h2 className="font-unageo-bold text-[20px] lg:text-[30px] xl:text-[45px] 2xl:text-[55px] 3xl:text-[111px] md:leading-[57px] capitalize text-[#00688F]">
             Featured Articles
-          </p>
+          </h2>
         </div>
 
         <Newssection />
-      </motion.div>
+      </motion.section>
+      </main>
 
       <ScrollToTop />
       <Footers />

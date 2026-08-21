@@ -10,7 +10,9 @@ const fadeInUp = {
   }),
 };
 
-export default function StepSectionNew() {
+export default function StepSectionNew({ headingLevel = "h1" }) {
+  const Heading = headingLevel === "h2" ? motion.h2 : motion.h1;
+
   return (
     <section className="w-full bg-white py-12 md:py-20 lg:py-32">
       <div className="max-w-[1440px] px-6 lg:px-12 mx-auto">
@@ -20,7 +22,7 @@ export default function StepSectionNew() {
           
           {/* LEFT COLUMN: Branding & Headings */}
           <div className="flex flex-col justify-center gap-3 h-full">
-            <motion.h1
+            <Heading
               variants={fadeInUp}
               initial="hidden"
               whileInView="visible"
@@ -30,9 +32,9 @@ export default function StepSectionNew() {
             >
               Comprehensive Fabrication
               <br className="hidden md:block" /> & Architectural Solutions
-            </motion.h1>
+            </Heading>
 
-            <motion.h2
+            <motion.p
               variants={fadeInUp}
               initial="hidden"
               whileInView="visible"
@@ -42,7 +44,7 @@ export default function StepSectionNew() {
             >
               From concept detailing to final installation, Mariani is your
               full-service partner in precision metal and glass systems.
-            </motion.h2>
+            </motion.p>
           </div>
 
           {/* RIGHT COLUMN: Narrative Body Text */}
