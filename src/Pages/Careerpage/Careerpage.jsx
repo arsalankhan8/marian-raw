@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
 
 import HeaderSticky from "../../Components/Header/HeaderSticky";
@@ -12,6 +12,7 @@ import ScrollToTop from "../../Components/ScrollToTop/ScrollTop";
 import { JOBS_BY_REGION } from "./careersData";
 
 const CAREER_FORM_NAME = "career-application";
+const CAREER_FORM_ENDPOINT = "/__forms.html";
 const MAXIMUM_RESUME_BYTES = 7 * 1024 * 1024;
 
 const TEAM_DEFINITIONS = [
@@ -330,7 +331,7 @@ export default function Careerpage() {
             setIsSubmitting(true);
             formData.set("form-name", CAREER_FORM_NAME);
 
-            const response = await fetch("/", {
+            const response = await fetch(CAREER_FORM_ENDPOINT, {
                 method: "POST",
                 body: formData,
             });
@@ -396,7 +397,7 @@ export default function Careerpage() {
                     <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/65 to-black/25" />
 
                     <div className="relative z-10 mx-auto w-full max-w-[90vw] pb-16 pt-16 lg:pb-24">
-                        <motion.div
+                        <Motion.div
                             initial={{
                                 opacity: 0,
                                 y: 45,
@@ -462,7 +463,7 @@ export default function Careerpage() {
                                 </button>
 
                             </div>
-                        </motion.div>
+                        </Motion.div>
                     </div>
                 </section>
 
@@ -473,7 +474,7 @@ export default function Careerpage() {
                     className="scroll-mt-28 py-20 lg:py-32"
                 >
                     <div className="mx-auto max-w-[90vw]">
-                        <motion.div
+                        <Motion.div
                             {...revealAnimation}
                             className="text-left"
                         >
@@ -494,7 +495,7 @@ export default function Careerpage() {
                                     : "Canadian"} operations, or submit
                                 your resume for future openings in this region.
                             </p>
-                        </motion.div>
+                        </Motion.div>
 
                         <div className="mt-12">
                             {currentJobs.length > 0 ? (
@@ -527,7 +528,7 @@ export default function Careerpage() {
                                     ))}
                                 </div>
                             ) : (
-                                <motion.div
+                                <Motion.div
                                     {...revealAnimation}
                                     className="mx-auto max-w-[880px] rounded-[24px] border border-[#DCE1E3] bg-[#F6F8F9] px-6 py-14 text-center sm:px-12"
                                 >
@@ -557,7 +558,7 @@ export default function Careerpage() {
                                     >
                                         Join Our Talent Community
                                     </button>
-                                </motion.div>
+                                </Motion.div>
                             )}
                         </div>
                     </div>
@@ -566,7 +567,7 @@ export default function Careerpage() {
                 {/* What Defines Our Team */}
                 <section className="overflow-hidden pb-20 lg:pb-32">
                     <div className="mx-auto max-w-[90vw]">
-                        <motion.div
+                        <Motion.div
                             {...revealAnimation}
                             className="grid gap-5 lg:grid-cols-[0.92fr_1.08fr] lg:items-end"
                         >
@@ -593,10 +594,10 @@ export default function Careerpage() {
                                 form. The work demands focus. It
                                 rewards precision.
                             </p>
-                        </motion.div>
+                        </Motion.div>
 
                         <div className="mt-14 grid gap-8 lg:grid-cols-[1.03fr_0.97fr]">
-                            <motion.div
+                            <Motion.div
                                 {...revealAnimation}
                                 className="relative min-h-[500px] overflow-hidden rounded-[24px] bg-[#E7EBED]"
                             >
@@ -617,12 +618,12 @@ export default function Careerpage() {
                                         one shared standard.
                                     </p>
                                 </div>
-                            </motion.div>
+                            </Motion.div>
 
                             <div className="grid gap-4 sm:grid-cols-2">
                                 {TEAM_DEFINITIONS.map(
                                     (item, index) => (
-                                        <motion.article
+                                        <Motion.article
                                             key={item.title}
                                             initial={{
                                                 opacity: 0,
@@ -663,7 +664,7 @@ export default function Careerpage() {
                                                     {item.description}
                                                 </p>
                                             </div>
-                                        </motion.article>
+                                        </Motion.article>
                                     ),
                                 )}
                             </div>
@@ -679,7 +680,7 @@ export default function Careerpage() {
                 >
                     <div className="mx-auto max-w-[90vw]">
                         <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
-                            <motion.div
+                            <Motion.div
                                 {...revealAnimation}
                             >
                                 <SectionLabel>
@@ -708,12 +709,12 @@ export default function Careerpage() {
 
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                                 </div>
-                            </motion.div>
+                            </Motion.div>
 
-                            <motion.form
+                            <Motion.form
                                 {...revealAnimation}
                                 name={CAREER_FORM_NAME}
-                                action="/"
+                                action={CAREER_FORM_ENDPOINT}
                                 method="POST"
                                 onSubmit={handleTalentSubmit}
                                 encType="multipart/form-data"
@@ -1021,7 +1022,7 @@ export default function Careerpage() {
 
 
 
-                            </motion.form>
+                            </Motion.form>
                         </div>
                     </div>
                 </section>
@@ -1029,7 +1030,7 @@ export default function Careerpage() {
                 {/* Final CTA */}
                 <section className="bg-white py-8 sm:py-12">
                     <div className="mx-auto max-w-[94vw]">
-                        <motion.div
+                        <Motion.div
                             {...revealAnimation}
                             className="relative flex min-h-[520px] items-center justify-center overflow-hidden rounded-[28px] bg-black px-6 py-20 text-center"
                         >
@@ -1079,7 +1080,7 @@ export default function Careerpage() {
                                     </button>
                                 </div>
                             </div>
-                        </motion.div>
+                        </Motion.div>
                     </div>
                 </section>
             </main>

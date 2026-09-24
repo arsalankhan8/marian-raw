@@ -2,6 +2,7 @@ import { useState } from "react";
 import { JOBS_BY_REGION } from "./careersData";
 
 const CAREER_FORM_NAME = "career-application";
+const CAREER_FORM_ENDPOINT = "/__forms.html";
 const MAXIMUM_RESUME_BYTES = 7 * 1024 * 1024;
 
 function FormIcon({ name, className = "h-5 w-5" }) {
@@ -87,7 +88,7 @@ export default function CareerApplicationForm({ application, region }) {
       setIsSubmitting(true);
       formData.set("form-name", CAREER_FORM_NAME);
 
-      const response = await fetch("/", {
+      const response = await fetch(CAREER_FORM_ENDPOINT, {
         method: "POST",
         body: formData,
       });
@@ -120,7 +121,7 @@ export default function CareerApplicationForm({ application, region }) {
   return (
     <form
       name={CAREER_FORM_NAME}
-      action="/"
+      action={CAREER_FORM_ENDPOINT}
       method="POST"
       onSubmit={handleSubmit}
       encType="multipart/form-data"
