@@ -10,11 +10,9 @@ import MobileFooters from "../../Components/Footers/MobileFooters";
 import ScrollToTop from "../../Components/ScrollToTop/ScrollTop";
 
 import { JOBS_BY_REGION } from "./careersData";
-import TurnstileWidget from "./TurnstileWidget";
-import {
-    resetTurnstileWidget,
-    turnstileSiteKey,
-} from "./turnstile";
+
+const CAREER_FORM_NAME = "career-application";
+const MAXIMUM_RESUME_BYTES = 7 * 1024 * 1024;
 
 const TEAM_DEFINITIONS = [
     {
@@ -262,11 +260,6 @@ export default function Careerpage() {
     const [selectedResumeName, setSelectedResumeName] =
         useState("");
 
-    const talentEndpoint =
-        import.meta.env.VITE_TALENT_API_ENDPOINT?.trim() ||
-        "/api/career-application.php";
-
-
     const currentJobs =
         JOBS_BY_REGION[pageRegion];
 
@@ -306,12 +299,10 @@ export default function Careerpage() {
             return;
         }
 
-        const maximumFileSize = 10 * 1024 * 1024;
-
-        if (resume.size > maximumFileSize) {
+        if (resume.size > MAXIMUM_RESUME_BYTES) {
             setFormStatus({
                 type: "error",
-                message: "Please upload a resume smaller than 10 MB.",
+                message: "Please upload a resume smaller than 7 MB.",
             });
 
             return;
@@ -335,59 +326,25 @@ export default function Careerpage() {
             return;
         }
 
-        const turnstileToken = formData.get("cf-turnstile-response");
-
-        if (
-            !turnstileSiteKey ||
-            typeof turnstileToken !== "string" ||
-            turnstileToken.trim() === ""
-        ) {
-            setFormStatus({
-                type: "error",
-                message: "Please complete the security verification.",
-            });
-
-            return;
-        }
-
         try {
             setIsSubmitting(true);
+            formData.set("form-name", CAREER_FORM_NAME);
 
-            const response = await fetch(talentEndpoint, {
+            const response = await fetch("/", {
                 method: "POST",
                 body: formData,
-                headers: {
-                    Accept: "application/json",
-                },
             });
 
-            const responseText = await response.text();
-
-            let result = {};
-
-            if (responseText) {
-                try {
-                    result = JSON.parse(responseText);
-                } catch {
-                    result = {};
-                }
-            }
-
-            if (!response.ok || result.success === false) {
-                throw new Error(
-                    result.message ||
-                    "Unable to submit the application.",
-                );
+            if (!response.ok) {
+                throw new Error("Unable to submit the application.");
             }
 
             form.reset();
-            resetTurnstileWidget(form);
             setSelectedResumeName("");
 
             setFormStatus({
                 type: "success",
                 message:
-                    result.message ||
                     "Thank you. Your application has been submitted to our hiring team.",
             });
         } catch (error) {
@@ -755,12 +712,20 @@ export default function Careerpage() {
 
                             <motion.form
                                 {...revealAnimation}
-                                action={talentEndpoint}
+                                name={CAREER_FORM_NAME}
+                                action="/"
                                 method="POST"
                                 onSubmit={handleTalentSubmit}
                                 encType="multipart/form-data"
+                                data-netlify="true"
+                                data-netlify-honeypot="bot-field"
                                 className="rounded-[24px] bg-white p-6 text-black sm:p-8 lg:p-10"
                             >
+                                <input
+                                    type="hidden"
+                                    name="form-name"
+                                    value={CAREER_FORM_NAME}
+                                />
                                 <div className="grid gap-5 sm:grid-cols-2">
                                     <div>
                                         <label
@@ -939,7 +904,7 @@ export default function Careerpage() {
                                         </span>
 
                                         <span className="mt-1 text-[12px] text-[#727A7E]">
-                                            PDF or DOCX. Maximum 10
+                                            PDF or DOCX. Maximum 7
                                             MB.
                                         </span>
                                     </label>
@@ -1009,27 +974,23 @@ export default function Careerpage() {
                                     className="absolute left-[-9999px] h-px w-px overflow-hidden"
                                     aria-hidden="true"
                                 >
-                                    <label htmlFor="companyWebsite">
+                                    <label htmlFor="talentBotField">
                                         Leave this field empty
                                     </label>
 
                                     <input
-                                        id="companyWebsite"
+                                        id="talentBotField"
                                         type="text"
-                                        name="_gotcha"
+                                        name="bot-field"
                                         tabIndex={-1}
                                         autoComplete="off"
                                     />
                                 </div>
 
-                                <div className="mt-6">
-                                    <TurnstileWidget />
-                                </div>
-
                                 <div className="mt-7">
                                     <button
                                         type="submit"
-                                        disabled={isSubmitting || !turnstileSiteKey}
+                                        disabled={isSubmitting}
                                         className="group inline-flex w-full cursor-pointer items-center justify-center gap-3 rounded-full bg-[#00688F] px-7 py-4 text-[14px] font-semibold text-white transition-colors duration-300 hover:bg-[#005472] disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
                                     >
                                         {isSubmitting

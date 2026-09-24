@@ -1,10 +1,8 @@
 import { useState } from "react";
 import { JOBS_BY_REGION } from "./careersData";
-import TurnstileWidget from "./TurnstileWidget";
-import {
-  resetTurnstileWidget,
-  turnstileSiteKey,
-} from "./turnstile";
+
+const CAREER_FORM_NAME = "career-application";
+const MAXIMUM_RESUME_BYTES = 7 * 1024 * 1024;
 
 function FormIcon({ name, className = "h-5 w-5" }) {
   const commonProps = {
@@ -41,10 +39,6 @@ export default function CareerApplicationForm({ application, region }) {
   const [selectedResumeName, setSelectedResumeName] = useState("");
   const [formStatus, setFormStatus] = useState({ type: "", message: "" });
 
-  const talentEndpoint =
-    import.meta.env.VITE_TALENT_API_ENDPOINT?.trim() ||
-    "/api/career-application.php";
-
   const inputClassName =
     "w-full rounded-[12px] border border-[#D5D9DB] bg-white px-4 py-4 text-[15px] text-black outline-none transition-colors duration-300 placeholder:text-[#8C9295] focus:border-[#00688F]";
 
@@ -71,10 +65,10 @@ export default function CareerApplicationForm({ application, region }) {
       return;
     }
 
-    if (resume.size > 10 * 1024 * 1024) {
+    if (resume.size > MAXIMUM_RESUME_BYTES) {
       setFormStatus({
         type: "error",
-        message: "Please upload a resume smaller than 10 MB.",
+        message: "Please upload a resume smaller than 7 MB.",
       });
       return;
     }
@@ -89,51 +83,24 @@ export default function CareerApplicationForm({ application, region }) {
       return;
     }
 
-    const turnstileToken = formData.get("cf-turnstile-response");
-
-    if (
-      !turnstileSiteKey ||
-      typeof turnstileToken !== "string" ||
-      turnstileToken.trim() === ""
-    ) {
-      setFormStatus({
-        type: "error",
-        message: "Please complete the security verification.",
-      });
-      return;
-    }
-
     try {
       setIsSubmitting(true);
+      formData.set("form-name", CAREER_FORM_NAME);
 
-      const response = await fetch(talentEndpoint, {
+      const response = await fetch("/", {
         method: "POST",
         body: formData,
-        headers: { Accept: "application/json" },
       });
 
-      const responseText = await response.text();
-      let result = {};
-
-      if (responseText) {
-        try {
-          result = JSON.parse(responseText);
-        } catch {
-          result = {};
-        }
-      }
-
-      if (!response.ok || result.success === false) {
-        throw new Error(result.message || "Unable to submit the application.");
+      if (!response.ok) {
+        throw new Error("Unable to submit the application.");
       }
 
       form.reset();
-      resetTurnstileWidget(form);
       setSelectedResumeName("");
       setFormStatus({
         type: "success",
         message:
-          result.message ||
           "Thank you. Your application has been submitted to our hiring team.",
       });
     } catch (error) {
@@ -152,12 +119,16 @@ export default function CareerApplicationForm({ application, region }) {
 
   return (
     <form
-      action={talentEndpoint}
+      name={CAREER_FORM_NAME}
+      action="/"
       method="POST"
       onSubmit={handleSubmit}
       encType="multipart/form-data"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
       className="rounded-[24px] bg-white p-6 text-black shadow-[0_20px_60px_rgba(0,0,0,0.08)] sm:p-8 lg:p-10"
     >
+      <input type="hidden" name="form-name" value={CAREER_FORM_NAME} />
       <div className="mb-7 rounded-[14px] border border-[#B9D9E4] bg-[#EDF7FA] p-5">
         <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#00688F]">
           {application.kind === "job" ? "Applying For" : "Area of Interest"}
@@ -282,7 +253,7 @@ export default function CareerApplicationForm({ application, region }) {
             {selectedResumeName || "Choose your resume"}
           </span>
           <span className="mt-1 text-[12px] text-[#727A7E]">
-            PDF or DOCX. Maximum 10 MB.
+            PDF or DOCX. Maximum 7 MB.
           </span>
         </label>
         <input
@@ -318,24 +289,20 @@ export default function CareerApplicationForm({ application, region }) {
       <input type="hidden" name="applicationRegion" value={regionLabel} />
 
       <div className="absolute left-[-9999px] h-px w-px overflow-hidden" aria-hidden="true">
-        <label htmlFor="companyWebsite">Leave this field empty</label>
+        <label htmlFor="careerBotField">Leave this field empty</label>
         <input
-          id="companyWebsite"
+          id="careerBotField"
           type="text"
-          name="_gotcha"
+          name="bot-field"
           tabIndex={-1}
           autoComplete="off"
         />
       </div>
 
-      <div className="mt-6">
-        <TurnstileWidget />
-      </div>
-
       <div className="mt-7">
         <button
           type="submit"
-          disabled={isSubmitting || !turnstileSiteKey}
+          disabled={isSubmitting}
           className="group inline-flex w-full cursor-pointer items-center justify-center gap-3 rounded-full bg-[#00688F] px-7 py-4 text-[14px] font-semibold text-white transition-colors duration-300 hover:bg-[#005472] disabled:cursor-not-allowed disabled:opacity-60"
         >
           {isSubmitting ? "Submitting..." : "Submit Application"}
