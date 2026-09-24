@@ -9,7 +9,7 @@ import Footers from "../../Components/Footers/Footers";
 import MobileFooters from "../../Components/Footers/MobileFooters";
 import ScrollToTop from "../../Components/ScrollToTop/ScrollTop";
 
-import { CAREER_AREAS, JOBS_BY_REGION } from "./careersData";
+import { JOBS_BY_REGION } from "./careersData";
 import TurnstileWidget from "./TurnstileWidget";
 import {
     resetTurnstileWidget,
@@ -509,8 +509,105 @@ export default function Careerpage() {
                     </div>
                 </section>
 
+                {/* Job Opportunities */}
+
+                <section
+                    id="job-opportunities"
+                    className="scroll-mt-28 py-20 lg:py-32"
+                >
+                    <div className="mx-auto max-w-[90vw]">
+                        <motion.div
+                            {...revealAnimation}
+                            className="text-left"
+                        >
+                            <SectionLabel>
+                                {pageRegion === "us"
+                                    ? "United States Job Opportunities"
+                                    : "Canada Job Opportunities"}
+                            </SectionLabel>
+
+                            <h2 className="text-[25px] font-semibold leading-tight sm:text-[35px] lg:text-[45px]">
+                                Find your place at Mariani.
+                            </h2>
+
+                            <p className="mt-5 max-w-[680px] text-[15px] leading-7 text-[#626A6E] lg:text-[15px]">
+                                Explore current opportunities available
+                                through our {pageRegion === "us"
+                                    ? "United States"
+                                    : "Canadian"} operations, or submit
+                                your resume for future openings in this region.
+                            </p>
+                        </motion.div>
+
+                        <div className="mt-12">
+                            {currentJobs.length > 0 ? (
+                                <div className="divide-y divide-[#DCE0E2] border-y border-[#DCE0E2]">
+                                    {currentJobs.map((job) => (
+                                        <Link
+                                            key={`${job.title}-${job.location}`}
+                                            to={`${regionPath}/careers/${job.slug}`}
+                                            className="group grid w-full cursor-pointer gap-4 py-7 text-left transition-colors duration-300 hover:bg-[#F5F7F8] sm:grid-cols-[1fr_auto] sm:items-center sm:px-6"
+                                        >
+                                            <div>
+                                                <h3 className="text-[18px] font-semibold transition-colors duration-300 group-hover:text-[#00688F]">
+                                                    {job.title}
+                                                </h3>
+
+                                                <div className="mt-2 flex flex-wrap gap-x-5 gap-y-1 text-[14px] text-[#6B7276]">
+                                                    <span>{job.location}</span>
+                                                    <span>{job.type}</span>
+                                                    <span>{job.department}</span>
+                                                </div>
+                                            </div>
+
+                                            <div className="flex h-11 w-11 items-center justify-center rounded-full border border-[#CBD1D4] text-[#00688F] transition-all duration-300 group-hover:border-[#00688F] group-hover:bg-[#00688F] group-hover:text-white">
+                                                <CareerIcon
+                                                    name="arrow"
+                                                    className="h-5 w-5"
+                                                />
+                                            </div>
+                                        </Link>
+                                    ))}
+                                </div>
+                            ) : (
+                                <motion.div
+                                    {...revealAnimation}
+                                    className="mx-auto max-w-[880px] rounded-[24px] border border-[#DCE1E3] bg-[#F6F8F9] px-6 py-14 text-center sm:px-12"
+                                >
+                                    <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#E6F2F6] text-[#00688F]">
+                                        <CareerIcon name="clipboard" />
+                                    </div>
+
+                                    <h3 className="mt-6 text-[25px] font-semibold">
+                                        New positions will be added here.
+                                    </h3>
+
+                                    <p className="mx-auto mt-3 max-w-[570px] text-[15px] leading-6 text-[#646C70]">
+                                        There are no published openings for{" "}
+                                        {pageRegion === "canada"
+                                            ? "Canada"
+                                            : "the United States"}{" "}
+                                        at this time. Submit your resume to stay
+                                        connected with our hiring team.
+                                    </p>
+
+                                    <button
+                                        type="button"
+                                        onClick={() =>
+                                            scrollToSection("talent-community")
+                                        }
+                                        className="mt-7 cursor-pointer rounded-full bg-[#00688F] px-7 py-3.5 text-[14px] font-semibold text-white transition-colors duration-300 hover:bg-[#005472]"
+                                    >
+                                        Join Our Talent Community
+                                    </button>
+                                </motion.div>
+                            )}
+                        </div>
+                    </div>
+                </section>
+
                 {/* What Defines Our Team */}
-                <section className="overflow-hidden py-20 lg:py-32">
+                <section className="overflow-hidden pb-20 lg:pb-32">
                     <div className="mx-auto max-w-[90vw]">
                         <motion.div
                             {...revealAnimation}
@@ -617,174 +714,6 @@ export default function Careerpage() {
                     </div>
                 </section>
 
-                {/* Career Disciplines */}
-                <section className="bg-[#E5F0F4] py-20 lg:py-32">
-                    <div className="mx-auto max-w-[90vw]">
-                        <motion.div
-                            {...revealAnimation}
-                            className="grid gap-8 lg:grid-cols-[1fr_0.7fr] lg:items-end"
-                        >
-                            <div>
-                                <SectionLabel>
-                                    Build Your Career at Mariani
-                                </SectionLabel>
-
-                                <h2 className="max-w-[700px] text-[25px] font-semibold leading-[1.12] sm:text-[35px] lg:text-[45px]">
-                                    Build skills that become part of
-                                    something permanent.
-                                </h2>
-                            </div>
-
-                            <p className="max-w-[580px] text-[15px] leading-7 text-[#5F666A] lg:justify-self-end lg:text-[15px]">
-                                Join a team where skill,
-                                discipline, and precision come
-                                together to shape landmark projects
-                                across Canada and the United States.
-                            </p>
-                        </motion.div>
-
-                        <div className="mt-14 grid gap-[1px] overflow-hidden rounded-[24px] bg-[#CFD5D8] md:grid-cols-2 lg:grid-cols-3">
-                            {CAREER_AREAS.map((area, index) => (
-                                <Link
-                                    key={area.title}
-                                    to={`${regionPath}/careers/${area.slug}`}
-                                    className="block"
-                                >
-                                    <motion.article
-                                        initial={{
-                                            opacity: 0,
-                                            y: 25,
-                                        }}
-                                        whileInView={{
-                                            opacity: 1,
-                                            y: 0,
-                                        }}
-                                        viewport={{
-                                            once: true,
-                                            amount: 0.15,
-                                        }}
-                                        transition={{
-                                            duration: 0.55,
-                                            delay: index * 0.06,
-                                        }}
-                                        className="group h-full bg-white p-7 transition-colors duration-300 hover:bg-[#00688F] sm:p-8"
-                                    >
-                                        <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#EAF4F7] text-[#00688F] transition-colors duration-300 group-hover:bg-white/15 group-hover:text-white">
-                                            <CareerIcon name={area.icon} />
-                                        </div>
-
-                                        <div className="mt-16 flex items-end justify-between gap-5">
-                                            <h3 className="max-w-[260px] text-[18px] font-semibold leading-7 transition-colors duration-300 group-hover:text-white">
-                                                {area.title}
-                                            </h3>
-
-                                            <CareerIcon
-                                                name="arrow"
-                                                className="h-5 w-5 shrink-0 text-[#00688F] transition-all duration-300 group-hover:translate-x-1 group-hover:text-white"
-                                            />
-                                        </div>
-                                    </motion.article>
-                                </Link>
-                            ))}
-                        </div>
-                    </div>
-                </section>
-
-                {/* Job Opportunities */}
-                <section
-                    id="job-opportunities"
-                    className="scroll-mt-28 py-20 lg:py-32"
-                >
-                    <div className="mx-auto max-w-[90vw]">
-                        <motion.div
-                            {...revealAnimation}
-                            className="text-center"
-                        >
-                            <SectionLabel>
-                                {pageRegion === "us"
-                                    ? "United States Job Opportunities"
-                                    : "Canada Job Opportunities"}
-                            </SectionLabel>
-
-                            <h2 className="text-[25px] font-semibold leading-tight sm:text-[35px] lg:text-[45px]">
-                                Find your place at Mariani.
-                            </h2>
-
-                            <p className="mx-auto mt-5 max-w-[680px] text-[15px] leading-7 text-[#626A6E] lg:text-[15px]">
-                                Explore current opportunities available
-                                through our {pageRegion === "us"
-                                    ? "United States"
-                                    : "Canadian"} operations, or submit
-                                your resume for future openings in this region.
-                            </p>
-                        </motion.div>
-
-                        <div className="mt-12">
-                            {currentJobs.length > 0 ? (
-                                <div className="divide-y divide-[#DCE0E2] border-y border-[#DCE0E2]">
-                                    {currentJobs.map((job) => (
-                                        <Link
-                                            key={`${job.title}-${job.location}`}
-                                            to={`${regionPath}/careers/${job.slug}`}
-                                            className="group grid w-full cursor-pointer gap-4 py-7 text-left transition-colors duration-300 hover:bg-[#F5F7F8] sm:grid-cols-[1fr_auto] sm:items-center sm:px-6"
-                                        >
-                                            <div>
-                                                <h3 className="text-[18px] font-semibold transition-colors duration-300 group-hover:text-[#00688F]">
-                                                    {job.title}
-                                                </h3>
-
-                                                <div className="mt-2 flex flex-wrap gap-x-5 gap-y-1 text-[14px] text-[#6B7276]">
-                                                    <span>{job.location}</span>
-                                                    <span>{job.type}</span>
-                                                    <span>{job.department}</span>
-                                                </div>
-                                            </div>
-
-                                            <div className="flex h-11 w-11 items-center justify-center rounded-full border border-[#CBD1D4] text-[#00688F] transition-all duration-300 group-hover:border-[#00688F] group-hover:bg-[#00688F] group-hover:text-white">
-                                                <CareerIcon
-                                                    name="arrow"
-                                                    className="h-5 w-5"
-                                                />
-                                            </div>
-                                        </Link>
-                                    ))}
-                                </div>
-                            ) : (
-                                <motion.div
-                                    {...revealAnimation}
-                                    className="mx-auto max-w-[880px] rounded-[24px] border border-[#DCE1E3] bg-[#F6F8F9] px-6 py-14 text-center sm:px-12"
-                                >
-                                    <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#E6F2F6] text-[#00688F]">
-                                        <CareerIcon name="clipboard" />
-                                    </div>
-
-                                    <h3 className="mt-6 text-[25px] font-semibold">
-                                        New positions will be added here.
-                                    </h3>
-
-                                    <p className="mx-auto mt-3 max-w-[570px] text-[15px] leading-6 text-[#646C70]">
-                                        There are no published openings for{" "}
-                                        {pageRegion === "canada"
-                                            ? "Canada"
-                                            : "the United States"}{" "}
-                                        at this time. Submit your resume to stay
-                                        connected with our hiring team.
-                                    </p>
-
-                                    <button
-                                        type="button"
-                                        onClick={() =>
-                                            scrollToSection("talent-community")
-                                        }
-                                        className="mt-7 cursor-pointer rounded-full bg-[#00688F] px-7 py-3.5 text-[14px] font-semibold text-white transition-colors duration-300 hover:bg-[#005472]"
-                                    >
-                                        Join Our Talent Community
-                                    </button>
-                                </motion.div>
-                            )}
-                        </div>
-                    </div>
-                </section>
 
                 {/* Talent Community */}
                 <section
@@ -934,16 +863,16 @@ export default function Careerpage() {
                                             }
                                         >
                                             <option value="" disabled>
-                                                Select an area
+                                                Select a position
                                             </option>
 
-                                            {CAREER_AREAS.map(
-                                                (area) => (
+                                            {currentJobs.map(
+                                                (job) => (
                                                     <option
-                                                        key={area.title}
-                                                        value={area.title}
+                                                        key={job.slug}
+                                                        value={job.title}
                                                     >
-                                                        {area.title}
+                                                        {job.title}
                                                     </option>
                                                 ),
                                             )}

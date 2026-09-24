@@ -93,6 +93,8 @@ export default function Portfoliolisting({ datas }) {
                     key={`${datas.slug}-${currentSlide}`}
                     src={images[currentSlide]}
                     alt={`${datas.title} project image ${currentSlide + 1}`}
+                    loading="lazy"
+                    decoding="async"
                     custom={direction}
                     variants={slideVariants}
                     initial="enter"

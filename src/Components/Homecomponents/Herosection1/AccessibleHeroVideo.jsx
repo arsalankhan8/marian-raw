@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useReducedMotion } from "framer-motion";
 
-export default function AccessibleHeroVideo({ src, regionLabel }) {
+export default function AccessibleHeroVideo({ src, poster, regionLabel }) {
   const sectionRef = useRef(null);
   const videoRef = useRef(null);
   const shouldReduceMotion = useReducedMotion();
@@ -94,10 +94,11 @@ export default function AccessibleHeroVideo({ src, regionLabel }) {
       <video
         ref={videoRef}
         src={src}
+        poster={poster}
         muted={isMuted}
         loop
         playsInline
-        preload={shouldReduceMotion ? "metadata" : "auto"}
+        preload="metadata"
         aria-hidden="true"
         tabIndex={-1}
         onPlay={() => setIsPlaying(true)}

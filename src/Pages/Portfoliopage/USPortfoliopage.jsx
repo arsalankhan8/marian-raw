@@ -1,7 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Bannerimage from "../../Components/Banners/Bannerimage";
-import banner from "../../assets/portban.webp";
 import Header from "../../Components/Header/Header";
 import SingleHeading from "../../Components/Headings/Singleheading/SingleHeading";
 import Leftheadingtop from "../../Components/Headings/Leftheadingtop/Leftheadingtop";
@@ -9,7 +8,6 @@ import Footers from "../../Components/Footers/Footers";
 import USPortfoliopagesliderv2 from "../../Components/Sliders/Portfoliopageslider/USPortfoliopagesliderv2";
 import MobileFooters from "../../Components/Footers/MobileFooters";
 import MobileHeader from "../../Components/Header/MobileHeader";
-import bannermob from "../../assets/portfoliomobile.webp";
 import ScrollToTop from "../../Components/ScrollToTop/ScrollTop";
 import USPortfolioBanner from "../../assets/HomeSec3/Hospitality.jpg";
 

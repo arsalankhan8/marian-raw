@@ -7,7 +7,6 @@ import "swiper/css/autoplay";
 import sliderimg1 from "../../../assets/sliderimg1.webp";
 import sliderimg2 from "../../../assets/sliderimg2.webp";
 import sliderimg3 from "../../../assets/sliderimg3.webp";
-import sliderimg4 from "../../../assets/sliderimg4.webp";
 import sliderimg5 from "../../../assets/sliderimg5.webp";
 import sliderimg6 from "../../../assets/sliderimg6.webp";
 

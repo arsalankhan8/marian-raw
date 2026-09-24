@@ -1,5 +1,4 @@
-import React, { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import React from "react";
 import { MapPin, Phone, Mail } from "lucide-react";
 
 import Header from "../../Components/Header/Header";
@@ -30,54 +29,12 @@ export default function Contactpage() {
     ? usBanner
     : canadaBanner;
 
-  const imgRef = useRef(null);
-  const blueSectionRef = useRef(null);
-
-  const { scrollYProgress: imgScrollYProgress } =
-    useScroll({
-      target: imgRef,
-      offset: ["start end", "end start"],
-    });
-
-  const {
-    scrollYProgress: blueSectionScrollYProgress,
-  } = useScroll({
-    target: blueSectionRef,
-    offset: ["start end", "end start"],
-  });
-
-  const scaleX = useTransform(
-    imgScrollYProgress,
-    [0, 2],
-    [1, 1.5],
-  );
-
-  const y = useTransform(
-    [
-      imgScrollYProgress,
-      blueSectionScrollYProgress,
-    ],
-    ([latestImgProgress, latestBlueProgress]) => {
-      if (latestBlueProgress > 0.1) {
-        return -300 * 0.6;
-      }
-
-      return -300 * latestImgProgress;
-    },
-  );
-
-  const blueSectionY = useTransform(
-    blueSectionScrollYProgress,
-    [0, 0.4],
-    [0, -1200],
-  );
-
   return (
     <>
       <Header />
       <MobileHeader />
 
-      <main id="main-content" tabIndex={-1}>
+      <main id="main-content" tabIndex={-1} className="overflow-hidden">
       <div className="max-w-[90vw] w-full mx-auto pt-[30px] md:pt-[40px] 2xl:pt-[40px] 3xl:pt-[70px]">
         <div className="flex flex-wrap md:flex-nowrap gap-6">
           {/* Heading */}
@@ -145,30 +102,19 @@ export default function Contactpage() {
         </div>
 
         {/* Regional animated banner */}
-        <motion.img
-          ref={imgRef}
+        <img
           src={selectedBanner}
           alt={
             isUS
               ? "Mariani Metal US contact"
               : "Mariani Metal Canada contact"
           }
-          className="w-full h-screen mt-[90px] md:mt-[120px] mb-[-130px] md:mb-[-200px] object-cover"
-          style={{
-            scaleX,
-            y,
-          }}
+          className="w-full h-screen mt-[90px] md:mt-[120px] object-cover"
         />
       </div>
 
       {/* Contact form section */}
-      <motion.div
-        ref={blueSectionRef}
-        className="bg-[#00688F] pt-[100px] pb-[110px] mb-[-950px] 3xl:mb-[-850px]"
-        style={{
-          y: blueSectionY,
-        }}
-      >
+      <div className="bg-[#00688F] pt-[100px] pb-[110px]">
         <div className="max-w-[90vw] w-full mx-auto text-white">
           <h2 className="font-counture text-[20px] lg:text-[30px] xl:text-[45px] 2xl:text-[55px] 3xl:text-[111px] uppercase leading-[100%]">
             Speak with Us
@@ -198,7 +144,7 @@ export default function Contactpage() {
             </p>
           </div>
         </div>
-      </motion.div>
+      </div>
       </main>
 
       <ScrollToTop />

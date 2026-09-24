@@ -14,15 +14,20 @@ import { getCareerDetail } from "./careersData";
 const revealAnimation = {
   initial: { opacity: 0, y: 32 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, amount: 0.15 },
+  viewport: { once: true, amount: 0.01 },
   transition: { duration: 0.65, ease: "easeOut" },
 };
 
-function DetailList({ title, items }) {
+function DetailList({ title, description, items }) {
   return (
     <section className="mt-10 border-t border-[#DCE1E3] pt-8">
       <h2 className="text-[25px] font-semibold">{title}</h2>
-      <ul className="mt-5 space-y-4">
+      {description && (
+        <p className="mt-3 text-[15px] leading-7 text-[#5F666A]">
+          {description}
+        </p>
+      )}
+      <ul className={`${description ? "mt-4" : "mt-5"} space-y-4`}>
         {items.map((item) => (
           <li key={item} className="flex gap-4 text-[15px] leading-7 text-[#5F666A]">
             <span className="mt-[11px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#00688F]" />
@@ -117,15 +122,30 @@ export default function CareerDetailpage() {
                 {detail.summary}
               </p>
 
-              <DetailList
-                title={detail.kind === "job" ? "Key Responsibilities" : "What You May Work On"}
-                items={detail.responsibilities}
-              />
+              {detail.sections?.length > 0 ? (
+                detail.sections.map((section) => (
+                  <DetailList
+                    key={section.title}
+                    title={section.title}
+                    description={section.description}
+                    items={section.items}
+                  />
+                ))
+              ) : (
+                <>
+                  <DetailList
+                    title={detail.kind === "job" ? "Key Responsibilities" : "What You May Work On"}
+                    items={detail.responsibilities}
+                  />
 
-              <DetailList
-                title={detail.kind === "job" ? "Qualifications" : "What We Value"}
-                items={detail.qualifications}
-              />
+                  {detail.qualifications?.length > 0 && (
+                    <DetailList
+                      title={detail.kind === "job" ? "Qualifications" : "What We Value"}
+                      items={detail.qualifications}
+                    />
+                  )}
+                </>
+              )}
 
               <section className="mt-10 rounded-[18px] bg-[#EAF4F7] p-6">
                 <h2 className="text-[22px] font-semibold">Why Mariani</h2>

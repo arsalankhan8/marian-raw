@@ -134,6 +134,8 @@ const FlipCard = () => {
                     <img
                       src={card.image}
                       alt={card.heading}
+                      loading="lazy"
+                      decoding="async"
                       className={`h-full w-full object-cover opacity-50 transition-transform duration-700 ${isActive ? 'scale-110' : ''}`}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
@@ -150,7 +152,7 @@ const FlipCard = () => {
 
                   {/* Background Image for Back Side */}
                   <div className="absolute inset-0 z-0">
-                    <img src={card.image} alt={`${card.heading} back`} className="h-full w-full object-cover opacity-20" />
+                    <img src={card.image} alt={`${card.heading} back`} loading="lazy" decoding="async" className="h-full w-full object-cover opacity-20" />
                     <div className="absolute inset-0 bg-[#1a202c]/40" />
                   </div>
 

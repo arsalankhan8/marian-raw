@@ -84,6 +84,7 @@ const relatedProjects = portfoliodata.filter(
             src={project.mainimage}
             alt=""
             aria-hidden="true"
+            decoding="async"
             className="absolute inset-0 h-full w-full scale-110 object-cover opacity-35 blur-2xl"
           />
 
@@ -91,6 +92,9 @@ const relatedProjects = portfoliodata.filter(
             <img
               src={project.mainimage}
               alt={project.title}
+              loading="eager"
+              decoding="async"
+              fetchPriority="high"
               className="block h-full w-full object-cover"
             />
           </div>

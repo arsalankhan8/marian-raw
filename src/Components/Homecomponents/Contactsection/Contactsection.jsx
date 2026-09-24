@@ -65,6 +65,8 @@ export default function Contactsection({
             src={backgroundImage}
             alt=""
             aria-hidden="true"
+            loading="lazy"
+            decoding="async"
             className="absolute inset-0 h-full w-full object-cover"
           />
           <div
@@ -85,6 +87,8 @@ export default function Contactsection({
               src={backgroundImage}
               alt=""
               aria-hidden="true"
+              loading="lazy"
+              decoding="async"
               className="block h-auto w-full"
             />
           </div>

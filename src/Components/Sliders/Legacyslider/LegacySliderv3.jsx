@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import img1 from "../../../assets/tabs2.webp";
 import img2 from "../../../assets/sliderimg2.webp";
-import img3 from "../../../assets/sliderimg3.webp";
 import line from "../../../assets/line.png";
 import left from "../../../assets/left.png";
 import right from "../../../assets/right.png";

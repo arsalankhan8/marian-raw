@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { CAREER_AREAS } from "./careersData";
+import { JOBS_BY_REGION } from "./careersData";
 import TurnstileWidget from "./TurnstileWidget";
 import {
   resetTurnstileWidget,
@@ -49,6 +49,7 @@ export default function CareerApplicationForm({ application, region }) {
     "w-full rounded-[12px] border border-[#D5D9DB] bg-white px-4 py-4 text-[15px] text-black outline-none transition-colors duration-300 placeholder:text-[#8C9295] focus:border-[#00688F]";
 
   const regionLabel = region === "us" ? "United States" : "Canada";
+  const availableJobs = JOBS_BY_REGION[region] || [];
   const positionLabel =
     application.kind === "job"
       ? application.title
@@ -237,12 +238,15 @@ export default function CareerApplicationForm({ application, region }) {
             id="areaOfInterest"
             name="areaOfInterest"
             required
-            defaultValue={application.department || application.title}
+            defaultValue={application.kind === "job" ? application.title : ""}
             className={inputClassName}
           >
-            {CAREER_AREAS.map((area) => (
-              <option key={area.title} value={area.title}>
-                {area.title}
+            <option value="" disabled>
+              Select a position
+            </option>
+            {availableJobs.map((job) => (
+              <option key={job.slug} value={job.title}>
+                {job.title}
               </option>
             ))}
             <option value="Other">Other</option>

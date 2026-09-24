@@ -281,55 +281,9 @@ export default function Homeslidernew() {
     typeof window !== "undefined" ? window.innerWidth - 48 : 0
   );
 
-  const [imagesPreloaded, setImagesPreloaded] = useState(false);
-
   const portfolioPath = getRegionPortfolioPath();
 
   const currentProject = slides[currentSlide];
-
-  useEffect(() => {
-    let mounted = true;
-
-    const promises = slides.map(
-      (slide) =>
-        new Promise((resolve) => {
-          const img = new Image();
-
-          img.src = slide.img;
-
-          img.onload = () =>
-            resolve({
-              src: slide.img,
-              status: "ok",
-            });
-
-          img.onerror = () =>
-            resolve({
-              src: slide.img,
-              status: "error",
-            });
-
-          setTimeout(
-            () =>
-              resolve({
-                src: slide.img,
-                status: "timeout",
-              }),
-            3000
-          );
-        })
-    );
-
-    Promise.all(promises).then(() => {
-      if (mounted) {
-        setImagesPreloaded(true);
-      }
-    });
-
-    return () => {
-      mounted = false;
-    };
-  }, [slides]);
 
   const updateBorderPositions = () => {
     const container = containerRef.current;
@@ -471,6 +425,13 @@ export default function Homeslidernew() {
     };
   }, [slides.length]);
 
+  const nextImage = slides[(currentSlide + 1) % slides.length].img;
+
+  useEffect(() => {
+    const image = new Image();
+    image.decoding = "async";
+    image.src = nextImage;
+  }, [nextImage]);
 
 
   return (
@@ -481,31 +442,6 @@ export default function Homeslidernew() {
         backgroundImage: `url(${currentProject.img})`,
       }}
     >
-      {/* Hidden images used for browser preloading */}
-      <div
-        style={{
-          position: "absolute",
-          width: 0,
-          height: 0,
-          overflow: "hidden",
-          pointerEvents: "none",
-          opacity: 0,
-        }}
-        aria-hidden="true"
-      >
-        {slides.map((slide) => (
-          <img
-            key={slide.id}
-            src={slide.img}
-            alt=""
-            style={{
-              width: 0,
-              height: 0,
-            }}
-          />
-        ))}
-      </div>
-
       <div className="flex justify-center items-center bg-black/50 w-full h-full transition-all duration-700 ease-in-out">
         <div className="relative w-full flex justify-center">
           <div

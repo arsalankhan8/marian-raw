@@ -193,6 +193,8 @@ const ExpertiseCard = ({ item }) => {
       <img
         src={item.image}
         alt={item.title}
+        loading="lazy"
+        decoding="async"
         className={`absolute inset-0 h-full w-full object-cover transition-transform duration-700 ${
           isActive ? "scale-105" : "scale-100"
         }`}

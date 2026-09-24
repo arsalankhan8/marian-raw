@@ -1,15 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import sliderimg1 from "../../../assets/sliderbanner/b1.webp";
-import sliderimg2 from "../../../assets/sliderbanner/b2.webp";
-import sliderimg3 from "../../../assets/sliderbanner/b3.webp";
-import sliderimg4 from "../../../assets/sliderbanner/b4.webp";
-import sliderimg5 from "../../../assets/sliderbanner/b5.webp";
-import sliderimg6 from "../../../assets/sliderbanner/b6.webp";
-import sliderimg7 from "../../../assets/sliderbanner/b7.webp";
-import sliderimg8 from "../../../assets/sliderbanner/b8.webp";
-import sliderimg9 from "../../../assets/sliderbanner/b9.webp";
-import sliderimg10 from "../../../assets/sliderbanner/b10.webp";
 import box from "../../../assets/box.png";
 import down from "../../../assets/arrdown.png";
 import iconlines from "../../../assets/lineicon.png";
@@ -87,7 +77,7 @@ export default function USPortfoliopagesliderv2() {
       id: "10",
       location: "New York City, New York",
       title: "Goldman Sachs",
-      img: "/images/portfolio/GoldmanSachs/main.webp",
+      img: "/images/portfolio/GoldmanSachs/main-new.webp",
       link: "/US/portfolio/GoldmanSachs",
     },
     {

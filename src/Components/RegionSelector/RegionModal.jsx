@@ -8,6 +8,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import MarianiScales from "../../assets/MarianiScales.webp";
 import MarianiWritten from "../../assets/MarianiWritten.webp";
 import EnteranceBannerVideo from "../../assets/home/RegionVideo.mp4";
+import EnteranceBannerPoster from "@optimized/home/RegionVideo-poster.webp";
 
 import { REGIONS } from "../../constants/regions";
 
@@ -129,11 +130,12 @@ const RegionModal = ({
       >
         <video
           ref={videoRef}
+          poster={EnteranceBannerPoster}
           autoPlay={!shouldReduceMotion}
           loop
           muted
           playsInline
-          preload={shouldReduceMotion ? "metadata" : "auto"}
+          preload="metadata"
           aria-hidden="true"
           tabIndex={-1}
           onPlay={() => setIsVideoPlaying(true)}

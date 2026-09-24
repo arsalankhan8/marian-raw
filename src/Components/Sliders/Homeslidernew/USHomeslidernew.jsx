@@ -2,8 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import locationicon from "../../../assets/mapw.png";
 import { Link } from "react-router";
 
-export default function Homeslidernew() {
-  const slides = [
+const US_SLIDES = [
     {
       id: "1",
       location: "New York City, New York",
@@ -81,7 +80,10 @@ export default function Homeslidernew() {
       img: "/images/portfolio/NYUGym/2.webp",
       link: "/US/portfolio/NYUGym",
     },
-  ];
+];
+
+export default function Homeslidernew() {
+  const slides = US_SLIDES;
 
   const containerRef = useRef(null);
   const contentRef = useRef(null);
@@ -97,31 +99,6 @@ export default function Homeslidernew() {
   const [borderRightPos, setBorderRightPos] = useState(
     typeof window !== "undefined" ? window.innerWidth - 48 : 0
   );
-
-  const [imagesPreloaded, setImagesPreloaded] = useState(false);
-
-  useEffect(() => {
-    let mounted = true;
-
-    const promises = slides.map(
-      (s) =>
-        new Promise((resolve) => {
-          const img = new Image();
-          img.src = s.img;
-          img.onload = () => resolve({ src: s.img, status: "ok" });
-          img.onerror = () => resolve({ src: s.img, status: "error" });
-          setTimeout(() => resolve({ src: s.img, status: "timeout" }), 3000);
-        })
-    );
-
-    Promise.all(promises).then(() => {
-      if (mounted) setImagesPreloaded(true);
-    });
-
-    return () => {
-      mounted = false;
-    };
-  }, [slides]);
 
   const updateBorderPositions = () => {
     const container = containerRef.current;
@@ -217,19 +194,20 @@ export default function Homeslidernew() {
     return () => clearInterval(interval);
   }, [slides.length]);
 
+  const nextImage = slides[(currentSlide + 1) % slides.length].img;
+
+  useEffect(() => {
+    const image = new Image();
+    image.decoding = "async";
+    image.src = nextImage;
+  }, [nextImage]);
+
   return (
     <div
       ref={containerRef}
       className="flex justify-center items-center w-full h-[400px] md:h-[100vh] bg-cover bg-no-repeat relative overflow-hidden transition-all duration-700 ease-in-out"
       style={{ backgroundImage: `url(${slides[currentSlide].img})` }}
     >
-      {/* HIDDEN IMG FALLBACK */}
-      <div style={{ position: "absolute", width: 0, height: 0, overflow: "hidden", pointerEvents: "none", opacity: 0 }} aria-hidden>
-        {slides.map((s) => (
-          <img key={s.id} src={s.img} alt="" style={{ width: 0, height: 0 }} />
-        ))}
-      </div>
-
       <div className="flex justify-center items-center bg-black/50 w-full h-full transition-all duration-700 ease-in-out">
         <div className="relative w-full flex justify-center">
           <div

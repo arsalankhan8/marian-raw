@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import Leftheadingright from "../../Components/Headings/Leftheadingtop/Leftheadingright";
 import Header from "../../Components/Header/Header";
-import imgs from "../../assets/sliderbanner/be.webp";
 import imgs2 from "../../assets/sliderbanner/legacy-banner.png";
 import Centerheading from "../../Components/Headings/Centerheading/Centerheading";
 import Stickysection from "../../Components/Legacycomponents/Stickysection/Stickysection";
