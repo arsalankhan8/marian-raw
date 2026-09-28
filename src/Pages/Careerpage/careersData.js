@@ -805,54 +805,7 @@ export const JOBS_BY_REGION = {
       ],
     },
   ],
-  us: [
-    {
-      slug: "metal-fabricator",
-      title: "Metal Fabricator",
-      location: "New York, United States",
-      type: "Full-Time",
-      department: "Welding & Fabrication",
-      eyebrow: "United States Opportunity",
-      summary:
-        "Mariani is seeking a metal fabricator to support the production of custom architectural metalwork for complex projects across the United States.",
-      responsibilities: [
-        "Read fabrication drawings and prepare materials for production.",
-        "Cut, fit, form, assemble, and finish metal components accurately.",
-        "Verify dimensions and quality at each stage of fabrication.",
-        "Use tools and equipment safely and maintain an organized work area.",
-        "Coordinate with supervisors, welders, and quality-control personnel.",
-      ],
-      qualifications: [
-        "Previous metal-fabrication or architectural-metalwork experience.",
-        "Ability to read drawings and work from precise measurements.",
-        "Working knowledge of common fabrication tools and equipment.",
-        "Reliable, safety-focused, and comfortable working within a team.",
-      ],
-    },
-    {
-      slug: "quality-control-inspector",
-      title: "Quality Control Inspector",
-      location: "New York, United States",
-      type: "Full-Time",
-      department: "Quality Control & Inspection",
-      eyebrow: "United States Opportunity",
-      summary:
-        "Mariani is seeking a quality control inspector to verify materials, fabrication, dimensions, finishes, and documentation against project requirements.",
-      responsibilities: [
-        "Inspect incoming materials, fabricated components, welds, and assemblies.",
-        "Verify work against drawings, specifications, tolerances, and quality plans.",
-        "Document inspection results and coordinate corrective actions.",
-        "Support traceability, reporting, and quality-system requirements.",
-        "Work with production teams to prevent recurring quality issues.",
-      ],
-      qualifications: [
-        "Quality-control or inspection experience in fabrication or manufacturing.",
-        "Ability to interpret drawings, specifications, and measurement requirements.",
-        "Experience using inspection and precision-measurement tools.",
-        "Relevant inspection or welding certifications are considered an asset.",
-      ],
-    },
-  ],
+  us: [],
 };
 
 export const getCareerDetail = (region, slug) => {

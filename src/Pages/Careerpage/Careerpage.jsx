@@ -263,6 +263,7 @@ export default function Careerpage() {
 
     const currentJobs =
         JOBS_BY_REGION[pageRegion];
+    const showJobOpportunities = pageRegion !== "us";
 
     const scrollToSection = (sectionId) => {
         document
@@ -445,22 +446,24 @@ export default function Careerpage() {
                             </p>
 
                             <div className="mt-9 flex flex-col gap-4 sm:flex-row">
-                                <button
-                                    type="button"
-                                    onClick={() =>
-                                        scrollToSection(
-                                            "job-opportunities",
-                                        )
-                                    }
-                                    className="group inline-flex cursor-pointer items-center justify-center gap-3 rounded-full bg-[#00688F] px-7 py-4 text-[14px] font-semibold text-white transition-all duration-300 hover:bg-[#005472]"
-                                >
-                                    View Open Positions
+                                {showJobOpportunities && (
+                                    <button
+                                        type="button"
+                                        onClick={() =>
+                                            scrollToSection(
+                                                "job-opportunities",
+                                            )
+                                        }
+                                        className="group inline-flex cursor-pointer items-center justify-center gap-3 rounded-full bg-[#00688F] px-7 py-4 text-[14px] font-semibold text-white transition-all duration-300 hover:bg-[#005472]"
+                                    >
+                                        View Open Positions
 
-                                    <CareerIcon
-                                        name="arrow"
-                                        className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1"
-                                    />
-                                </button>
+                                        <CareerIcon
+                                            name="arrow"
+                                            className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1"
+                                        />
+                                    </button>
+                                )}
 
                             </div>
                         </Motion.div>
@@ -469,10 +472,11 @@ export default function Careerpage() {
 
                 {/* Job Opportunities */}
 
-                <section
-                    id="job-opportunities"
-                    className="scroll-mt-28 py-20 lg:py-32"
-                >
+                {showJobOpportunities && (
+                    <section
+                        id="job-opportunities"
+                        className="scroll-mt-28 py-20 lg:py-32"
+                    >
                     <div className="mx-auto max-w-[90vw]">
                         <Motion.div
                             {...revealAnimation}
@@ -562,7 +566,8 @@ export default function Careerpage() {
                             )}
                         </div>
                     </div>
-                </section>
+                    </section>
+                )}
 
                 {/* What Defines Our Team */}
                 <section className="overflow-hidden pb-20 lg:pb-32">
@@ -1055,17 +1060,19 @@ export default function Careerpage() {
                                 </p>
 
                                 <div className="mt-9 flex flex-col justify-center gap-4 sm:flex-row">
-                                    <button
-                                        type="button"
-                                        onClick={() =>
-                                            scrollToSection(
-                                                "job-opportunities",
-                                            )
-                                        }
-                                        className="cursor-pointer rounded-full border border-white/60 px-7 py-4 text-[14px] font-semibold text-white transition-all duration-300 hover:bg-white hover:text-black"
-                                    >
-                                        View Open Positions
-                                    </button>
+                                    {showJobOpportunities && (
+                                        <button
+                                            type="button"
+                                            onClick={() =>
+                                                scrollToSection(
+                                                    "job-opportunities",
+                                                )
+                                            }
+                                            className="cursor-pointer rounded-full border border-white/60 px-7 py-4 text-[14px] font-semibold text-white transition-all duration-300 hover:bg-white hover:text-black"
+                                        >
+                                            View Open Positions
+                                        </button>
+                                    )}
 
                                     <button
                                         type="button"
