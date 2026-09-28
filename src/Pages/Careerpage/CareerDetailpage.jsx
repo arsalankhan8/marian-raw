@@ -28,12 +28,29 @@ function DetailList({ title, description, items }) {
         </p>
       )}
       <ul className={`${description ? "mt-4" : "mt-5"} space-y-4`}>
-        {items.map((item) => (
-          <li key={item} className="flex gap-4 text-[15px] leading-7 text-[#5F666A]">
-            <span className="mt-[11px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#00688F]" />
-            <span>{item}</span>
-          </li>
-        ))}
+        {items.map((item) => {
+          const text = typeof item === "string" ? item : item.text;
+          const subitems = typeof item === "string" ? [] : item.subitems ?? [];
+
+          return (
+            <li key={text} className="flex gap-4 text-[15px] leading-7 text-[#5F666A]">
+              <span className="mt-[11px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#00688F]" />
+              <div>
+                <span>{text}</span>
+                {subitems.length > 0 && (
+                  <ul className="mt-2 space-y-2 pl-1">
+                    {subitems.map((subitem) => (
+                      <li key={subitem} className="flex gap-3">
+                        <span className="mt-[11px] h-1.5 w-1.5 shrink-0 rounded-full border border-[#00688F]" />
+                        <span>{subitem}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            </li>
+          );
+        })}
       </ul>
     </section>
   );
@@ -118,9 +135,14 @@ export default function CareerDetailpage() {
                 {detail.kind === "job" ? "Position Overview" : "Career Overview"}
               </span>
 
-              <p className="mt-5 text-[18px] leading-8 text-[#42494D]">
-                {detail.summary}
-              </p>
+              <div className="mt-5 space-y-5 text-[18px] leading-8 text-[#42494D]">
+                {(Array.isArray(detail.summary)
+                  ? detail.summary
+                  : [detail.summary]
+                ).map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
+              </div>
 
               {detail.sections?.length > 0 ? (
                 detail.sections.map((section) => (

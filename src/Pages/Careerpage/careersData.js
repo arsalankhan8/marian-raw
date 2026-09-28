@@ -146,10 +146,14 @@ export const JOBS_BY_REGION = {
         "Communicate with project managers to ensure the timely and accurate delivery of drawings.",
         "Conduct on-site inspections to verify compliance with drawings and specifications.",
         "Provide technical support and guidance to junior staff members.",
-        "Stay up to date with industry trends, technologies, and best practices related to drawing checking and document control.",
-        "Apply thorough knowledge and understanding of CWB and AWS welding processes and welding symbols.",
-        "Identify and correct errors, omissions, or discrepancies in drawings.",
-        "Participate in the development and implementation of quality-control procedures for drawings.",
+        "Stay up-to-date with industry trends, technologies, and best practices related to drawing checking and document control.",
+        {
+          text: "Thorough knowledge and understanding of CWB and AWS welding processes and welding sysmbols.",
+          subitems: [
+            "Identify and correct errors, omissions, or discrepancies in drawings.",
+            "Participate in the development and implementation of quality control procedures for drawings.",
+          ],
+        },
       ],
       qualifications: [
         "Proficiency in reading and interpreting engineering drawings.",
@@ -172,15 +176,14 @@ export const JOBS_BY_REGION = {
       summary:
         "Perform precise machining operations using manual and numerically controlled equipment to produce high-quality components from a range of metals.",
       responsibilities: [
-        "Use various types of manual and numerically controlled machine-shop equipment, including cylindrical and surface grinders, burring equipment, lathes, and honing equipment.",
-        "Perform machining operations on materials including steel, aluminum, stainless steel, brass, and bronze.",
-        "Work from specifications and design criteria, including verbal instructions, drawings, and blueprints, and perform standard shop computations relating to work dimensions and tooling.",
-        "Use a wide variety of precision measuring instruments and maintain accurate dimensional tolerances based on drawings.",
-        "Improvise production aids as necessary to facilitate operations.",
-        "Rework and calibrate production parts, assemblies, and machine tooling as required, checking each component for accuracy as it comes off the machine.",
+        "Utilizes various types of manual and numerically controlled machine shop equipment (i.e. Cylindrical and Surface Grinding, Burring,Lathes, Honing, etc.) to perform machining operations on materials including, but not limited to steel, aluminum, stainless steel, brass, bronze.",
+        "Works from and in accordance with specifications and design criteria including but not limited to verbal instructions, drawings and blueprints; performs standard shop computations relating to dimensions of work and tooling. ",
+        "Uses a wide variety of precision measuring instruments; maintains accurate dimensional tolerances based upon drawings.",
+        "Improvises production aides as necessary to facilitate operations.",
+        "Reworks and calibrates production parts or assemblies and machine tooling as required; checks each component for accuracy as they come off of the machine.",
         "Maintain thorough knowledge of all applicable safety requirements and considerations.",
         "Provide all required reports and correspondence.",
-        "Perform other related duties as assigned by the supervisor.",
+        "Performs other related duties and assigned by Supervisor.",
         "Operate manual lathes, mills, and grinders.",
         "Read and interpret blueprints and technical drawings.",
         "Produce high-quality parts and components according to specifications.",
@@ -195,11 +198,11 @@ export const JOBS_BY_REGION = {
         "Maintain a clean and organized work area.",
         "Follow standard operating procedures and best practices.",
         "Communicate effectively with supervisors and colleagues.",
-        "Participate in continuous-improvement initiatives.",
+        "Participate in continuous improvement initiatives.",
         "Train and mentor junior machinists as needed.",
         "Ensure compliance with company policies and regulations.",
         "Monitor inventory levels and request supplies as needed.",
-        "Assist in developing new machining techniques.",
+        "Assist in the development of new machining techniques.",
         "Provide feedback on design and manufacturing processes.",
       ],
       qualifications: [],
@@ -214,17 +217,17 @@ export const JOBS_BY_REGION = {
       summary:
         "Support engineering project delivery through coordination, tracking, documentation, procurement assistance, construction support, and project closeout.",
       responsibilities: [
-        "Maintain and monitor engineering activities and progress trackers, project plans, and project schedules.",
-        "Coordinate with design consultants, engineers, project representatives, internal departments, and authority agencies to establish design deliverable requirements for submission.",
+        "Maintain and monitor engineering activities and progress trackers, project plans, and project schedules",
+        "Coordinate with design consultants, engineers, project representatives, various internal departments, and authority agencies to set up design deliverables requirements for submission.",
         "Document and follow up on important actions and decisions from meetings.",
-        "Maintain regular communication with the active team and business stakeholders to ensure necessary and appropriate steps are taken to resolve difficulties that may impede progress or compromise achievement of the project's objectives.",
-        "Prepare and maintain an engineering cost tracker for new projects to record and track all costs associated with engineering activities.",
-        "Maintain filing and document control for engineering documents.",
-        "Assist the procurement agent with the technical inputs required to facilitate equipment procurement and the hiring of external engineering consultants and subcontractors.",
-        "Support the implementation of design services during construction, including requests for information, shop drawing reviews, non-conformance report resolution, and design changes.",
-        "Assist with overall project closeout, including coordinating with consultants to provide completion documents and as-builts, correcting engineering deficiencies, and maintaining and filing all closeout documents.",
-        "Maintain a log of submittals, Requests for Information (RFIs), and Potential Change Orders.",
-        "Perform other related duties as assigned by Engineering Project Manager(s).",
+        "Maintain regular communications with active team and business stakeholders to ensure necessary and appropriate steps are taken to resolve difficulties, which may impede progress or compromise achievement of project's objectives",
+        "Prepare and maintain Engineering cost tracker for new projects to record and track all costs associated with engineering activities",
+        "File and document control of engineering documents",
+        "Assist procurement agent with all necessary technical inputs to facilitate procurement of equipment and hiring of external engineering consultants and subcontractors",
+        "Support the implementation of design services during construction procedures including requests for information, shop drawing reviews, non-conformance report resolution and design changes during construction",
+        "Assist with overall project closeout, including coordination with all consultants to provide completion documents and Asbuilts, engineering deficiency corrections, maintaining and filing all close out documents",
+        "Maintain a log of submittals, Requests for Information (RFI), and Potential Change Orders",
+        "Performs other related duties as assigned by Engineering ProjectManager(s)"
       ],
       qualifications: [],
     },
@@ -237,6 +240,7 @@ export const JOBS_BY_REGION = {
       eyebrow: "Canada Opportunity",
       summary:
         "Develop, coordinate, and maintain workplace health and safety programs that protect employees and support regulatory compliance across the organization.",
+
       responsibilities: [
         "Program Management: Develop, implement, and maintain health and safety policies, procedures, and training programs.",
         "Risk Assessment & Audits: Conduct regular workplace inspections, ergonomic assessments, and safety audits to identify and mitigate hazards.",
@@ -330,7 +334,7 @@ export const JOBS_BY_REGION = {
         {
           title: "Equipment",
           description:
-            "The employee may be required to operate or work around the following equipment. Only employees who have received the required training and authorization may operate applicable equipment.",
+            "The employee may be required to operate or work around:",
           items: [
             "Forklifts.",
             "Pallet jacks.",
@@ -340,6 +344,7 @@ export const JOBS_BY_REGION = {
             "Packaging equipment.",
             "Hand and power tools.",
             "Shipping and inventory computer systems.",
+            "Only employees who have received the required training and authorization may operate applicable equipment.",
           ],
         },
         {
@@ -494,20 +499,29 @@ export const JOBS_BY_REGION = {
         {
           title: "Key Responsibilities",
           items: [
-            "Procure materials, supplies, equipment, and services for operations.",
-            "Review requisition requests, prepare purchase orders, and solicit bids for materials and services.",
-            "Apply strong knowledge of Material Test Reports (MTRs) from metal suppliers.",
-            "Read and understand engineering drawings, including dimensioning and tolerancing.",
-            "Apply a quality-assurance background gained in an environment with established quality standards.",
-            "Remain accountable for all purchasing activities and supplier management in a fast-paced, high-volume environment.",
-            "Process purchase requisitions and issue purchase orders for products and services based on negotiated costs and deliverables.",
-            "Manage a portfolio of materials and suppliers to ensure product-manufacturing targets are met.",
-            "Ensure the continuous supply of required goods and materials, and communicate any supply problems that may pose a risk to or affect business operations.",
-            "Identify new or alternate sources of supply while maintaining alignment with the long-term supply-chain strategy.",
-            "Work cross-functionally across the organization and with suppliers to resolve issues related to material supply, costs, and purchase-order-to-invoice discrepancies.",
-            "Coordinate shipments and receive and track deliveries.",
+            "Procuring materials, supplies, equipment, and services for operations.",
+            "Review of requisition requests, prepare purchase orders, and solicit bids for material and services.",
+            "Strong knowledge of MTR reports from metal suppliers",
+            "Ability to read and understand engineering drawings in terms of dimensioning, tolerancing etc.",
+            "Quality assurance background having worked in an environment with quality standards.",
+            "Accountable for all purchasing activities, managing suppliers, in a fast-paced high-volume environment;",
+            "Process purchase requisitions and issue purchase orders for products and services based on negotiated costs and deliverables; Manage a portfolio of materials and suppliers to ensure that product manufacturing targets are met",
+            "Ensure continuous supply of required goods and materials, and communicate any supply problems which may pose a risk or impact to business operations;",
+            "Identify new or alternate sources of supply while maintaining alignment to the long-term supply chain strategy",
+            "Work cross-functionally across the organization and with suppliers to solve any issues related to material supply, costing, and any related discrepancies regarding purchase order to invoice;",
+            "Coordinate shipments and receive/track deliveries;",
             "Perform all other duties as assigned.",
-          ],
+            "Qualifications & Key Competencies:",
+            "BS in Business Administration or related field; or actual working experience.",
+            "2-3 years’ sales/ purchase related experience in metals industry is an asset.",
+            "Experience/ knowledge in metals industry is desirable",
+            "Strong Microsoft Office application skills, including Excel and Word;",
+            "Excellent customer service and interpersonal skills with the ability to communicate effectively both written and verbal;",
+            "Strong team player with the ability to build strong, collaborative relationships with Sales, Shipping & Receiving, Production, Suppliers and Customers;",
+            "Self-motivated, with strong organizational skills and the ability to prioritize tasks in a fast-paced environment;",
+            "Ability to work under pressure and achieve deadlines;",
+            "Strong analytical skills with high attention to detail and an ability to follow policies and procedures."
+          ]
         },
         {
           title: "Qualifications & Key Competencies",
@@ -532,8 +546,11 @@ export const JOBS_BY_REGION = {
       type: "Full-Time",
       department: "Human Resources",
       eyebrow: "Canada Opportunity",
-      summary:
-        "The Human Resources Manager is responsible for managing and coordinating the Company's human resources functions, policies, programs, and employee relations activities. The position provides guidance to management and employees on workplace policies, recruitment, compensation and benefits, performance management, attendance, discipline, training, health and safety, employment standards, and other employment-related matters. The Human Resources Manager is expected to promote a professional, respectful, safe, and productive workplace while ensuring that HR practices are consistently applied and comply with applicable legislation and Company policies.",
+      summary: [
+        "The Human Resources Manager is responsible for managing and coordinating the Company's human resources functions, policies, programs, and employee relations activities.",
+        "The position provides guidance to management and employees on workplace policies, recruitment, compensation and benefits, performance management, attendance, discipline, training, health and safety, employment standards, and other employment-related matters.",
+        "The Human Resources Manager is expected to promote a professional, respectful, safe, and productive workplace while ensuring that HR practices are consistently applied and comply with applicable legislation and Company policies.",
+      ],
       sections: [
         {
           title: "Recruitment and Staffing",
