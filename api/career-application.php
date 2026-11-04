@@ -795,7 +795,7 @@ if ($retryAfter > 0) {
     ]);
 }
 
-if (getField('_gotcha') !== '') {
+if (getField('bot-field') !== '' || getField('_gotcha') !== '') {
     logSecurityEvent('honeypot_triggered', 'warning', [
         'client_hash' => $clientHash,
     ]);

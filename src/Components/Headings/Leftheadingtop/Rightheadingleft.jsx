@@ -4,12 +4,12 @@ export default function Rightheadingleft({ heading, subtext, as = "h2" }) {
   return (
     <div className="max-w-[90vw] w-full mx-auto pt-[70px] 3xl:pt-[180px]">
       <div className="flex pb-[25px] jus md:w-[87%]">
-        <Heading className=" text-center md:text-left text-[30px] lg:text-[30px] xl:text-[45px] 2xl:text-[55px] 3xl:text-[111px] text-[#00688F] font-counture leading-[100%] md:leading-[84%] uppercase">
+        <Heading className=" text-center md:text-left text-[30px] lg:text-[30px] xl:text-[45px] 2xl:text-[55px] 4k:text-[111px] text-[#00688F] font-counture leading-[100%] md:leading-[84%] uppercase">
           {heading}
         </Heading>
       </div>
       <div className="flex pb-[25px] md:w-[60%] md:pt-[10px] xl:pt-[15px] 2xl:pt-[25px]">
-        <p className="text-[14px] lg:text-[15px] 3xl:text-[24px] text-black font-unageo text-left leading-[112%]">
+        <p className="text-[14px] lg:text-[15px] 4k:text-[24px] text-black font-unageo text-left leading-[112%]">
           {subtext}
         </p>
       </div>

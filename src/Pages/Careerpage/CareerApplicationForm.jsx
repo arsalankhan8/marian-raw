@@ -1,8 +1,17 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { JOBS_BY_REGION } from "./careersData";
+import {
+  careerFormEndpoint,
+  isSecureFormEndpointConfigured,
+  submitSecureForm,
+} from "../../utils/secureForms";
+import TurnstileWidget from "./TurnstileWidget";
+import {
+  hasTurnstileToken,
+  resetTurnstileWidget,
+} from "./turnstile";
 
-const CAREER_FORM_NAME = "career-application";
-const CAREER_FORM_ENDPOINT = "/__forms.html";
 const MAXIMUM_RESUME_BYTES = 7 * 1024 * 1024;
 
 function FormIcon({ name, className = "h-5 w-5" }) {
@@ -84,18 +93,25 @@ export default function CareerApplicationForm({ application, region }) {
       return;
     }
 
+    if (!isSecureFormEndpointConfigured(careerFormEndpoint)) {
+      setFormStatus({
+        type: "error",
+        message: "The secure application service is temporarily unavailable.",
+      });
+      return;
+    }
+
+    if (!hasTurnstileToken(formData)) {
+      setFormStatus({
+        type: "error",
+        message: "Please complete the security verification.",
+      });
+      return;
+    }
+
     try {
       setIsSubmitting(true);
-      formData.set("form-name", CAREER_FORM_NAME);
-
-      const response = await fetch(CAREER_FORM_ENDPOINT, {
-        method: "POST",
-        body: formData,
-      });
-
-      if (!response.ok) {
-        throw new Error("Unable to submit the application.");
-      }
+      await submitSecureForm(careerFormEndpoint, formData);
 
       form.reset();
       setSelectedResumeName("");
@@ -114,22 +130,19 @@ export default function CareerApplicationForm({ application, region }) {
             : "We could not submit your application. Please try again.",
       });
     } finally {
+      resetTurnstileWidget(form);
       setIsSubmitting(false);
     }
   };
 
   return (
     <form
-      name={CAREER_FORM_NAME}
-      action={CAREER_FORM_ENDPOINT}
+      action={careerFormEndpoint || undefined}
       method="POST"
       onSubmit={handleSubmit}
       encType="multipart/form-data"
-      data-netlify="true"
-      data-netlify-honeypot="bot-field"
       className="rounded-[24px] bg-white p-6 text-black shadow-[0_20px_60px_rgba(0,0,0,0.08)] sm:p-8 lg:p-10"
     >
-      <input type="hidden" name="form-name" value={CAREER_FORM_NAME} />
       <div className="mb-7 rounded-[14px] border border-[#B9D9E4] bg-[#EDF7FA] p-5">
         <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#00688F]">
           {application.kind === "job" ? "Applying For" : "Area of Interest"}
@@ -299,6 +312,23 @@ export default function CareerApplicationForm({ application, region }) {
           autoComplete="off"
         />
       </div>
+
+      <div className="mt-5">
+        <TurnstileWidget action="career_application" />
+      </div>
+
+      <p className="mt-4 text-[12px] leading-relaxed text-[#4B5563]">
+        By submitting, you acknowledge that your applicant information and
+        resume will be processed for recruitment, security screening, and
+        record-keeping as described in our{" "}
+        <Link
+          to={`${region === "us" ? "/US" : "/canada"}/privacy-policy`}
+          className="font-semibold text-[#00688F] underline underline-offset-2"
+        >
+          Privacy Policy
+        </Link>
+        .
+      </p>
 
       <div className="mt-7">
         <button

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion as Motion, AnimatePresence } from 'framer-motion'
 
 export default function Newstabs({ blogdata }) {
   const [activeTab, setActiveTab] = useState(1)
@@ -19,12 +19,12 @@ export default function Newstabs({ blogdata }) {
   }
 
   return (
-    <div>
+    <div className="w-full min-w-0">
       {/* Tabs */}
-      <div className="flex justify-between mt-[20px]">
+      <div className="mt-[20px] grid w-full grid-cols-2">
         <p
           onClick={() => setActiveTab(1)}
-          className={`font-unageo-bold whitespace-nowrap text-[13px] md:text-[11px] xl:text-[16px] 3xl:text-[24px] px-[25px] py-[15px] leading-[132%] capitalize cursor-pointer ${
+          className={`flex min-w-0 cursor-pointer items-center justify-center px-3 py-[15px] text-center font-unageo-bold text-[13px] leading-[132%] capitalize md:px-5 md:text-[11px] xl:text-[16px] 4k:text-[24px] ${
             activeTab === 1
               ? 'text-black bg-[#D9D9D9]'
               : 'text-[#BFBFBF] bg-white'
@@ -35,7 +35,7 @@ export default function Newstabs({ blogdata }) {
 
         <p
           onClick={() => setActiveTab(2)}
-          className={`font-unageo-bold whitespace-nowrap text-[13px] md:text-[11px] xl:text-[16px] 3xl:text-[24px] px-[25px] py-[15px] leading-[132%] capitalize cursor-pointer ${
+          className={`flex min-w-0 cursor-pointer items-center justify-center px-3 py-[15px] text-center font-unageo-bold text-[13px] leading-[132%] capitalize md:px-5 md:text-[11px] xl:text-[16px] 4k:text-[24px] ${
             activeTab === 2
               ? 'text-black bg-[#D9D9D9]'
               : 'text-[#BFBFBF] bg-white'
@@ -48,7 +48,7 @@ export default function Newstabs({ blogdata }) {
       {/* Animated Content */}
       <div className="relative py-[40px] px-[15px] md:px-[30px] bg-[#D9D9D9]">
         <AnimatePresence mode="wait">
-          <motion.div
+          <Motion.div
             key={activeTab} // triggers animation on tab switch
             variants={variants}
             initial="hidden"
@@ -58,18 +58,18 @@ export default function Newstabs({ blogdata }) {
           >
             {filteredBlogs.map((value, index) => (
               <div className="flex flex-col gap-2" key={index}>
-                <h4 className="font-unageo-bold text-[16px] md:text-[18px] lg:text-[21px] capitalize leading-[94%] 3xl:text-[31px]">
+                <h4 className="font-unageo-bold text-[16px] md:text-[18px] lg:text-[21px] capitalize leading-[94%] 4k:text-[31px]">
                   {value.title}
                 </h4>
-                <p className="font-unageo text-[12px] capitalize 3xl:text-[17px]">
+                <p className="font-unageo text-[12px] capitalize 4k:text-[17px]">
                   {value.description}
                 </p>
-                <button className="font-unageo-bold text-[16px] xl:text-[17px] leading-[132%] 3xl:text-[21px] capitalize underline w-fit text-[#00688F]">
+                <button className="font-unageo-bold text-[16px] xl:text-[17px] leading-[132%] 4k:text-[21px] capitalize underline w-fit text-[#00688F]">
                   Read More
                 </button>
               </div>
             ))}
-          </motion.div>
+          </Motion.div>
         </AnimatePresence>
       </div>
     </div>

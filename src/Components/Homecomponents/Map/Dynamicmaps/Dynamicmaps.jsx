@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
@@ -10,8 +10,6 @@ export default function DynamicMaps() {
   const handleViewMore = () => {
     navigate(getRegionPortfolioPath());
   };
-
-  const [countries, setCountries] = useState(null);
 
   const locations = [
     { id: 1, name: "New York City", country: "USA", short: "NYC", lat: 40.7128, lng: -74.0060, desc: "3 Projects" },
@@ -25,7 +23,7 @@ export default function DynamicMaps() {
       className: "custom-marker",
       html: `
         <div style="text-align:center;">
-          <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" style="width:32px;height:32px;" />
+          <div style="display:inline-flex;width:32px;height:32px;align-items:center;justify-content:center;border-radius:9999px;background:#00688F;color:white;font-size:18px;box-shadow:0 2px 6px rgba(0,0,0,.25);">&#8226;</div>
           <div style="font-size:12px;color:#00688F;margin-top:3px;font-weight:bold;">${short}</div>
           <div style="font-size:10px;color:#555;">${country}</div>
         </div>
@@ -34,13 +32,6 @@ export default function DynamicMaps() {
       iconAnchor: [16, 42],
       popupAnchor: [0, -42],
     });
-
-  useEffect(() => {
-    fetch("https://raw.githubusercontent.com/johan/world.geo.json/master/countries.geo.json")
-      .then((res) => res.json())
-      .then((data) => setCountries(data))
-      .catch((err) => console.error("Error loading GeoJSON:", err));
-  }, []);
 
   return (
     <div className="w-full h-[600px] mt-[60px]">

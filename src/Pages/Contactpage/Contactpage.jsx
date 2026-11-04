@@ -39,7 +39,7 @@ export default function Contactpage() {
         <div className="flex flex-wrap md:flex-nowrap gap-6">
           {/* Heading */}
           <div className="flex justify-center md:justify-start w-full md:w-[50%]">
-            <h1 className="font-unageo-bold text-[#00688F] text-[24px] md:text-[32px] lg:text-[38px] xl:text-[44px] 2xl:text-[52px] 3xl:text-[60px] leading-[100%]">
+            <h1 className="font-unageo-bold text-[#00688F] text-[24px] md:text-[32px] lg:text-[38px] xl:text-[44px] 2xl:text-[52px] 4k:text-[60px] leading-[100%]">
               CONTACT US
             </h1>
           </div>
@@ -48,7 +48,7 @@ export default function Contactpage() {
           <div className="md:flex justify-between w-full md:w-[50%]">
             {/* Address */}
             <div className="flex items-center md:items-start flex-col">
-              <p className="flex items-start gap-2 font-unageo-medium text-[14px] md:text-[16px] lg:text-[18px] xl:text-[20px] 2xl:text-[22px] 3xl:text-[26px] capitalize">
+              <p className="flex items-start gap-2 font-unageo-medium text-[14px] md:text-[16px] lg:text-[18px] xl:text-[20px] 2xl:text-[22px] 4k:text-[26px] capitalize">
                 <MapPin className="w-4 h-4 md:w-6 md:h-6 mt-1 md:mt-2 shrink-0" />
 
                 <span>
@@ -84,7 +84,7 @@ export default function Contactpage() {
                   /[^\d+]/g,
                   "",
                 )}`}
-                className="flex items-center justify-center md:justify-start gap-2 font-unageo-medium text-center md:text-left text-[14px] md:text-[24px] lg:text-[18px] xl:text-[25px] 2xl:text-[28px] 3xl:text-[66px] leading-[20px]"
+                className="flex items-center justify-center md:justify-start gap-2 font-unageo-medium text-center md:text-left text-[14px] md:text-[24px] lg:text-[18px] xl:text-[25px] 2xl:text-[28px] 4k:text-[66px] leading-[20px]"
               >
                 <Phone className="w-4 h-4 md:w-6 md:h-6 shrink-0" />
                 {contact.phone}
@@ -92,7 +92,7 @@ export default function Contactpage() {
 
               <a
                 href={`mailto:${contact.email}`}
-                className="flex items-center justify-center md:justify-start gap-2 font-unageo-medium text-center md:text-left text-[14px] md:text-[24px] lg:text-[18px] xl:text-[25px] 2xl:text-[28px] 3xl:text-[66px] leading-[32px]"
+                className="flex items-center justify-center md:justify-start gap-2 font-unageo-medium text-center md:text-left text-[14px] md:text-[24px] lg:text-[18px] xl:text-[25px] 2xl:text-[28px] 4k:text-[66px] leading-[32px]"
               >
                 <Mail className="w-4 h-4 md:w-6 md:h-6 shrink-0" />
                 {contact.email}
@@ -116,24 +116,24 @@ export default function Contactpage() {
       {/* Contact form section */}
       <div className="bg-[#00688F] pt-[100px] pb-[110px]">
         <div className="max-w-[90vw] w-full mx-auto text-white">
-          <h2 className="font-counture text-[20px] lg:text-[30px] xl:text-[45px] 2xl:text-[55px] 3xl:text-[111px] uppercase leading-[100%]">
+          <h2 className="font-counture text-[20px] lg:text-[30px] xl:text-[45px] 2xl:text-[55px] 4k:text-[111px] uppercase leading-[100%]">
             Speak with Us
           </h2>
 
-          <p className="font-unageo-semibold text-[14px] md:text-[24px] lg:text-[18px] xl:text-[25px] 2xl:text-[28px] 3xl:text-[66px] capitalize">
+          <p className="font-unageo-semibold text-[14px] md:text-[24px] lg:text-[18px] xl:text-[25px] 2xl:text-[28px] 4k:text-[66px] capitalize">
             Witness Your Vision Find Form
           </p>
 
           <ContactPageform />
 
           <div className="flex flex-col w-full md:w-[80%] mt-[50px]">
-            <p className="font-unageo-bold text-white text-center md:text-left text-[20px] lg:text-[30px] xl:text-[45px] 2xl:text-[55px] 3xl:text-[111px] leading-[112%] tracking-[-2%]">
+            <p className="font-unageo-bold text-white text-center md:text-left text-[20px] lg:text-[30px] xl:text-[45px] 2xl:text-[55px] 4k:text-[111px] leading-[112%] tracking-[-2%]">
               Where vision finds permanence,
               <br />
               Legacy takes shape.
             </p>
 
-            <p className="flex justify-center md:justify-start font-unageo-medium text-[15px] md:text-[22px] 3xl:text-[30px] gap-2 mt-4">
+            <p className="flex justify-center md:justify-start font-unageo-medium text-[15px] md:text-[22px] 4k:text-[30px] gap-2 mt-4">
               Get Started
 
               <img

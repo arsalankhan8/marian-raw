@@ -101,9 +101,9 @@ export default function Legacysliderv3() {
         {/* RIGHT SIDE - TEXT */}
         <div className="flex flex-col gap-6 justify-between w-[100%] md:w-[55%]">
           <div className="flex flex-col gap-3">
-            <p className="font-unageo leading-[112%] text-[12px] md:text-[14px] lg:text-[15px] 3xl:text-[24px]">Our Values</p>
+            <p className="font-unageo leading-[112%] text-[12px] md:text-[14px] lg:text-[15px] 4k:text-[24px]">Our Values</p>
             <img src={line} alt="arrow" className="w-[1px] h-[38px]" />
-            <p className="font-unageo leading-[112%] text-[12px] md:text-[14px] lg:text-[15px] 3xl:text-[24px]">{`0${index + 1}`}</p>
+            <p className="font-unageo leading-[112%] text-[12px] md:text-[14px] lg:text-[15px] 4k:text-[24px]">{`0${index + 1}`}</p>
           </div>
 
           <AnimatePresence mode="wait">
@@ -115,10 +115,10 @@ export default function Legacysliderv3() {
               transition={{ duration: 0.45, ease: "easeInOut" }}
               className="flex flex-col gap-6"
             >
-              <p className="font-unageo-bold text-[14px] md:text-[24px] lg:text-[18px] xl:text-[25px]  2xl:text-[28px] 3xl:text-[66px] leading-[97%] text-[#00688F] capitalize">
+              <p className="font-unageo-bold text-[14px] md:text-[24px] lg:text-[18px] xl:text-[25px]  2xl:text-[28px] 4k:text-[66px] leading-[97%] text-[#00688F] capitalize">
                 {slides[index].title}
               </p>
-              <p className="font-unageo text-[12px] md:text-[14px] lg:text-[15px] 3xl:text-[24px] mt-[-15px] md:pr-6">{slides[index].description}</p>
+              <p className="font-unageo text-[12px] md:text-[14px] lg:text-[15px] 4k:text-[24px] mt-[-15px] md:pr-6">{slides[index].description}</p>
             </motion.div>
           </AnimatePresence>
 

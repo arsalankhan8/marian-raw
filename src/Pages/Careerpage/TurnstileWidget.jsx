@@ -49,7 +49,7 @@ function loadTurnstileScript() {
   return turnstileScriptPromise;
 }
 
-export default function TurnstileWidget() {
+export default function TurnstileWidget({ action }) {
   const containerRef = useRef(null);
   const widgetIdRef = useRef(null);
   const [loadError, setLoadError] = useState(false);
@@ -71,7 +71,7 @@ export default function TurnstileWidget() {
 
         const widgetId = turnstile.render(container, {
           sitekey: turnstileSiteKey,
-          action: "career_application",
+          action,
           theme: "light",
           appearance: "interaction-only",
           retry: "auto",
@@ -87,14 +87,14 @@ export default function TurnstileWidget() {
     return () => {
       cancelled = true;
 
-      if (widgetIdRef.current && window.turnstile) {
+      if (widgetIdRef.current !== null && window.turnstile) {
         window.turnstile.remove(widgetIdRef.current);
         widgetIdRef.current = null;
       }
 
       delete container.dataset.turnstileWidgetId;
     };
-  }, []);
+  }, [action]);
 
   if (!turnstileSiteKey || loadError) {
     return (

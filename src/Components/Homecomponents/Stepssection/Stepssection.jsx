@@ -88,10 +88,10 @@ export default function Stepssection() {
           }`}
         >
           <img src={steps[activeStep].icon} alt="img" className="h-[70px] w-[70px] md:h-[138px] md:w-[138px]" />
-          <p className="uppercase font-unageo-semibold text-[40px] md:text-[80px] 2xl:text-[120px] leading-[120px] 3xl:text-[180px] text-[#00688F]">
+          <p className="uppercase font-unageo-semibold text-[40px] md:text-[80px] 2xl:text-[120px] leading-[120px] 4k:text-[180px] text-[#00688F]">
             {steps[activeStep].title}
           </p>
-          <p className="font-unageo capitalize text-[16px] md:text-[20px] 3xl:text-[24px] leading-[112%] w-[50%] text-center">
+          <p className="font-unageo capitalize text-[16px] md:text-[20px] 4k:text-[24px] leading-[112%] w-[50%] text-center">
             {steps[activeStep].content}
           </p>
         </div>

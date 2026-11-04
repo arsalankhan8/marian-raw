@@ -293,7 +293,7 @@ const ExpertiseSection = () => {
           viewport={{
             once: true,
           }}
-          className="font-counture text-[20px] uppercase leading-[84%] text-[#00688F] lg:text-[30px] xl:text-[45px] 2xl:text-[55px] 3xl:text-[111px]"
+          className="font-counture text-[20px] uppercase leading-[84%] text-[#00688F] lg:text-[30px] xl:text-[45px] 2xl:text-[55px] 4k:text-[111px]"
         >
           Sectors We Build For
         </motion.h2>
@@ -315,7 +315,7 @@ const ExpertiseSection = () => {
           viewport={{
             once: true,
           }}
-          className="font-unageo-medium text-[14px] capitalize text-[#00688F] md:text-[24px] lg:text-[18px] xl:text-[25px] 2xl:text-[28px] 3xl:text-[66px]"
+          className="font-unageo-medium text-[14px] capitalize text-[#00688F] md:text-[24px] lg:text-[18px] xl:text-[25px] 2xl:text-[28px] 4k:text-[66px]"
         >
           Supporting public and private infrastructure across multiple
           industries.

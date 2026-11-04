@@ -56,7 +56,7 @@ export default function StepSectionNew({ headingLevel = "h1" }) {
             viewport={{ once: true }}
             className="flex flex-col gap-6 text-base md:text-lg text-gray-800 font-unageo-medium leading-[112%]"
           >
-            <p className="border-l-2 text-[12px] md:text-[14px] lg:text-[15px] 3xl:text-[24px] border-[#00688F] pl-6 py-2">
+            <p className="border-l-2 text-[12px] md:text-[14px] lg:text-[15px] 4k:text-[24px] border-[#00688F] pl-6 py-2">
               At Mariani, we design, engineer, fabricate, and install
               high-quality custom metal and glass systems for complex
               architectural and civil projects. From public infrastructure and

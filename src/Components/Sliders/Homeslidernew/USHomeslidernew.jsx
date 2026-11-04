@@ -220,16 +220,16 @@ export default function Homeslidernew() {
                 alt="location"
                 className="w-[20px] h-[24px] md:w-[20px] md:h-[30px] mt-1.5 sm:mt-0 "
               />
-              <p className="text-[16px] md:text-[30px] text-center 3xl:text-[36px] leading-[37px] font-unageo">
+              <p className="text-[16px] md:text-[30px] text-center 4k:text-[36px] leading-[37px] font-unageo">
                 {slides[currentSlide].location}
               </p>
             </div>
-            <p className="text-center text-[25px] md:text-[50px] 2xl:text-[80px] 3xl:text-[100px] text-white uppercase font-unageo-semibold">
+            <p className="text-center text-[25px] md:text-[50px] 2xl:text-[80px] 4k:text-[100px] text-white uppercase font-unageo-semibold">
               {slides[currentSlide].title}
             </p>
             <div className="flex flex-col items-center justify-center gap-4">
               <Link to={`${slides[currentSlide].link}`}>
-                <p className="font-unageo text-[15px] md:text-[25px] 3xl:text-[36px] bg-transparent border-b-[2px] text-white border-white">
+                <p className="font-unageo text-[15px] md:text-[25px] 4k:text-[36px] bg-transparent border-b-[2px] text-white border-white">
                   explore this project
                 </p>
               </Link>

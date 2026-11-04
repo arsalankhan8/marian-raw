@@ -94,7 +94,7 @@ const FlipCard = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
           viewport={{ once: true, amount: 0.1 }}
-          className="text-[20px] lg:text-[30px] xl:text-[45px] 2xl:text-[55px] 3xl:text-[111px] text-[#00688F] font-counture text-center md:text-left leading-[84%] uppercase"
+          className="text-[20px] lg:text-[30px] xl:text-[45px] 2xl:text-[55px] 4k:text-[111px] text-[#00688F] font-counture text-center md:text-left leading-[84%] uppercase"
         >
           CORE EXPERTISE
         </motion.h2>
@@ -104,7 +104,7 @@ const FlipCard = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
           viewport={{ once: true, amount: 0.1 }}
-          className="text-[14px] md:text-[24px] lg:text-[18px] xl:text-[25px] 2xl:text-[28px] 3xl:text-[66px] text-[#00688F] font-unageo-medium capitalize text-center"
+          className="text-[14px] md:text-[24px] lg:text-[18px] xl:text-[25px] 2xl:text-[28px] 4k:text-[66px] text-[#00688F] font-unageo-medium capitalize text-center"
         >
           Engineered systems built for performance, longevity, and architectural integrity.
         </motion.p>

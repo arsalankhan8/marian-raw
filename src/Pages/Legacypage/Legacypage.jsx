@@ -117,7 +117,7 @@ export default function Legacypage({
             viewport={{ once: true, amount: 0.1 }}
           >
             <div className="flex pb-[10px] w-[87%]">
-              <h1 className="text-[20px] lg:text-[30px] xl:text-[45px] 2xl:text-[55px] 3xl:text-[111px] text-[#00688F] font-counture text-left leading-[84%] uppercase">
+              <h1 className="text-[20px] lg:text-[30px] xl:text-[45px] 2xl:text-[55px] 4k:text-[111px] text-[#00688F] font-counture text-left leading-[84%] uppercase">
                 The Legacy of Mariani
               </h1>
             </div>
@@ -128,11 +128,11 @@ export default function Legacypage({
             transition={{ duration: 1, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.1 }}
           >
-            <p className="text-[14px] md:text-[24px] lg:text-[18px] xl:text-[25px]  2xl:text-[28px] 3xl:text-[66px] pl-[4px] md:pl-0 text-[#00688F] font-unageo-medium capitalize text-left ">
+            <p className="text-[14px] md:text-[24px] lg:text-[18px] xl:text-[25px]  2xl:text-[28px] 4k:text-[66px] pl-[4px] md:pl-0 text-[#00688F] font-unageo-medium capitalize text-left ">
               Defined by Detail, Led by Innovation
             </p>
             <div className="flex pb-[25px] md:w-[70%] pt-[10px] ">
-              <span className="text-[12px] md:text-[14px] lg:text-[15px] 3xl:text-[24px] text-black font-unageo text-left pl-[6px] md:pl-0 leading-[112%]">
+              <span className="text-[12px] md:text-[14px] lg:text-[15px] 4k:text-[24px] text-black font-unageo text-left pl-[6px] md:pl-0 leading-[112%]">
                 <>
                   For over four decades, Mariani Metal has been at the forefront
                   of architectural innovation. Our legacy is built on a

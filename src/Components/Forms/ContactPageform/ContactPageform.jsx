@@ -1,4 +1,14 @@
 import React, { useState } from "react";
+import TurnstileWidget from "../../../Pages/Careerpage/TurnstileWidget";
+import {
+  hasTurnstileToken,
+  resetTurnstileWidget,
+} from "../../../Pages/Careerpage/turnstile";
+import {
+  contactFormEndpoint,
+  isSecureFormEndpointConfigured,
+  submitSecureForm,
+} from "../../../utils/secureForms";
 
 export default function ContactPageform() {
   const [formData, setFormData] = useState({
@@ -8,6 +18,8 @@ export default function ContactPageform() {
     message: "",
     consent: false,
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formStatus, setFormStatus] = useState({ type: "", message: "" });
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -17,13 +29,63 @@ export default function ContactPageform() {
     }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    if (isSubmitting) return;
+
+    const form = event.currentTarget;
+    const payload = new FormData(form);
+    setFormStatus({ type: "", message: "" });
+
+    if (!isSecureFormEndpointConfigured(contactFormEndpoint)) {
+      setFormStatus({
+        type: "error",
+        message: "The secure contact service is temporarily unavailable.",
+      });
+      return;
+    }
+
+    if (!hasTurnstileToken(payload)) {
+      setFormStatus({
+        type: "error",
+        message: "Please complete the security verification.",
+      });
+      return;
+    }
+
+    try {
+      setIsSubmitting(true);
+      await submitSecureForm(contactFormEndpoint, payload);
+      setFormData({
+        fullName: "",
+        phone: "",
+        email: "",
+        message: "",
+        consent: false,
+      });
+      setFormStatus({
+        type: "success",
+        message: "Thank you. Your message has been sent.",
+      });
+    } catch (error) {
+      setFormStatus({
+        type: "error",
+        message:
+          error instanceof Error
+            ? error.message
+            : "We could not send your message. Please try again.",
+      });
+    } finally {
+      resetTurnstileWidget(form);
+      setIsSubmitting(false);
+    }
   };
 
   return (
     <form
+      action={contactFormEndpoint || undefined}
+      method="POST"
       onSubmit={handleSubmit}
       className="w-full  p-4 text-white mt-[30px]"
     >
@@ -34,7 +96,7 @@ export default function ContactPageform() {
         value={formData.fullName}
         onChange={handleChange}
         placeholder="Full Name"
-        className="w-full border border-white bg-transparent text-[16px] md:text-[19px] 3xl:text-[30px] px-2 py-0.5 md:px-4 md:py-3 mb-[25px] leading-[30px] md:leading-[30px] lg:leading-[40px] xl:leading-[40px] 3xl:leading-[100px] rounded-none focus:outline-none focus:border-cyan-400"
+        className="w-full border border-white bg-transparent text-[16px] md:text-[19px] 4k:text-[30px] px-2 py-0.5 md:px-4 md:py-3 mb-[25px] leading-[30px] md:leading-[30px] lg:leading-[40px] xl:leading-[40px] 4k:leading-[100px] rounded-none focus:outline-none focus:border-cyan-400"
         required
       />
 
@@ -45,7 +107,7 @@ export default function ContactPageform() {
         value={formData.phone}
         onChange={handleChange}
         placeholder="Phone No"
-        className="w-full border border-white bg-transparent text-[16px] md:text-[19px] 3xl:text-[30px] px-2 py-0.5 md:px-4 md:py-3 mb-[25px] leading-[30px] md:leading-[30px] lg:leading-[40px] xl:leading-[40px] 3xl:leading-[100px] rounded-none focus:outline-none focus:border-cyan-400"
+        className="w-full border border-white bg-transparent text-[16px] md:text-[19px] 4k:text-[30px] px-2 py-0.5 md:px-4 md:py-3 mb-[25px] leading-[30px] md:leading-[30px] lg:leading-[40px] xl:leading-[40px] 4k:leading-[100px] rounded-none focus:outline-none focus:border-cyan-400"
         required
       />
 
@@ -56,7 +118,7 @@ export default function ContactPageform() {
         value={formData.email}
         onChange={handleChange}
         placeholder="Email Address"
-        className="w-full border border-white bg-transparent text-[16px] md:text-[19px] 3xl:text-[30px] px-2 py-0.5 md:px-4 md:py-3 mb-[25px] leading-[30px] md:leading-[30px] lg:leading-[40px] xl:leading-[40px] 3xl:leading-[100px] rounded-none focus:outline-none focus:border-cyan-400"
+        className="w-full border border-white bg-transparent text-[16px] md:text-[19px] 4k:text-[30px] px-2 py-0.5 md:px-4 md:py-3 mb-[25px] leading-[30px] md:leading-[30px] lg:leading-[40px] xl:leading-[40px] 4k:leading-[100px] rounded-none focus:outline-none focus:border-cyan-400"
         required
       />
 
@@ -67,7 +129,7 @@ export default function ContactPageform() {
         onChange={handleChange}
         placeholder="Message"
         rows="3"
-        className="w-full border border-white bg-transparent text-[16px] md:text-[25px] 3xl:text-[30px] px-2 py-0.5 md:px-4 md:py-3 mb-[25px] rounded-none focus:outline-none focus:border-cyan-400"
+        className="w-full border border-white bg-transparent text-[16px] md:text-[25px] 4k:text-[30px] px-2 py-0.5 md:px-4 md:py-3 mb-[25px] rounded-none focus:outline-none focus:border-cyan-400"
         required
       ></textarea>
 
@@ -77,6 +139,7 @@ export default function ContactPageform() {
         <input
           type="checkbox"
           name="consent"
+          value="yes"
           checked={formData.consent}
           onChange={handleChange}
           className="mr-2 mt-1"
@@ -86,14 +149,41 @@ export default function ContactPageform() {
         handled in accordance with our Privacy Policy.
       </label>
 
+      <div className="mb-4 w-full md:w-auto">
+        <TurnstileWidget action="contact_form" />
+      </div>
+
       {/* Submit Button */}
       <button
         type="submit"
-        className="px-10 md:px-16 font-unageo-semibold text-[16px] md:text-[18px] 3xl:text-[26px] py-2 border border-white text-white rounded-3xl hover:bg-white hover:text-cyan-700 transition"
+        disabled={isSubmitting}
+        className="px-10 md:px-16 font-unageo-semibold text-[16px] md:text-[18px] 4k:text-[26px] py-2 border border-white text-white rounded-3xl hover:bg-white hover:text-cyan-700 transition disabled:cursor-not-allowed disabled:opacity-60"
       >
-        Send
+        {isSubmitting ? "Sending..." : "Send"}
       </button>
       </div>
+
+      <div className="absolute left-[-9999px] h-px w-px overflow-hidden" aria-hidden="true">
+        <label htmlFor="contactBotField">Leave this field empty</label>
+        <input
+          id="contactBotField"
+          type="text"
+          name="bot-field"
+          tabIndex={-1}
+          autoComplete="off"
+        />
+      </div>
+
+      {formStatus.message && (
+        <p
+          role="status"
+          className={`mt-4 text-[14px] ${
+            formStatus.type === "success" ? "text-green-300" : "text-red-300"
+          }`}
+        >
+          {formStatus.message}
+        </p>
+      )}
     </form>
   );
 }

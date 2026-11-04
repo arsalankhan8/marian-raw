@@ -9,3 +9,9 @@ export function resetTurnstileWidget(form) {
     window.turnstile.reset(widgetId);
   }
 }
+
+export function hasTurnstileToken(formData) {
+  const token = formData.get("cf-turnstile-response");
+
+  return typeof token === "string" && token.trim().length > 0;
+}

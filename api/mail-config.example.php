@@ -12,9 +12,12 @@ return [
     'from_name' => getenv('CAREERS_FROM_NAME') ?: 'Mariani Careers',
     'recipient_email' => getenv('CAREERS_RECIPIENT_EMAIL') ?: '',
     'recipient_name' => getenv('CAREERS_RECIPIENT_NAME') ?: 'Mariani Hiring Team',
+    'contact_recipient_email' => getenv('CONTACT_RECIPIENT_EMAIL') ?: '',
+    'contact_recipient_name' => getenv('CONTACT_RECIPIENT_NAME') ?: 'Mariani Contact Team',
 
     'turnstile_secret_key' => getenv('TURNSTILE_SECRET_KEY') ?: '',
     'turnstile_action' => 'career_application',
+    'turnstile_contact_action' => 'contact_form',
     'turnstile_allowed_hostnames' => [
         'marianimetal.com',
         'www.marianimetal.com',
@@ -31,6 +34,8 @@ return [
         . 'mariani-career-rate-limit',
     'rate_limit_15_minutes' => 5,
     'rate_limit_daily' => 20,
+    'contact_rate_limit_15_minutes' => 5,
+    'contact_rate_limit_daily' => 20,
 
     // Fail closed unless the uploaded resume is scanned by clamd.
     'require_malware_scan' => true,

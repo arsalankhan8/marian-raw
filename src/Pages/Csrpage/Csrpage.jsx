@@ -71,11 +71,11 @@ export default function Csrpage({ region = "canada" }) {
 
         {/* Education section */}
         <h2 className="flex justify-center gap-2 md:justify-start pt-[60px] pb-[20px]">
-          <span className="font-unageo-bold text-[20px] lg:text-[30px] xl:text-[45px] 2xl:text-[55px] 3xl:text-[111px] text-[#00688F]">
+          <span className="font-unageo-bold text-[20px] lg:text-[30px] xl:text-[45px] 2xl:text-[55px] 4k:text-[111px] text-[#00688F]">
             Education &amp;
           </span>
 
-          <span className="font-unageo-bold text-[20px] lg:text-[30px] xl:text-[45px] 2xl:text-[55px] 3xl:text-[111px] text-[#00688F]">
+          <span className="font-unageo-bold text-[20px] lg:text-[30px] xl:text-[45px] 2xl:text-[55px] 4k:text-[111px] text-[#00688F]">
             Scholarship
           </span>
         </h2>
@@ -95,7 +95,7 @@ export default function Csrpage({ region = "canada" }) {
         {!isUS && (
           <>
             <div className="flex justify-center md:justify-start pt-[60px] pb-[20px]">
-              <h2 className="font-unageo-bold text-[20px] lg:text-[30px] xl:text-[45px] 2xl:text-[55px] 3xl:text-[111px] text-[#00688F]">
+              <h2 className="font-unageo-bold text-[20px] lg:text-[30px] xl:text-[45px] 2xl:text-[55px] 4k:text-[111px] text-[#00688F]">
                 Community Engagement
               </h2>
             </div>
@@ -128,11 +128,11 @@ export default function Csrpage({ region = "canada" }) {
             }}
           >
             <div className="flex justify-center flex-col flex-wrap items-center h-full bg-black/50 text-white">
-              <p className="text-[25px] md:text-[55px] leading-[119%] font-unageo 3xl:text-[66px] mb-3">
+              <p className="text-[25px] md:text-[55px] leading-[119%] font-unageo 4k:text-[66px] mb-3">
                 CSR &amp; <b>Sustainability</b>
               </p>
 
-              <p className="font-unageo text-[14px] md:text-[22px] w-[65%] capitalize leading-[127%] text-center 3xl:text-[32px]">
+              <p className="font-unageo text-[14px] md:text-[22px] w-[65%] capitalize leading-[127%] text-center 4k:text-[32px]">
                 We design with integrity and build for longevity.
               </p>
             </div>

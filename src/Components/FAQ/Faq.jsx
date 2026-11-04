@@ -8,10 +8,10 @@ export default function Faq({ faqtitle, faqsubtitle, faqdescription }) {
     <div className="rounded-4xl p-[15px] 3xl:p-[30px] flex flex-col gap-4 shadow-md">
       <div className="flex justify-between gap-4 items-start">
         <div className="flex flex-col">
-          <p className="font-unageo-bold text-[14px] md:text-[16px] lg:text-[18px] xl:text-[19px] 3xl:text-[31px] text-left capitalize leading-[112%]">
+          <p className="font-unageo-bold text-[14px] md:text-[16px] lg:text-[18px] xl:text-[19px] 4k:text-[31px] text-left capitalize leading-[112%]">
             {faqtitle}
           </p>
-          <p className="font-unageo text-[12px] md:text-[13px] lg:text-[14px] xl:text-[15px] 3xl:text-[20px] text-left capitalize leading-[112%]">
+          <p className="font-unageo text-[12px] md:text-[13px] lg:text-[14px] xl:text-[15px] 4k:text-[20px] text-left capitalize leading-[112%]">
             {faqsubtitle}
           </p>
         </div>
@@ -31,7 +31,7 @@ export default function Faq({ faqtitle, faqsubtitle, faqdescription }) {
           isOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
-        <p className="font-unageo border-t-[1px] border-t-black pt-4 text-[12px] md:text-[13px] lg:text-[14px] xl:text-[15px] 3xl:text-[20px] leading-[140%] mt-2">
+        <p className="font-unageo border-t-[1px] border-t-black pt-4 text-[12px] md:text-[13px] lg:text-[14px] xl:text-[15px] 4k:text-[20px] leading-[140%] mt-2">
           {faqdescription}
         </p>
       </div>

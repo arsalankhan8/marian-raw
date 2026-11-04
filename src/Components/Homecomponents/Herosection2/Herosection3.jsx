@@ -15,7 +15,7 @@ export default function Herosection3() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
           viewport={{ once: true, amount: 0.1 }}
-          className="text-[20px] lg:text-[30px] xl:text-[45px] 2xl:text-[55px] 3xl:text-[111px] text-[#00688F] font-counture text-center md:text-left leading-[84%] uppercase"
+          className="text-[20px] lg:text-[30px] xl:text-[45px] 2xl:text-[55px] 4k:text-[111px] text-[#00688F] font-counture text-center md:text-left leading-[84%] uppercase"
         >
           Precision in Practice
         </motion.h2>
@@ -26,7 +26,7 @@ export default function Herosection3() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
           viewport={{ once: true, amount: 0.1 }}
-          className="text-[14px] md:text-[24px] lg:text-[18px] xl:text-[25px]  2xl:text-[28px] 3xl:text-[66px] text-[#00688F] font-unageo-medium capitalize text-center md:text-left"
+          className="text-[14px] md:text-[24px] lg:text-[18px] xl:text-[25px]  2xl:text-[28px] 4k:text-[66px] text-[#00688F] font-unageo-medium capitalize text-center md:text-left"
         >
           Featured Projects
         </motion.p>
@@ -37,7 +37,7 @@ export default function Herosection3() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.4 }}
           viewport={{ once: true, amount: 0.1 }}
-          className="flex flex-col gap-4 text-[12px] md:text-[14px] lg:text-[15px] 3xl:text-[24px] text-black text-center font-unageo md:text-left leading-[112%] max-w-[800px]"
+          className="flex flex-col gap-4 text-[12px] md:text-[14px] lg:text-[15px] 4k:text-[24px] text-black text-center font-unageo md:text-left leading-[112%] max-w-[800px]"
         >
           <p>
             A showcase of technically complex projects<br className='md:hidden '/>executed with clarity and control.

@@ -67,7 +67,7 @@ export default function Portfoliolisting({ datas }) {
             subtext={datas.contractor}
           />
 
-          <p className="font-unageo-medium text-[12px] md:text-[14px] lg:text-[15px] 3xl:text-[24px] leading-[130%] whitespace-pre-line">
+          <p className="font-unageo-medium text-[12px] md:text-[14px] lg:text-[15px] 4k:text-[24px] leading-[130%] whitespace-pre-line">
             {datas.description}
           </p>
         </div>

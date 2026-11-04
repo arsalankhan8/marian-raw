@@ -1,8 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
+import TurnstileWidget from "../../../Pages/Careerpage/TurnstileWidget";
+import {
+  hasTurnstileToken,
+  resetTurnstileWidget,
+} from "../../../Pages/Careerpage/turnstile";
+import {
+  contactFormEndpoint,
+  isSecureFormEndpointConfigured,
+  submitSecureForm,
+} from "../../../utils/secureForms";
 
 export default function HomePageform({
   isDark = false,
 }) {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formStatus, setFormStatus] = useState({ type: "", message: "" });
+
   const textColour = isDark
     ? "text-white"
     : "text-black";
@@ -29,10 +42,61 @@ export default function HomePageform({
     placeholder:opacity-60
   `;
 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    if (isSubmitting) return;
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    setFormStatus({ type: "", message: "" });
+
+    if (!isSecureFormEndpointConfigured(contactFormEndpoint)) {
+      setFormStatus({
+        type: "error",
+        message: "The secure contact service is temporarily unavailable.",
+      });
+      return;
+    }
+
+    if (!hasTurnstileToken(formData)) {
+      setFormStatus({
+        type: "error",
+        message: "Please complete the security verification.",
+      });
+      return;
+    }
+
+    try {
+      setIsSubmitting(true);
+      await submitSecureForm(contactFormEndpoint, formData);
+      form.reset();
+      setFormStatus({
+        type: "success",
+        message: "Thank you. Your message has been sent.",
+      });
+    } catch (error) {
+      setFormStatus({
+        type: "error",
+        message:
+          error instanceof Error
+            ? error.message
+            : "We could not send your message. Please try again.",
+      });
+    } finally {
+      resetTurnstileWidget(form);
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="relative z-10 mx-auto w-full max-w-[1344px] px-5 py-6 md:px-10 md:py-8">
-      <form>
-        <div className="grid grid-cols-1 gap-y-8 text-[12px] md:grid-cols-2 md:gap-x-12 md:text-[14px] lg:gap-x-20 lg:text-[15px] xl:gap-x-32 3xl:text-[24px]">
+      <form
+        action={contactFormEndpoint || undefined}
+        method="POST"
+        onSubmit={handleSubmit}
+      >
+        <div className="grid grid-cols-1 gap-y-8 text-[12px] md:grid-cols-2 md:gap-x-12 md:text-[14px] lg:gap-x-20 lg:text-[15px] xl:gap-x-32 4k:text-[24px]">
           {/* Full Name */}
           <div className="flex flex-col">
             <label
@@ -47,6 +111,7 @@ export default function HomePageform({
               name="fullName"
               type="text"
               autoComplete="name"
+              required
               className={inputStyles}
             />
           </div>
@@ -83,6 +148,7 @@ export default function HomePageform({
               name="email"
               type="email"
               autoComplete="email"
+              required
               className={inputStyles}
             />
           </div>
@@ -100,6 +166,7 @@ export default function HomePageform({
               id="message"
               name="message"
               type="text"
+              required
               className={inputStyles}
             />
           </div>
@@ -109,7 +176,8 @@ export default function HomePageform({
           <label className="flex items-start gap-3 cursor-pointer md:max-w-[35%]">
             <input
               type="checkbox"
-              name="smsConsent"
+              name="marketingConsent"
+              value="yes"
               className={`w-5 h-5 mt-1 shrink-0 ${checkboxColour}`}
             />
 
@@ -122,13 +190,40 @@ export default function HomePageform({
             </span>
           </label>
 
+          <div className="w-full md:w-auto">
+            <TurnstileWidget action="contact_form" />
+          </div>
+
           <button
             type="submit"
-            className={`shrink-0 px-6 py-2 border rounded-full font-unageo-medium transition duration-300 ${buttonStyles}`}
+            disabled={isSubmitting}
+            className={`shrink-0 px-6 py-2 border rounded-full font-unageo-medium transition duration-300 disabled:cursor-not-allowed disabled:opacity-60 ${buttonStyles}`}
           >
-            Send
+            {isSubmitting ? "Sending..." : "Send"}
           </button>
         </div>
+
+        <div className="absolute left-[-9999px] h-px w-px overflow-hidden" aria-hidden="true">
+          <label htmlFor="homeContactBotField">Leave this field empty</label>
+          <input
+            id="homeContactBotField"
+            type="text"
+            name="bot-field"
+            tabIndex={-1}
+            autoComplete="off"
+          />
+        </div>
+
+        {formStatus.message && (
+          <p
+            role="status"
+            className={`mt-4 font-unageo text-[13px] ${
+              formStatus.type === "success" ? "text-green-600" : "text-red-600"
+            }`}
+          >
+            {formStatus.message}
+          </p>
+        )}
       </form>
     </div>
   );

@@ -8,11 +8,19 @@ import MobileHeader from "../../Components/Header/MobileHeader";
 import Footers from "../../Components/Footers/Footers";
 import MobileFooters from "../../Components/Footers/MobileFooters";
 import ScrollToTop from "../../Components/ScrollToTop/ScrollTop";
+import {
+    careerFormEndpoint,
+    isSecureFormEndpointConfigured,
+    submitSecureForm,
+} from "../../utils/secureForms";
 
 import { JOBS_BY_REGION } from "./careersData";
+import TurnstileWidget from "./TurnstileWidget";
+import {
+    hasTurnstileToken,
+    resetTurnstileWidget,
+} from "./turnstile";
 
-const CAREER_FORM_NAME = "career-application";
-const CAREER_FORM_ENDPOINT = "/__forms.html";
 const MAXIMUM_RESUME_BYTES = 7 * 1024 * 1024;
 
 const TEAM_DEFINITIONS = [
@@ -328,18 +336,28 @@ export default function Careerpage() {
             return;
         }
 
-        try {
-            setIsSubmitting(true);
-            formData.set("form-name", CAREER_FORM_NAME);
-
-            const response = await fetch(CAREER_FORM_ENDPOINT, {
-                method: "POST",
-                body: formData,
+        if (!isSecureFormEndpointConfigured(careerFormEndpoint)) {
+            setFormStatus({
+                type: "error",
+                message:
+                    "The secure application service is temporarily unavailable.",
             });
 
-            if (!response.ok) {
-                throw new Error("Unable to submit the application.");
-            }
+            return;
+        }
+
+        if (!hasTurnstileToken(formData)) {
+            setFormStatus({
+                type: "error",
+                message: "Please complete the security verification.",
+            });
+
+            return;
+        }
+
+        try {
+            setIsSubmitting(true);
+            await submitSecureForm(careerFormEndpoint, formData);
 
             form.reset();
             setSelectedResumeName("");
@@ -363,6 +381,7 @@ export default function Careerpage() {
                         : "We could not submit your application. Please try again.",
             });
         } finally {
+            resetTurnstileWidget(form);
             setIsSubmitting(false);
         }
     };
@@ -570,7 +589,7 @@ export default function Careerpage() {
                 )}
 
                 {/* What Defines Our Team */}
-                <section className="overflow-hidden pb-20 lg:pb-32">
+                <section className="overflow-hidden pb-20 pt-[50px] lg:pb-32">
                     <div className="mx-auto max-w-[90vw]">
                         <Motion.div
                             {...revealAnimation}
@@ -718,20 +737,12 @@ export default function Careerpage() {
 
                             <Motion.form
                                 {...revealAnimation}
-                                name={CAREER_FORM_NAME}
-                                action={CAREER_FORM_ENDPOINT}
+                                action={careerFormEndpoint || undefined}
                                 method="POST"
                                 onSubmit={handleTalentSubmit}
                                 encType="multipart/form-data"
-                                data-netlify="true"
-                                data-netlify-honeypot="bot-field"
                                 className="rounded-[24px] bg-white p-6 text-black sm:p-8 lg:p-10"
                             >
-                                <input
-                                    type="hidden"
-                                    name="form-name"
-                                    value={CAREER_FORM_NAME}
-                                />
                                 <div className="grid gap-5 sm:grid-cols-2">
                                     <div>
                                         <label
@@ -992,6 +1003,23 @@ export default function Careerpage() {
                                         autoComplete="off"
                                     />
                                 </div>
+
+                                <div className="mt-5">
+                                    <TurnstileWidget action="career_application" />
+                                </div>
+
+                                <p className="mt-4 text-[12px] leading-relaxed text-[#4B5563]">
+                                    By submitting, you acknowledge that your applicant
+                                    information and resume will be processed for recruitment,
+                                    security screening, and record-keeping as described in our{" "}
+                                    <Link
+                                        to={`${regionPath}/privacy-policy`}
+                                        className="font-semibold text-[#00688F] underline underline-offset-2"
+                                    >
+                                        Privacy Policy
+                                    </Link>
+                                    .
+                                </p>
 
                                 <div className="mt-7">
                                     <button

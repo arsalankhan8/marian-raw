@@ -28,8 +28,8 @@ export default function Contactsection({
         heading="Speak with Us"
         subtext="Witness Your Vision Find Form"
         textColor={isUS ? "text-white" : "text-black"}
-        headingcss="font-counture text-[20px] lg:text-[30px] xl:text-[45px] 2xl:text-[55px] 3xl:text-[111px]"
-        subtextcss="font-unageo-semibold text-[14px] md:text-[24px] lg:text-[18px] xl:text-[25px] 2xl:text-[28px] 3xl:text-[66px]"
+        headingcss="font-counture text-[20px] lg:text-[30px] xl:text-[45px] 2xl:text-[55px] 4k:text-[111px]"
+        subtextcss="font-unageo-semibold text-[14px] md:text-[24px] lg:text-[18px] xl:text-[25px] 2xl:text-[28px] 4k:text-[66px]"
       />
       <HomePageform isDark={isUS} />
     </>

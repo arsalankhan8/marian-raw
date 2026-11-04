@@ -140,7 +140,7 @@ export default function HomeSlider2() {
             <AnimatePresence mode="wait">
               <motion.p
                 key={slides[activeIndex].title}
-                className=" text-[30px] md:text-[50px] xl:text-[70px] 3xl:text-[95px] font-bold leading-tight font-unageo-bold"
+                className=" text-[30px] md:text-[50px] xl:text-[70px] 4k:text-[95px] font-bold leading-tight font-unageo-bold"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}

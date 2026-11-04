@@ -241,11 +241,11 @@ export default function LegacySlider() {
         {/* RIGHT SIDE - Text */}
         <div className="flex flex-col justify-between w-[55%]">
           <div className="flex flex-col gap-3">
-            <p className="font-unageo leading-[112%] text-[19px] 3xl:text-[24px]">
+            <p className="font-unageo leading-[112%] text-[19px] 4k:text-[24px]">
               Our Process
             </p>
             <img src={line} alt="arrow" className="w-[1px] h-[38px]" />
-            <p className="font-unageo leading-[112%] text-[19px] 3xl:text-[24px]">
+            <p className="font-unageo leading-[112%] text-[19px] 4k:text-[24px]">
               {`0${index + 1}`}
             </p>
           </div>
@@ -259,10 +259,10 @@ export default function LegacySlider() {
               transition={{ duration: 0.45, ease: "easeInOut" }}
               className="flex flex-col gap-6"
             >
-              <p className="font-unageo-bold text-[65px] 3xl:text-[72px] leading-[97%] text-[#00688F] capitalize">
+              <p className="font-unageo-bold text-[65px] 4k:text-[72px] leading-[97%] text-[#00688F] capitalize">
                 {slides[index].title}
               </p>
-              <p className="font-unageo text-[25px] mt-[-15px] 3xl:text-[28px]">
+              <p className="font-unageo text-[25px] mt-[-15px] 4k:text-[28px]">
                 {slides[index].description}
               </p>
             </motion.div>

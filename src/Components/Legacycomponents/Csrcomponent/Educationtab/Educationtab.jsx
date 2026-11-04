@@ -128,7 +128,7 @@ export default function Educationtab({
               onClick={() =>
                 handleTabChange(tab.id)
               }
-              className={`font-unageo-semibold transition duration-300 text-[11px] whitespace-nowrap md:text-[25px] lg:text-[26px] 2xl:text-[30px] 3xl:text-[41px] p-2 border-b-[1px] cursor-pointer ${
+              className={`font-unageo-semibold transition duration-300 text-[11px] whitespace-nowrap md:text-[25px] lg:text-[26px] 2xl:text-[30px] 4k:text-[41px] p-2 border-b-[1px] cursor-pointer ${
                 activeTab === tab.id
                   ? "text-black border-b-black"
                   : "text-[#C2C2C2] border-b-transparent"
@@ -225,11 +225,11 @@ export default function Educationtab({
               }}
               className="flex flex-col justify-center w-full md:w-[45%]"
             >
-              <h3 className="font-unageo-semibold text-[16px] md:text-[20px] lg:text-[24px] xl:text-[27px] 2xl:text-[30px] 3xl:text-[40px] text-[#00688F] capitalize leading-[112%]">
+              <h3 className="font-unageo-semibold text-[16px] md:text-[20px] lg:text-[24px] xl:text-[27px] 2xl:text-[30px] 4k:text-[40px] text-[#00688F] capitalize leading-[112%]">
                 {activeTabContent?.heading}
               </h3>
 
-              <p className="font-unageo text-[12px] md:text-[16px] lg:text-[17px] xl:text-[20px] 2xl:text-[22px] 3xl:text-[32px] text-black capitalize leading-[127%] mt-3">
+              <p className="font-unageo text-[12px] md:text-[16px] lg:text-[17px] xl:text-[20px] 2xl:text-[22px] 4k:text-[32px] text-black capitalize leading-[127%] mt-3">
                 {activeTabContent?.description}
               </p>
             </motion.div>

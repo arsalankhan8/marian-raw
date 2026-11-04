@@ -11,12 +11,12 @@ export default function AodaCompliance() {
       <Header />
       <MobileHeader />
       <main id="main-content" tabIndex={-1} className="max-w-[90vw] w-full mx-auto pt-[80px] md:pt-[130px] pb-[100px] min-h-[60vh]">
-        <h1 className="font-counture text-[#00688F] text-[20px] lg:text-[30px] xl:text-[45px] 2xl:text-[55px] 3xl:text-[111px] mb-8">
+        <h1 className="font-counture text-[#00688F] text-[20px] lg:text-[30px] xl:text-[45px] 2xl:text-[55px] 4k:text-[111px] mb-8">
           AODA Compliance
         </h1>
         <div className="font-unageo-medium text-[16px] md:text-[18px] space-y-6">
           <section>
-            <p className="text-[12px] md:text-[14px] lg:text-[15px] 3xl:text-[24px]">
+            <p className="text-[12px] md:text-[14px] lg:text-[15px] 4k:text-[24px]">
               The AODA (Accessibility for Ontarians with Disabilities Act)
               requires Ontario organizations, including businesses with 50+
               employees and public sector bodies, to make their websites
@@ -37,10 +37,10 @@ export default function AodaCompliance() {
           </section>
 
           <section>
-            <h2 className="font-unageo-medium text-[14px] md:text-[24px] lg:text-[18px] xl:text-[25px]  2xl:text-[28px] 3xl:text-[66px] mb-2 text-[#00688F]">
+            <h2 className="font-unageo-medium text-[14px] md:text-[24px] lg:text-[18px] xl:text-[25px]  2xl:text-[28px] 4k:text-[66px] mb-2 text-[#00688F]">
               Key Requirements & Deadlines
             </h2>
-            <ul className="list-disc pl-5 space-y-1 mb-2 text-[12px] md:text-[14px] lg:text-[15px] 3xl:text-[24px]">
+            <ul className="list-disc pl-5 space-y-1 mb-2 text-[12px] md:text-[14px] lg:text-[15px] 4k:text-[24px]">
               <li>
                 <strong>Target Audience:</strong> Designated public sector
                 organizations and businesses/non-profits with 50+ employees.
@@ -50,10 +50,10 @@ export default function AodaCompliance() {
                 captions/audio descriptions).
               </li>
             </ul>
-            <p className="font-bold mt-2 text-[12px] md:text-[14px] lg:text-[15px] 3xl:text-[24px]">
+            <p className="font-bold mt-2 text-[12px] md:text-[14px] lg:text-[15px] 4k:text-[24px]">
               Deadlines:
             </p>
-            <ul className="list-disc pl-5 space-y-1 mb-2 text-[12px] md:text-[14px] lg:text-[15px] 3xl:text-[24px]">
+            <ul className="list-disc pl-5 space-y-1 mb-2 text-[12px] md:text-[14px] lg:text-[15px] 4k:text-[24px]">
               <li>
                 <strong>Jan 1, 2014:</strong> New public sites/refreshes must
                 meet WCAG 2.0 Level A.
@@ -66,10 +66,10 @@ export default function AodaCompliance() {
           </section>
 
           <section>
-            <h2 className="font-unageo-medium text-[14px] md:text-[24px] lg:text-[18px] xl:text-[25px]  2xl:text-[28px] 3xl:text-[66px] mb-2 text-[#00688F]">
+            <h2 className="font-unageo-medium text-[14px] md:text-[24px] lg:text-[18px] xl:text-[25px]  2xl:text-[28px] 4k:text-[66px] mb-2 text-[#00688F]">
               How to Achieve Compliance
             </h2>
-            <ul className="font-unageo-medium list-disc pl-5 space-y-1 mb-2 text-[12px] md:text-[14px] lg:text-[15px] 3xl:text-[24px]">
+            <ul className="font-unageo-medium list-disc pl-5 space-y-1 mb-2 text-[12px] md:text-[14px] lg:text-[15px] 4k:text-[24px]">
               <li>
                 <strong>Use WCAG Guidelines:</strong> Follow WCAG 2.0 Level AA,
                 focusing on making content perceivable, operable,
@@ -95,10 +95,10 @@ export default function AodaCompliance() {
           </section>
 
           <section>
-            <h2 className="font-unageo-medium text-[14px] md:text-[24px] lg:text-[18px] xl:text-[25px]  2xl:text-[28px] 3xl:text-[66px] mb-2 text-[#00688F]">
+            <h2 className="font-unageo-medium text-[14px] md:text-[24px] lg:text-[18px] xl:text-[25px]  2xl:text-[28px] 4k:text-[66px] mb-2 text-[#00688F]">
               Why It Matters
             </h2>
-            <ul className="list-disc pl-5 space-y-1 mb-2 text-[12px] md:text-[14px] lg:text-[15px] 3xl:text-[24px]">
+            <ul className="list-disc pl-5 space-y-1 mb-2 text-[12px] md:text-[14px] lg:text-[15px] 4k:text-[24px]">
               <li>
                 <strong>Legal Obligation:</strong> It's provincial law, with
                 significant fines for non-compliance (up to $100,000/day for
@@ -112,10 +112,10 @@ export default function AodaCompliance() {
           </section>
 
           <section>
-            <h2 className="font-unageo-medium text-[14px] md:text-[24px] lg:text-[18px] xl:text-[25px]  2xl:text-[28px] 3xl:text-[66px] mb-2 text-[#00688F]">
+            <h2 className="font-unageo-medium text-[14px] md:text-[24px] lg:text-[18px] xl:text-[25px]  2xl:text-[28px] 4k:text-[66px] mb-2 text-[#00688F]">
               Resources & Guidance
             </h2>
-            <ul className="list-disc pl-5 space-y-1 mb-2 text-[12px] md:text-[14px] lg:text-[15px] 3xl:text-[24px]">
+            <ul className="list-disc pl-5 space-y-1 mb-2 text-[12px] md:text-[14px] lg:text-[15px] 4k:text-[24px]">
               <li>
                 <a
                   href="https://www.ontario.ca/page/when-public-websites-are-not-accessible"

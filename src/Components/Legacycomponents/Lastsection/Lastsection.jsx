@@ -12,7 +12,7 @@ export default function Lastsection() {
     <div ref={ref} className="max-w-[90vw] w-full mx-auto mt-[70px]">
       {/* Heading Animation */}
       <motion.p
-        className="font-counture text-[20px] lg:text-[30px] xl:text-[45px] 2xl:text-[55px] 3xl:text-[111px] text-center md:text-left leading-[89%] uppercase text-[#00688F]"
+        className="font-counture text-[20px] lg:text-[30px] xl:text-[45px] 2xl:text-[55px] 4k:text-[111px] text-center md:text-left leading-[89%] uppercase text-[#00688F]"
         initial={{ opacity: 0 }}
         animate={isInView ? { opacity: 1 } : {}}
         transition={{ duration: 1, ease: 'easeOut' }}
@@ -51,7 +51,7 @@ export default function Lastsection() {
 
             {/* Foreground content (gradient + text) — stays fixed size */}
             <div className="relative z-10 flex items-end w-full h-full bg-gradient-to-t from-black/50 to-black/0">
-              <p className="font-unageo-semibold text-[16px]  md:text-[20px] lg:text-[24px] 3xl:text-[35px] leading-[112%] text-white px-[30px] py-[20px] capitalize">
+              <p className="font-unageo-semibold text-[16px]  md:text-[20px] lg:text-[24px] 4k:text-[35px] leading-[112%] text-white px-[30px] py-[20px] capitalize">
                 Education & Scholarships
               </p>
             </div>
@@ -76,7 +76,7 @@ export default function Lastsection() {
               aria-hidden
             />
             <div className="relative z-10 flex items-end w-full h-full bg-gradient-to-t from-black/50 to-black/0">
-              <p className="font-unageo-semibold text-[16px]  md:text-[20px] lg:text-[24px] 3xl:text-[35px] leading-[112%] text-white px-[30px] py-[20px] capitalize">
+              <p className="font-unageo-semibold text-[16px]  md:text-[20px] lg:text-[24px] 4k:text-[35px] leading-[112%] text-white px-[30px] py-[20px] capitalize">
                 Community Engagement
               </p>
             </div>
@@ -101,7 +101,7 @@ export default function Lastsection() {
               aria-hidden
             />
             <div className="relative z-10 flex items-end w-full h-full bg-gradient-to-t from-black/50 to-black/0">
-              <p className="font-unageo-semibold text-[16px]  md:text-[20px] lg:text-[24px] 3xl:text-[35px] leading-[112%] text-white px-[30px] py-[20px] capitalize">
+              <p className="font-unageo-semibold text-[16px]  md:text-[20px] lg:text-[24px] 4k:text-[35px] leading-[112%] text-white px-[30px] py-[20px] capitalize">
                 Commitment to Sustainability
               </p>
             </div>

@@ -41,6 +41,7 @@ export default function USPortfoliopage() {
           viewport={{ once: true, amount: 0.3 }} // trigger once when ~30% is in view
         >
           <Leftheadingtop
+            centered
             heading="Defining Skylines and Shaping Spaces"
             subtext={
               <>
