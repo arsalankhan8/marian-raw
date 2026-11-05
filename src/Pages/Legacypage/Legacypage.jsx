@@ -170,15 +170,21 @@ export default function Legacypage({
           }
           subtext={
             <>
-              At Mariani, our legacy is not just defined by the buildings we
-              create, but by the values that guide us. Over the years, we have
-              built a reputation for pushing the limits of design and technology
-              in metal and glass fabrication. From pioneering new techniques to
-              crafting monumental works, Mariani’s work reflects our commitment
-              to both craftsmanship and sustainability. Our journey has been one
-              of continuous evolution, and we remain committed to staying at the
-              cutting edge of architectural design, engineering, and
-              fabrication.
+              At Mariani, our legacy is defined not only by the structures we
+              help create, but by the craftsmanship, precision, and commitment
+              to excellence behind every project. Over the years, we have earned
+              a reputation for pushing the boundaries of architectural metal and
+              glass fabrication, transforming ambitious concepts into
+              remarkable built environments.
+              <br />
+              <br />
+              From pioneering advanced fabrication techniques to contributing
+              to monumental architectural works, our approach reflects a
+              commitment to innovation, quality, and continuous improvement. By
+              combining generations of craftsmanship with modern technology and
+              close collaboration with architects, designers, and licensed
+              engineering firms, we continue to advance what is possible in
+              custom architectural fabrication.
             </>
           }
         />

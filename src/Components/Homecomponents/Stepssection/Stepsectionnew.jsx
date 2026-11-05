@@ -57,21 +57,20 @@ export default function StepSectionNew({ headingLevel = "h1" }) {
             className="flex flex-col gap-6 text-base md:text-lg text-gray-800 font-unageo-medium leading-[112%]"
           >
             <p className="border-l-2 text-[12px] md:text-[14px] lg:text-[15px] 4k:text-[24px] border-[#00688F] pl-6 py-2">
-              At Mariani, we design, engineer, fabricate, and install
-              high-quality custom metal and glass systems for complex
-              architectural and civil projects. From public infrastructure and
-              institutional developments to commercial buildings and specialty
-              amenities, we deliver solutions that are structurally sound and 
-              built for long-term performance.<br/><br/>
-              Our work stands at the intersection of craftsmanship and
-              engineering — translating detailed drawings into durable,
-              code-compliant environments.
+              At Mariani, we specialize in design assistance, fabrication, and
+              installation of high-quality custom metal and glass systems for
+              complex architectural and civil projects. From public
+              infrastructure and institutional developments to commercial
+              buildings and specialty amenities, we deliver precision-crafted
+              solutions designed for lasting performance.
+              <br />
+              <br />
+              Working alongside architects, designers, contractors, and
+              licensed engineering firms, we transform complex architectural
+              concepts into exceptional built environments, combining
+              technical expertise, advanced fabrication capabilities, and
+              uncompromising craftsmanship.
             </p>
-            {/* <p className="border-l-2 border-[#00688F] pl-6 py-2">
-              Our work stands at the intersection of craftsmanship and
-              engineering — translating detailed drawings into durable,
-              code-compliant environments.
-            </p> */}
           </motion.div>
         </div>
         
