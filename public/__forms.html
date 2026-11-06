@@ -6,6 +6,51 @@
     <title>Form definitions</title>
   </head>
   <body>
-    <p>Form submissions are handled by the secured application API.</p>
+    <!-- Netlify scans this static form during deployment. Keep its fields in
+         sync with both React career application forms. -->
+    <form
+      name="career-application"
+      action="/__forms.html"
+      method="POST"
+      enctype="multipart/form-data"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+      hidden
+    >
+      <input type="hidden" name="form-name" value="career-application" />
+      <input name="bot-field" />
+      <input name="firstName" />
+      <input name="lastName" />
+      <input type="email" name="email" />
+      <input name="phone" />
+      <input name="areaOfInterest" />
+      <input name="preferredLocation" />
+      <input type="file" name="resume" />
+      <textarea name="message"></textarea>
+      <input name="positionAppliedFor" />
+      <input name="positionLocation" />
+      <input name="positionDepartment" />
+      <input name="applicationRegion" />
+    </form>
+
+    <!-- Netlify scans this static form during deployment. Keep its fields in
+         sync with both React contact forms. -->
+    <form
+      name="contact"
+      action="/__forms.html"
+      method="POST"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+      hidden
+    >
+      <input type="hidden" name="form-name" value="contact" />
+      <input name="bot-field" />
+      <input name="fullName" />
+      <input name="phone" />
+      <input type="email" name="email" />
+      <textarea name="message"></textarea>
+      <input name="consent" />
+      <input name="marketingConsent" />
+    </form>
   </body>
 </html>

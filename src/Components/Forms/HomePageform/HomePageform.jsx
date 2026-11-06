@@ -1,14 +1,8 @@
 import React, { useState } from "react";
-import TurnstileWidget from "../../../Pages/Careerpage/TurnstileWidget";
 import {
-  hasTurnstileToken,
-  resetTurnstileWidget,
-} from "../../../Pages/Careerpage/turnstile";
-import {
-  contactFormEndpoint,
-  isSecureFormEndpointConfigured,
-  submitSecureForm,
-} from "../../../utils/secureForms";
+  netlifyFormEndpoint,
+  submitNetlifyForm,
+} from "../../../utils/netlifyForms";
 
 export default function HomePageform({
   isDark = false,
@@ -51,25 +45,9 @@ export default function HomePageform({
     const formData = new FormData(form);
     setFormStatus({ type: "", message: "" });
 
-    if (!isSecureFormEndpointConfigured(contactFormEndpoint)) {
-      setFormStatus({
-        type: "error",
-        message: "The secure contact service is temporarily unavailable.",
-      });
-      return;
-    }
-
-    if (!hasTurnstileToken(formData)) {
-      setFormStatus({
-        type: "error",
-        message: "Please complete the security verification.",
-      });
-      return;
-    }
-
     try {
       setIsSubmitting(true);
-      await submitSecureForm(contactFormEndpoint, formData);
+      await submitNetlifyForm(formData);
       form.reset();
       setFormStatus({
         type: "success",
@@ -84,7 +62,6 @@ export default function HomePageform({
             : "We could not send your message. Please try again.",
       });
     } finally {
-      resetTurnstileWidget(form);
       setIsSubmitting(false);
     }
   };
@@ -92,10 +69,14 @@ export default function HomePageform({
   return (
     <div className="relative z-10 mx-auto w-full max-w-[1344px] px-5 py-6 md:px-10 md:py-8">
       <form
-        action={contactFormEndpoint || undefined}
+        name="contact"
+        action={netlifyFormEndpoint}
         method="POST"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
         onSubmit={handleSubmit}
       >
+        <input type="hidden" name="form-name" value="contact" />
         <div className="grid grid-cols-1 gap-y-8 text-[12px] md:grid-cols-2 md:gap-x-12 md:text-[14px] lg:gap-x-20 lg:text-[15px] xl:gap-x-32 4k:text-[24px]">
           {/* Full Name */}
           <div className="flex flex-col">
@@ -189,10 +170,6 @@ export default function HomePageform({
               will be handled in accordance with our Privacy Policy.
             </span>
           </label>
-
-          <div className="w-full md:w-auto">
-            <TurnstileWidget action="contact_form" />
-          </div>
 
           <button
             type="submit"

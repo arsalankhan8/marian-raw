@@ -8,8 +8,6 @@ import Footers from "../../Components/Footers/Footers";
 import MobileFooters from "../../Components/Footers/MobileFooters";
 import ScrollToTop from "../../Components/ScrollToTop/ScrollTop";
 
-import arrowIcon from "../../assets/arrowsmall.png";
-
 import canadaBanner from "../../assets/contactbanners.webp";
 import usBanner from "../../assets/UsContactPageBanner.jpg";
 
@@ -126,23 +124,6 @@ export default function Contactpage() {
 
           <ContactPageform />
 
-          <div className="flex flex-col w-full md:w-[80%] mt-[50px]">
-            <p className="font-unageo-bold text-white text-center md:text-left text-[20px] lg:text-[30px] xl:text-[45px] 2xl:text-[55px] 4k:text-[111px] leading-[112%] tracking-[-2%]">
-              Where vision finds permanence,
-              <br />
-              Legacy takes shape.
-            </p>
-
-            <p className="flex justify-center md:justify-start font-unageo-medium text-[15px] md:text-[22px] 4k:text-[30px] gap-2 mt-4">
-              Get Started
-
-              <img
-                src={arrowIcon}
-                alt=""
-                className="w-[16px] h-[16px] mt-1 md:mt-2.5"
-              />
-            </p>
-          </div>
         </div>
       </div>
       </main>

@@ -9,17 +9,11 @@ import Footers from "../../Components/Footers/Footers";
 import MobileFooters from "../../Components/Footers/MobileFooters";
 import ScrollToTop from "../../Components/ScrollToTop/ScrollTop";
 import {
-    careerFormEndpoint,
-    isSecureFormEndpointConfigured,
-    submitSecureForm,
-} from "../../utils/secureForms";
+    netlifyFormEndpoint,
+    submitNetlifyFileForm,
+} from "../../utils/netlifyForms";
 
 import { JOBS_BY_REGION } from "./careersData";
-import TurnstileWidget from "./TurnstileWidget";
-import {
-    hasTurnstileToken,
-    resetTurnstileWidget,
-} from "./turnstile";
 
 const MAXIMUM_RESUME_BYTES = 7 * 1024 * 1024;
 
@@ -336,28 +330,9 @@ export default function Careerpage() {
             return;
         }
 
-        if (!isSecureFormEndpointConfigured(careerFormEndpoint)) {
-            setFormStatus({
-                type: "error",
-                message:
-                    "The secure application service is temporarily unavailable.",
-            });
-
-            return;
-        }
-
-        if (!hasTurnstileToken(formData)) {
-            setFormStatus({
-                type: "error",
-                message: "Please complete the security verification.",
-            });
-
-            return;
-        }
-
         try {
             setIsSubmitting(true);
-            await submitSecureForm(careerFormEndpoint, formData);
+            await submitNetlifyFileForm(formData);
 
             form.reset();
             setSelectedResumeName("");
@@ -381,7 +356,6 @@ export default function Careerpage() {
                         : "We could not submit your application. Please try again.",
             });
         } finally {
-            resetTurnstileWidget(form);
             setIsSubmitting(false);
         }
     };
@@ -413,7 +387,6 @@ export default function Careerpage() {
                         alt="Mariani team reviewing architectural metalwork"
                         className="absolute inset-0 h-full w-full object-cover"
                     />
-
                     <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/65 to-black/25" />
 
                     <div className="relative z-10 mx-auto w-full max-w-[90vw] pb-16 pt-16 lg:pb-24">
@@ -737,12 +710,20 @@ export default function Careerpage() {
 
                             <Motion.form
                                 {...revealAnimation}
-                                action={careerFormEndpoint || undefined}
+                                name="career-application"
+                                action={netlifyFormEndpoint}
                                 method="POST"
                                 onSubmit={handleTalentSubmit}
                                 encType="multipart/form-data"
+                                data-netlify="true"
+                                data-netlify-honeypot="bot-field"
                                 className="rounded-[24px] bg-white p-6 text-black sm:p-8 lg:p-10"
                             >
+                                <input
+                                    type="hidden"
+                                    name="form-name"
+                                    value="career-application"
+                                />
                                 <div className="grid gap-5 sm:grid-cols-2">
                                     <div>
                                         <label
@@ -1002,10 +983,6 @@ export default function Careerpage() {
                                         tabIndex={-1}
                                         autoComplete="off"
                                     />
-                                </div>
-
-                                <div className="mt-5">
-                                    <TurnstileWidget action="career_application" />
                                 </div>
 
                                 <p className="mt-4 text-[12px] leading-relaxed text-[#4B5563]">
